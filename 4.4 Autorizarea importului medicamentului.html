@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<p>Display some text when the checkbox is checked:</p>
+
+Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
+Checkbox2: <input type="checkbox" id="myCheck2"  onclick="myFunction2()">
+
+
+<div id="medicamentulInregistrat" style="display:none">
+<form action="/processMedicamentulInregistrat">
+    <fieldset>
+        <legend>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT :</legend>
+        <!--First name:<br>-->
+        <!--<input type="text" name="firstname" value="Mickey"><br>-->
+        <!--Last name:<br>-->
+        <!--<input type="text" name="lastname" value="Mouse"><br><br>-->
+
+
+        Codul medicamentului                         <input type="text" name="codMedicamentului">             <br>
+        Codul vamal                                  <input type="text" name="codVamal">                      <br>
+        Denumirea comercială a medicamentului        <input type="text" name="denumireComerciala">            <br>
+        Forma medicamentoasă                         <input type="text" name="formaMedicamentului">           <br>
+        Forma medicamentoasă                         <select name="formaMedicamentului">
+                                                        <option value="audi">Audi</option>
+                                                     </select>                                                <br>
+        Doza                                         <input type="text" name="doza">                          <br>
+        Divizare (Unitatea de măsură)                <input type="text" name="divizare">                      <br>
+        Cantitatea                                   <input type="text" name="cantitate">                     <br>
+        Prețul                                       <input type="text" name="pret">                          <br>
+        Valuta                                       <input type="text" name="valuta">                        <br>
+        Țara producătoare                            <input type="text" name="taraProducatoare">              <br>
+        Firma producătoare                           <input type="text" name="firmaProducatoare">             <br>
+        Nr. de înregistrare în RM                    <input type="text" name="nrInregistrare">                <br>
+        Data înregistrare în RM                      <input type="date" name="dataInregistrare">              <br>
+        Cod ATC                                      <input type="text" name="codATC">                        <br>
+        Denumirea comună internaționala              <input type="text" name="denumireaInternationala">       <br>
+        <br>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+</div>
+
+
+<p id="text2" style="display:none">
+    Cantitatea returnată <br>
+    INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT (fișierul *.xls)  <br>
+    Codul medicamentului <br>
+    Codul vamal <br>
+    Denumirea comercială a medicamentului <br>
+    Forma medicamentoasă <br>
+    Doza <br>
+    Divizare (Unitatea de măsură) <br>
+    Cantitatea <br>
+    Prețul <br>
+    Valuta <br>
+    Țara producătoare <br>
+    Firma producătoare <br>
+    Nr. de înregistrare în RM <br>
+    Data înregistrare în RM <br>
+    Cod ATC <br>
+    Denumirea comună internaționala <br>
+</p>
+
+
+<script>
+    function myFunction() {
+        var checkBox = document.getElementById("checkMedicamentulInregistrat");
+        var text = document.getElementById("medicamentulInregistrat");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function myFunction2() {
+        var checkBox = document.getElementById("myCheck2");
+        var text = document.getElementById("text2");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
