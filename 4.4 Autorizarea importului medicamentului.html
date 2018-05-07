@@ -1,72 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title> Pagina de inregistrare</title>
+    <h2>Pagian de inregistrare</h2>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 
 
-<p>Display some text when the checkbox is checked:</p>
 
+<strong>Se va inregistra:</strong> <br>
 Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
-Checkbox2: <input type="checkbox" id="myCheck2"  onclick="myFunction2()">
+Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
+Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
+Ambalajul pentru producerea medicamentelor: <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
 
 
-<div id="medicamentulInregistrat" style="display:none">
-<form action="/processMedicamentulInregistrat">
-    <fieldset>
-        <legend>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT :</legend>
-        <!--First name:<br>-->
-        <!--<input type="text" name="firstname" value="Mickey"><br>-->
-        <!--Last name:<br>-->
-        <!--<input type="text" name="lastname" value="Mouse"><br><br>-->
-
-
-        Codul medicamentului                         <input type="text" name="codMedicamentului">             <br>
-        Codul vamal                                  <input type="text" name="codVamal">                      <br>
-        Denumirea comercială a medicamentului        <input type="text" name="denumireComerciala">            <br>
-        Forma medicamentoasă                         <input type="text" name="formaMedicamentului">           <br>
-        Forma medicamentoasă                         <select name="formaMedicamentului">
-                                                        <option value="audi">Audi</option>
-                                                     </select>                                                <br>
-        Doza                                         <input type="text" name="doza">                          <br>
-        Divizare (Unitatea de măsură)                <input type="text" name="divizare">                      <br>
-        Cantitatea                                   <input type="text" name="cantitate">                     <br>
-        Prețul                                       <input type="text" name="pret">                          <br>
-        Valuta                                       <input type="text" name="valuta">                        <br>
-        Țara producătoare                            <input type="text" name="taraProducatoare">              <br>
-        Firma producătoare                           <input type="text" name="firmaProducatoare">             <br>
-        Nr. de înregistrare în RM                    <input type="text" name="nrInregistrare">                <br>
-        Data înregistrare în RM                      <input type="date" name="dataInregistrare">              <br>
-        Cod ATC                                      <input type="text" name="codATC">                        <br>
-        Denumirea comună internaționala              <input type="text" name="denumireaInternationala">       <br>
+<form action="/processForm">
+    <hr>
+    <div id="inregistrare" >
         <br>
-        <input type="submit" value="Submit">
+        <fieldset>
+            <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
+
+            Nr. de înregistrare a cererii (Se introduce automatizat în timpul înregistrării) <br>
+            Data depunerii cererii (Data se introduce automatizat în timpul înregistrării) <br>
+            Compania-solicitant (Se introduce manual) <br>
+            Denumirea materiei prime <br>
+            Producătorul materiei prime <br>
+            Ţara şi adresa producătorului materiei prime <br>
+            Vînzător <br>
+            Ţara şi adresa vînzătorului <br>
+            Importator <br>
+            Ţara şi adresa importatorului <br>
+            Codul vamal <br>
+            Temeiul pentru autorizație de import (Contract) <br>
+            Cantitatea <br>
+            Prețul <br>
+            Valuta <br>
+            Condiții și precizări <br>
+            Nr. şi data a declaraţiei vamale <br>
+            Nr. autorizaţiei de import în RM <br>
+            Nr. declaraţiei vamale <br>
+            Termen de valabilitate <br>
+            Cantitatea prelevată <br>
+            Cantitatea returnată <br>
+
+        </fieldset>
+    </div>
+
+
+    <div id="medicamentulInregistrat" style="display:none">
+        <br>
+        <fieldset>
+            <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></legend>
+
+        Codul medicamentului                         <input type="text" name="codMedicamentului">                             <br>
+        Codul vamal                                  <input type="text" name="codVamal">                                      <br>
+        Denumirea comercială a medicamentului        <input type="text" name="denumireComerciala">                            <br>
+        Forma medicamentoasă                         <input type="text" name="formaMedicamentului">                           <br>
+        Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
+        Doza                                         <input type="text" name="doza">
+                                                     <select id="dozaDropdown"></select> <br>                                 <br>
+        Divizare (Unitatea de măsură)                <input type="text" name="divizare">                                      <br>
+        Cantitatea                                   <input type="text" name="cantitate">                                     <br>
+        Prețul                                       <input type="text" name="pret">                                          <br>
+        Valuta                                       <select name="valuta" id="valuta"> </select>                             <br>
+        Țara producătoare                            <select name="taraProducatoare" id="taraProducatoare">         </select> <br>
+        Firma producătoare                           <input type="text" name="firmaProducatoare">                             <br>
+        Nr. de înregistrare în RM                    <input type="text" name="nrInregistrare">                                <br>
+        Data înregistrare în RM                      <input type="date" name="dataInregistrare">                              <br>
+        Cod ATC                                      <input type="text" name="codATC">                                        <br>
+        Denumirea comună internaționala              <input type="text" name="denumireaInternationala">                       <br>
+
+        </fieldset>
+    </div>
+
+    <div id="medicamentulNeInregistrat" style="display:none">
+        <br>
+        <fieldset>
+            <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></legend>
+
+            Codul vamal                                  <input type="text" name="codVamalNeInregistrat"> <br>
+            Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaNeInregistrat"> <br>
+            Forma medicamentoasă                         <input type="text" name="formaMedicamentuluiNeInregistrat"> <br>
+            Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select> <br>
+            Doza                                         <input type="text" name="dozaNeInregistrat">
+                                                          <select id="dozaDropdownNeInregistrat"></select> <br>
+            Divizare (Unitatea de măsură)                <input type="text" name="divizareNeInregistrat"> <br>
+            Cantitatea                                   <input type="text" name="cantitateNeInregistrat"> <br>
+            Prețul                                       <input type="text" name="pretNeInregistrat"> <br>
+            Valuta                                       <select name="valuta" id="valutaNeInregistrat"> </select> <br>
+            Țara producătoare                            <select name="taraProducatoare" id="taraProducatoareNeInregistrat"></select> <br>
+            Firma producătoare                           <input type="text" name="firmaProducatoareNeInregistrat"> <br>
+            Nr. de înregistrare în RM                    <input type="text" name="nrInregistrareNeInregistrat"> <br>
+            Data înregistrare în RM                      <input type="date" name="dataInregistrareNeInregistrat"> <br>
+            Cod ATC                                      <input type="text" name="codATCNeInregistrat"> <br>
+            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat"> <br>
     </fieldset>
+    </div>
+
+    <div id="materiaPrima" style="display:none">
+        <br>
+        <fieldset>
+           <legend><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></legend>
+
+            Codul vamal                                  <input type="text" name="codVamalMateria">                              <br>
+            Denumirea materiei prime (DCI)               <input type="text" name="denumireMateriei">                             <br>
+            Cantitatea                                   <input type="text" name="cantitateMateria">                             <br>
+            Prețul                                       <input type="text" name="pretMateria">                                  <br>
+            Valuta                                       <select name="valuta" id="valutaMateria"> </select>                     <br>
+            Țara producătoare                            <select name="taraProducatoare" id="taraProducatoareMateria"> </select> <br>
+            Firma producătoare                           <input type="text" name="firmaProducatoareMateria">                     <br>
+            Cod ATC                                      <input type="text" name="codATCMateria">                                <br>
+
+        </fieldset>
+    </div>
+
+    <div id="ambalaj" style="display:none">
+        <br>
+        <fieldset>
+            <legend><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </legend>
+            Codul vamal                                  <input type="text" name="codVamalAmbalaj">                              <br>
+            Denumirea ambalajului                        <input type="text" name="denumireAmbalaj">                             <br>
+            Cantitatea                                   <input type="text" name="cantitateAmbalaj">                             <br>
+            Prețul                                       <input type="text" name="pretAmbalaj">                                  <br>
+            Valuta                                       <select name="valuta" id="valutaAmbalaj"> </select>                     <br>
+            Țara producătoare                            <select name="taraProducatoare" id="taraProducatoareAmbalaj"> </select> <br>
+            Firma producătoare                           <input type="text" name="firmaProducatoareAmbalaj">                     <br>
+
+        </fieldset>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
 </form>
-</div>
 
 
-<p id="text2" style="display:none">
-    Cantitatea returnată <br>
-    INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT (fișierul *.xls)  <br>
-    Codul medicamentului <br>
-    Codul vamal <br>
-    Denumirea comercială a medicamentului <br>
-    Forma medicamentoasă <br>
-    Doza <br>
-    Divizare (Unitatea de măsură) <br>
-    Cantitatea <br>
-    Prețul <br>
-    Valuta <br>
-    Țara producătoare <br>
-    Firma producătoare <br>
-    Nr. de înregistrare în RM <br>
-    Data înregistrare în RM <br>
-    Cod ATC <br>
-    Denumirea comună internaționala <br>
-</p>
 
 
 <script>
@@ -83,13 +153,100 @@ Checkbox2: <input type="checkbox" id="myCheck2"  onclick="myFunction2()">
 
 <script>
     function myFunction2() {
-        var checkBox = document.getElementById("myCheck2");
-        var text = document.getElementById("text2");
+        var checkBox = document.getElementById("checkMedicamentulNeInregistrat");
+        var text = document.getElementById("medicamentulNeInregistrat");
         if (checkBox.checked == true){
             text.style.display = "block";
         } else {
             text.style.display = "none";
         }
+    }
+</script>
+
+<script>
+    function showMateria() {
+        var checkBox = document.getElementById("checkMateriaPrima");
+        var text = document.getElementById("materiaPrima");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function showAmbalaj() {
+        var checkBox = document.getElementById("checkAmbalaj");
+        var text = document.getElementById("ambalaj");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    var countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"],
+        taraProducatoare = document.getElementById('taraProducatoare');
+        taraProducatoareAmbalaj = document.getElementById('taraProducatoareAmbalaj');
+        taraProducatoareNeInregistrat = document.getElementById('taraProducatoareNeInregistrat');
+        taraProducatoareMateria = document.getElementById('taraProducatoareMateria');
+
+    for (country in countries) {
+
+        taraProducatoare.add(new Option(countries[country],countries[country]));
+        taraProducatoareAmbalaj.add(new Option(countries[country],countries[country]));
+        taraProducatoareNeInregistrat.add(new Option(countries[country],countries[country]));
+        taraProducatoareMateria.add(new Option(countries[country],countries[country]));
+
+    }
+</script>
+
+<script>
+    var currencies = ["EUR : Euro","USD : United States dollar","GBP : Pound sterling","RUB : Russian ruble","UAH : Ukrainian hryvnia","RON : Romanian leu","AED : United Arab Emirates dirham","AFN : Afghan afghani","ALL : Albanian lek","AMD : Armenian dram","ANG : Netherlands Antillean guilder","AOA : Angolan kwanza","ARS : Argentine peso","AUD : Australian dollar","AWG : Aruban florin","AZN : Azerbaijani manat","BAM : Bosnia and Herzegovina convertible mark","BBD : Barbados dollar","BDT : Bangladeshi taka","BGN : Bulgarian lev","BHD : Bahraini dinar","BIF : Burundian franc","BMD : Bermudian dollar","BND : Brunei dollar","BOB : Boliviano","BRL : Brazilian real","BSD : Bahamian dollar","BTN : Bhutanese ngultrum","BWP : Botswana pula","BYN : New Belarusian ruble","BYR : Belarusian ruble","BZD : Belize dollar","CAD : Canadian dollar","CDF : Congolese franc","CHF : Swiss franc","CLF : Unidad de Fomento","CLP : Chilean peso","CNY : Renminbi|Chinese yuan","COP : Colombian peso","CRC : Costa Rican colon","CUC : Cuban convertible peso","CUP : Cuban peso","CVE : Cape Verde escudo","CZK : Czech koruna","DJF : Djiboutian franc","DKK : Danish krone","DOP : Dominican peso","DZD : Algerian dinar","EGP : Egyptian pound","ERN : Eritrean nakfa","ETB : Ethiopian birr","FJD : Fiji dollar","FKP : Falkland Islands pound","GEL : Georgian lari","GHS : Ghanaian cedi","GIP : Gibraltar pound","GMD : Gambian dalasi","GNF : Guinean franc","GTQ : Guatemalan quetzal","GYD : Guyanese dollar","HKD : Hong Kong dollar","HNL : Honduran lempira","HRK : Croatian kuna","HTG : Haitian gourde","HUF : Hungarian forint","IDR : Indonesian rupiah","ILS : Israeli new shekel","INR : Indian rupee","IQD : Iraqi dinar","IRR : Iranian rial","ISK : Icelandic króna","JMD : Jamaican dollar","JOD : Jordanian dinar","JPY : Japanese yen","KES : Kenyan shilling","KGS : Kyrgyzstani som","KHR : Cambodian riel","KMF : Comoro franc","KPW : North Korean won","KRW : South Korean won","KWD : Kuwaiti dinar","KYD : Cayman Islands dollar","KZT : Kazakhstani tenge","LAK : Lao kip","LBP : Lebanese pound","LKR : Sri Lankan rupee","LRD : Liberian dollar","LSL : Lesotho loti","LYD : Libyan dinar","MAD : Moroccan dirham","MDL : Moldovan leu","MGA : Malagasy ariary","MKD : Macedonian denar","MMK : Myanmar kyat","MNT : Mongolian tögrög","MOP : Macanese pataca","MRO : Mauritanian ouguiya","MUR : Mauritian rupee","MVR : Maldivian rufiyaa","MWK : Malawian kwacha","MXN : Mexican peso","MXV : Mexican Unidad de Inversion","MYR : Malaysian ringgit","MZN : Mozambican metical","NAD : Namibian dollar","NGN : Nigerian naira","NIO : Nicaraguan córdoba","NOK : Norwegian krone","NPR : Nepalese rupee","NZD : New Zealand dollar","OMR : Omani rial","PAB : Panamanian balboa","PEN : Peruvian Sol","PGK : Papua New Guinean kina","PHP : Philippine peso","PKR : Pakistani rupee","PLN : Polish złoty","PYG : Paraguayan guaraní","QAR : Qatari riyal","RSD : Serbian dinar","RWF : Rwandan franc","SAR : Saudi riyal","SBD : Solomon Islands dollar","SCR : Seychelles rupee","SDG : Sudanese pound","SEK : Swedish krona","SGD : Singapore dollar","SHP : Saint Helena pound","SLL : Sierra Leonean leone","SOS : Somali shilling","SRD : Surinamese dollar","SSP : South Sudanese pound","STD : São Tomé and Príncipe dobra","SVC : Salvadoran colón","SYP : Syrian pound","SZL : Swazi lilangeni","THB : Thai baht","TJS : Tajikistani somoni","TMT : Turkmenistani manat","TND : Tunisian dinar","TOP : Tongan paʻanga","TRY : Turkish lira","TTD : Trinidad and Tobago dollar","TWD : New Taiwan dollar","TZS : Tanzanian shilling","UGX : Ugandan shilling","UYI : Uruguay Peso en Unidades Indexadas","UYU : Uruguayan peso","UZS : Uzbekistan som","VEF : Venezuelan bolívar","VND : Vietnamese đồng","VUV : Vanuatu vatu","WST : Samoan tala","XAF : Central African CFA franc","XCD : East Caribbean dollar","XOF : West African CFA franc","XPF : CFP franc","XXX : No currency","YER : Yemeni rial","ZAR : South African rand","ZMW : Zambian kwacha","ZWL : Zimbabwean dollar"],
+        valuta = document.getElementById('valuta');
+        valutaAmbalaj = document.getElementById('valutaAmbalaj');
+        valutaMateria = document.getElementById('valutaMateria');
+        valutaNeInregistrat = document.getElementById('valutaNeInregistrat');
+
+    for (currency in currencies) {
+
+        valuta.add(new Option(currencies[currency],currencies[currency]));
+        valutaAmbalaj.add(new Option(currencies[currency],currencies[currency]));
+        valutaMateria.add(new Option(currencies[currency],currencies[currency]));
+        valutaNeInregistrat.add(new Option(currencies[currency],currencies[currency]));
+
+    }
+</script>
+
+<script>
+    var formaMedicamentoasaArray = [" conc./sol. perf.", " drajeuri", "comp. film.", "sol. inj.", "comprimate", "sirop", "comp. film. gastrorez.", "sol. cutan.", "     comp. eferv.", "     pulb./sol. orală", " spray cutan., sol.", "     ung.", "     sol. perf.", "     sol. uleioasă", " caps.", "     cremă", " comp. masticab.", "     pulb. cutan.", "     pulb./sol. cutan", " liof./sol. perf.", " pic. orale homeopate", " pulb.+solv./sol. inj./perf.", "     gel", " sol. inj. în cartuş", " sup.", "     pic. naz., sol.", "     caps. elib. prel.", "     emuls. cutan.", "     pic. orale, sol.", "     caps. moi", " comp. homeopate", " pastile", " comp. gastrorez.", "     sol. orală", " pulb./susp. orală", " pulb.+solv./sol. inj.", " pulb./sol. inj.", " sol. alc. cutan.", "     pic. oft., sol.", "     sol.", "     spray naz., sol.", "     gran./susp. orală", " susp. orală", " liof./sol. inj.", " comp. de supt", " comp./disper. orală", " pulb./sol. inj./perf.", "     pic. auric., sol.", "     spray bucofaring.", "     sol./gargarisme"];
+
+
+    formaMedicamentoasa = document.getElementById('formaMedicamentoasa');
+    formaMedicamentoasaNeInregistrat = document.getElementById('formaMedicamentoasaNeInregistrat');
+
+    for (element in formaMedicamentoasaArray) {
+
+        formaMedicamentoasa.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+        formaMedicamentoasaNeInregistrat.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+
+    }
+</script>
+
+<script>
+    var dozaArray = ["mg","ml","mg/ml","g","mcg","IU","%"];
+
+
+    dozaDropdown = document.getElementById('dozaDropdown');
+    dozaDropdownNeInregistrat = document.getElementById('dozaDropdownNeInregistrat');
+
+    for (element in dozaArray) {
+
+        dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDropdownNeInregistrat.add(new Option(dozaArray[element], dozaArray[element]));
+
     }
 </script>
 </body>
