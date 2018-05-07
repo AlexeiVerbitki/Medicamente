@@ -14,7 +14,8 @@
 Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
 Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
 Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
-Ambalajul pentru producerea medicamentelor: <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
+Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
+Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
 
 
 <form action="/processForm">
@@ -56,23 +57,23 @@ Ambalajul pentru producerea medicamentelor: <input type="checkbox" id="checkAmba
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></legend>
 
-        Codul medicamentului                         <input type="text" name="codMedicamentului">                             <br>
-        Codul vamal                                  <input type="text" name="codVamal">                                      <br>
-        Denumirea comercială a medicamentului        <input type="text" name="denumireComerciala">                            <br>
-        Forma medicamentoasă                         <input type="text" name="formaMedicamentului">                           <br>
-        Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
-        Doza                                         <input type="text" name="doza">
-                                                     <select id="dozaDropdown"></select> <br>                                 <br>
-        Divizare (Unitatea de măsură)                <input type="text" name="divizare">                                      <br>
-        Cantitatea                                   <input type="text" name="cantitate">                                     <br>
-        Prețul                                       <input type="text" name="pret">                                          <br>
-        Valuta                                       <select name="valuta" id="valuta"> </select>                             <br>
-        Țara producătoare                            <select name="taraProducatoare" id="taraProducatoare">         </select> <br>
-        Firma producătoare                           <input type="text" name="firmaProducatoare">                             <br>
-        Nr. de înregistrare în RM                    <input type="text" name="nrInregistrare">                                <br>
-        Data înregistrare în RM                      <input type="date" name="dataInregistrare">                              <br>
-        Cod ATC                                      <input type="text" name="codATC">                                        <br>
-        Denumirea comună internaționala              <input type="text" name="denumireaInternationala">                       <br>
+        Codul medicamentului                             <input type="text" name="codMedicamentului">                             <br>
+        Codul vamal                                      <input type="text" name="codVamal">                                      <br>
+        Denumirea comercială a medicamentului            <input type="text" name="denumireComerciala">                            <br>
+        Forma medicamentoasă                             <input type="text" name="formaMedicamentului">                           <br>
+        Forma medicamentoasă                             <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
+        Doza                                             <input type="text" name="doza">
+                                                         <select id="dozaDropdown"></select> <br>                                 <br>
+        Divizare (Unitatea de măsură)                    <input type="text" name="divizare">                                      <br>
+        Cantitatea                                       <input type="text" name="cantitate">                                     <br>
+        Prețul                                           <input type="text" name="pret">                                          <br>
+        Valuta                                           <select name="valuta" id="valuta"> </select>                             <br>
+        Țara producătoare                                <select name="taraProducatoare" id="taraProducatoare">         </select> <br>
+        Firma producătoare                               <input type="text" name="firmaProducatoare">                             <br>
+        Nr. de înregistrare în RM                        <input type="text" name="nrInregistrare">                                <br>
+        Data înregistrare în RM                          <input type="date" name="dataInregistrare">                              <br>
+        Cod ATC                                          <input type="text" name="codATC">                                        <br>
+        Denumirea comună internaționala                  <input type="text" name="denumireaInternationala">                       <br>
 
         </fieldset>
     </div>
@@ -132,7 +133,34 @@ Ambalajul pentru producerea medicamentelor: <input type="checkbox" id="checkAmba
 
         </fieldset>
     </div>
-    <br>
+
+    <div id="prelevareAProbei" style="display: none">
+        <br>
+        <fieldset>
+            <legend><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></legend>
+
+
+            Codul medicamentului  <br>
+            Codul vamal  <br>
+            Denumirea comercială a medicamentului  <br>
+            Forma medicamentoasă  <br>
+            Doza  <br>
+            Divizare (Unitatea de măsură)  <br>
+            Cantitatea  <br>
+            Prețul  <br>
+            Valuta  <br>
+            Suma  <br>
+            Țara producătoare  <br>
+            Firma producătoare  <br>
+            Nr. autorizaţiei de import în RM  <br>
+            Nr. declaraţiei vamale  <br>
+            Termen de valabilitate  <br>
+            Cantitatea prelevată  <br>
+            Cantitatea returnată  <br>
+
+
+        </fieldset>
+    </div>
     <input type="submit" value="Submit">
 </form>
 
@@ -178,6 +206,18 @@ Ambalajul pentru producerea medicamentelor: <input type="checkbox" id="checkAmba
     function showAmbalaj() {
         var checkBox = document.getElementById("checkAmbalaj");
         var text = document.getElementById("ambalaj");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function showPrelevareAProbei() {
+        var checkBox = document.getElementById("checkPrelevareAProbei");
+        var text = document.getElementById("prelevareAProbei");
         if (checkBox.checked == true){
             text.style.display = "block";
         } else {
