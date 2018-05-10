@@ -85,7 +85,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului            <input type="text" name="denumireComerciala">                            <br>
             Forma medicamentoasă                             <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
             <div id="dozaDivInregistrat">
-            Doza                                             <input type="number" name="dozaDivInregistrat" id="dozaDivInregistrat">
+            Doza                                             <input type="number" name="dozaInregistrat" id="dozaInregistrat">
                                                              <select id="dozaDropdown"></select>
             Denumirea comună internaționala                  <input type="text" name="denumireaInternationala" id="denumireaInternationala">                       <br>
             </div>
@@ -378,26 +378,71 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 
             }
             var newdiv = document.createElement('doza');
-            var name=dozaName;
+            var dropdownName=dozaName+"Dropdown"+counter.toString();
+
+            // newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
+            //     "<select id='dozaDropdown'>" +
+            //     "<option value='mg'>mg</option>" +
+            //     "<option value='ml'>mg</option>" +
+            //     "<option value='buc.'>mg</option>" +
+            //     "</select>" +
+            //     " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'><br>";
 
             newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
-                "<select id='dozaDropdown'>" +
+                "<select id='"+dozaName+"Dropdown"+counter+"'>" +
                 "<option value='mg'>mg</option>" +
-                "<option value='ml'>mg</option>" +
-                "<option value='buc.'>mg</option>" +
+                "<option value='ml'>ml</option>" +
+                "<option value='mg/ml'>mg/ml</option>" +
+                "<option value='g'>g</option>" +
+                "<option value='mcg'>mcg</option>" +
+                "<option value='IU'>IU</option>" +
+                "<option value='%'>mg</option>" +
+                "<option value='comp.'>comp.</option>" +
+                "<option value='buc.'>buc.</option>" +
                 "</select>" +
-                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'><br>";
+                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>" +
+                "<button onclick='showIt('inregistrare',dozaName);'>Sterge</button>";
 
 
 
-            dozaDropdown = document.getElementById('dozaDropdown');
-            for (element in dozaArray) {
-                dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
+                // var dozaDropdown = document.getElementById('dozaDropdown');
+                // for (element in dozaArray) {
+                //     dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
+                // }
             }
+
             document.getElementById(dozaName).appendChild(newdiv);
 
+
             counter++;
+
+    }
+</script>
+
+<script>
+    function removeElement(parentDiv, childDiv){
+        if (childDiv == parentDiv) {
+            alert("The parent div cannot be removed.");
         }
+        else if (document.getElementById(childDiv)) {
+            var child = document.getElementById(childDiv);
+            var parent = document.getElementById(parentDiv);
+            parent.removeChild(child);
+        }
+        else {
+            alert("Doza si Denumirea comună internaționala sunt obligatorii");
+            return false;
+        }
+    }
+</script>
+
+<script>
+    function showIt(parentDiv,childDiv) {
+
+        var child = document.getElementById(childDiv);
+        var parent = document.getElementById(parentDiv);
+        parent.removeChild(child);
+
     }
 </script>
 
