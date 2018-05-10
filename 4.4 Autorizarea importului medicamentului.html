@@ -30,14 +30,35 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Compania-solicitant (Se introduce manual)        <input type="text" name="CompaniaSolicitantInfo">  <br>
             Denumirea materiei prime                         <input type="text" name="denumireMaterieiInfo">  <br>
             Producătorul materiei prime                      <input type="text" name="producatorMaterieiInfo">  <br>
-            Ţara şi adresa producătorului materiei prime     <input type="text" name="adresaProducatoruluiMaterieiInfo" id="adresaProducatoruluiMaterieiInfo">
-                                                             <select name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo"> </select><br>
+            Ţara şi adresa producătorului materiei prime:    <br>
+            <dd>Strada                                           <input type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Bloc                                             <input type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Oficiu                                           <input type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Cod Postal                                       <input type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Localitate                                       <input type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Ţara:                                            <select name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo"> </select><br> </dd>
+            <dd>Raion                                            <input type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo"> <br> </dd>
             Vînzător                                         <input type="text" name="vinzatorInfo">  <br>
-            Ţara şi adresa vînzătorului                      <input type="text" name="adresaVinzatoruluiInfo">
-                                                             <select name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo"> </select><br>
+            Ţara şi adresa vînzătorului:
+            <dd>Strada                                           <input type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Bloc                                             <input type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Oficiu                                           <input type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Cod Postal                                       <input type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Localitate                                       <input type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Raion                                            <input type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Ţara:                                            <select name="taraVinzatoruluiMaterieiInfo" id="taraVinzatoruluiMaterieiInfo"> </select><br> </dd>
+
+            <select name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo"> </select><br>
             Importator                                       <input type="text" name="importatorInfo">  <br>
-            Ţara şi adresa importatorului                    <input type="text" name="adresaImportatoruluiInfo">
-                                                             <select name="taraImportatoruluiInfo" id="taraImportatoruluiInfo"> </select><br>
+            Ţara şi adresa importatorului:
+            <dd>Strada                                           <input type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Bloc                                             <input type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Oficiu                                           <input type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Cod Postal                                       <input type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Localitate                                       <input type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>Raion                                            <input type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo"> <br> </dd>
+
+            <select name="taraImportatoruluiInfo" id="taraImportatoruluiInfo"> </select><br>
             Codul vamal                                      <input type="text" name="codVamaiInfo">  <br>
             Temeiul pentru autorizație de import (Contract)  <input type="text" name="contractInfo">  <br>
             Cantitatea                                       <input type="number" name="cantitateaInfo">  <br>
@@ -66,6 +87,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             <div id="dozaDivInregistrat">
             Doza                                             <input type="number" name="doza">
                                                              <select id="dozaDropdown"></select>
+            Denumirea comună internaționala                  <input type="text" name="denumireaInternationala">                       <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivInregistrat');"> <br>
             Divizare (Unitatea de măsură)                    <input type="number" name="divizare" placeholder="într-o paleta">
@@ -78,7 +100,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Nr. de înregistrare în RM                        <input type="text" name="nrInregistrare">                                <br>
             Data înregistrare în RM                          <input type="date" name="dataInregistrare">                              <br>
             Cod ATC                                          <input type="text" name="codATC">                                        <br>
-            Denumirea comună internaționala                  <input type="text" name="denumireaInternationala">                       <br>
 
         </fieldset>
     </div>
@@ -94,6 +115,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             <div id="dozaDivNeInregistrat">
             Doza                                         <input type="number" name="dozaNeInregistrat">
                                                          <select id="dozaDropdownNeInregistrat"></select>
+            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat"> <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
@@ -106,7 +128,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Nr. de înregistrare în RM                    <input type="text" name="nrInregistrareNeInregistrat"> <br>
             Data înregistrare în RM                      <input type="date" name="dataInregistrareNeInregistrat"> <br>
             Cod ATC                                      <input type="text" name="codATCNeInregistrat"> <br>
-            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat"> <br>
         </fieldset>
     </div>
 
@@ -155,6 +176,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             <div id="dozaDivPrelevare">
             Doza                                         <input type="number" name="dozaPrelevare">
                                                          <select id="dozaDropdownPrelevare"></select>
+            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare"> <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizarePrelevare" placeholder="într-o paleta">
@@ -327,10 +349,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 </script>
 
 <script>
-    document.getElementById("dataDepunerii").value = new Date();
-</script>
-
-<script>
     var counter=0;
     var dozaDivInregistrat=0;
     var dozaDivNeInregistrat=0;
@@ -361,12 +379,14 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             }
             var newdiv = document.createElement('doza');
 
-            newdiv.innerHTML = " + Doza " + (counter + 1) + "<input type='number' name='doza'> " +
+            newdiv.innerHTML = " + Doza " + (counter + 1) + "<input type='number' name=divName> " +
                 "<select id='dozaDropdown'>" +
                 "<option value='mg'>mg</option>" +
                 "<option value='ml'>mg</option>" +
                 "<option value='buc.'>mg</option>" +
-                "</select> ";
+                "</select>" +
+                " Denumirea comună internaționala " + (counter + 1) +  " <input type='text' name='denumireaInternationala'><br>";
+
 
 
             dozaDropdown = document.getElementById('dozaDropdown');
