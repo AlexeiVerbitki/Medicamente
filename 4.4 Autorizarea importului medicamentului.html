@@ -85,11 +85,11 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului            <input type="text" name="denumireComerciala">                            <br>
             Forma medicamentoasă                             <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
             <div id="dozaDivInregistrat">
-            Doza                                             <input type="number" name="doza">
+            Doza                                             <input type="number" name="dozaDivInregistrat" id="dozaDivInregistrat">
                                                              <select id="dozaDropdown"></select>
-            Denumirea comună internaționala                  <input type="text" name="denumireaInternationala">                       <br>
+            Denumirea comună internaționala                  <input type="text" name="denumireaInternationala" id="denumireaInternationala">                       <br>
             </div>
-            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivInregistrat');"> <br>
+            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala');"> <br>
             Divizare (Unitatea de măsură)                    <input type="number" name="divizare" placeholder="într-o paleta">
                                                              <select name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input type="text" name="dozaBlisterInregistrat" placeholder="palete"> <br>
             Cantitatea                                       <input type="number" name="cantitate">                                     <br>
@@ -113,11 +113,11 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaNeInregistrat"> <br>
             Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select> <br>
             <div id="dozaDivNeInregistrat">
-            Doza                                         <input type="number" name="dozaNeInregistrat">
+            Doza                                         <input type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
                                                          <select id="dozaDropdownNeInregistrat"></select>
-            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat"> <br>
+            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat"> <br>
             </div>
-            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat');"> <br>
+            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
                                                          <select name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input type="text" name="dozaBlisterNeInregistrat" placeholder="palete"> <br>
             Cantitatea                                   <input type="number" name="cantitateNeInregistrat"> <br>
@@ -174,11 +174,11 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaPrelevare">                            <br>
             Forma medicamentoasă                         <select name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> <br>
             <div id="dozaDivPrelevare">
-            Doza                                         <input type="number" name="dozaPrelevare">
+            Doza                                         <input type="number" name="dozaPrelevare" id="dozaPrelevare">
                                                          <select id="dozaDropdownPrelevare"></select>
-            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare"> <br>
+            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> <br>
             </div>
-            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare');"> <br>
+            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizarePrelevare" placeholder="într-o paleta">
                                                          <select name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input type="text" name="dozaBlisterPrelevare" placeholder="palete"> <br>
             Cantitatea                                   <input type="number" name="cantitateaPrelevare">  <br>
@@ -349,19 +349,19 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 </script>
 
 <script>
-    var counter=0;
-    var dozaDivInregistrat=0;
-    var dozaDivNeInregistrat=0;
-    var dozaDivPrelevare=0;
+    var counter=1;
+    var dozaDivInregistrat=1;
+    var dozaDivNeInregistrat=1;
+    var dozaDivPrelevare=1;
     var limit = 20;
     var dozaArray = ["mg","ml","mg/ml","g","mcg","IU","%","comp.","buc."];
-    function adaugaDoza(divName) {
+    function adaugaDoza(dozaName, denumireName) {
         if (counter == limit) {
             alert("Ati ajuns la limita de  " + counter + " adaugari");
         }
         else {
 // var id='dozaDropdown+counter'+counter;
-            switch (divName) {
+            switch (dozaName) {
                 case "dozaDivInregistrat":{
                     dozaDivInregistrat++;
                     counter=dozaDivInregistrat;
@@ -378,14 +378,15 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 
             }
             var newdiv = document.createElement('doza');
+            var name=dozaName;
 
-            newdiv.innerHTML = " + Doza " + (counter + 1) + "<input type='number' name=divName> " +
+            newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
                 "<select id='dozaDropdown'>" +
                 "<option value='mg'>mg</option>" +
                 "<option value='ml'>mg</option>" +
                 "<option value='buc.'>mg</option>" +
                 "</select>" +
-                " Denumirea comună internaționala " + (counter + 1) +  " <input type='text' name='denumireaInternationala'><br>";
+                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'><br>";
 
 
 
@@ -393,7 +394,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             for (element in dozaArray) {
                 dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
             }
-            document.getElementById(divName).appendChild(newdiv);
+            document.getElementById(dozaName).appendChild(newdiv);
 
             counter++;
         }
