@@ -85,13 +85,13 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului            <input type="text" name="denumireComerciala">                            <br>
             Forma medicamentoasă                             <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
             <div id="dozaDivInregistrat">
-            Doza                                             <input type="number" name="dozaInregistrat" id="dozaInregistrat">
-                                                             <select id="dozaDropdown"></select>
-            Denumirea comună internaționala                  <input type="text" name="denumireaInternationala" id="denumireaInternationala">                       <br>
+                Doza                                             <input type="number" name="dozaInregistrat" id="dozaInregistrat">
+                <select id="dozaDropdown"></select>
+                Denumirea comună internaționala                  <input type="text" name="denumireaInternationala" id="denumireaInternationala">                       <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala');"> <br>
             Divizare (Unitatea de măsură)                    <input type="number" name="divizare" placeholder="într-o paleta">
-                                                             <select name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input type="text" name="dozaBlisterInregistrat" placeholder="palete"> <br>
+            <select name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input type="text" name="dozaBlisterInregistrat" placeholder="palete"> <br>
             Cantitatea                                       <input type="number" name="cantitate">                                     <br>
             Prețul                                           <input type="number" name="pret">                                          <br>
             Valuta                                           <select name="valuta" id="valuta"> </select>                             <br>
@@ -113,13 +113,13 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaNeInregistrat"> <br>
             Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select> <br>
             <div id="dozaDivNeInregistrat">
-            Doza                                         <input type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
-                                                         <select id="dozaDropdownNeInregistrat"></select>
-            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat"> <br>
+                Doza                                         <input type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
+                <select id="dozaDropdownNeInregistrat"></select>
+                Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat"> <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
-                                                         <select name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input type="text" name="dozaBlisterNeInregistrat" placeholder="palete"> <br>
+            <select name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input type="text" name="dozaBlisterNeInregistrat" placeholder="palete"> <br>
             Cantitatea                                   <input type="number" name="cantitateNeInregistrat"> <br>
             Prețul                                       <input type="number" name="pretNeInregistrat"> <br>
             Valuta                                       <select name="valuta" id="valutaNeInregistrat"> </select> <br>
@@ -174,13 +174,13 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
             Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaPrelevare">                            <br>
             Forma medicamentoasă                         <select name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> <br>
             <div id="dozaDivPrelevare">
-            Doza                                         <input type="number" name="dozaPrelevare" id="dozaPrelevare">
-                                                         <select id="dozaDropdownPrelevare"></select>
-            Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> <br>
+                Doza                                         <input type="number" name="dozaPrelevare" id="dozaPrelevare">
+                <select id="dozaDropdownPrelevare"></select>
+                Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> <br>
             </div>
             <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> <br>
             Divizare (Unitatea de măsură)                <input type="number" name="divizarePrelevare" placeholder="într-o paleta">
-                                                         <select name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input type="text" name="dozaBlisterPrelevare" placeholder="palete"> <br>
+            <select name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input type="text" name="dozaBlisterPrelevare" placeholder="palete"> <br>
             Cantitatea                                   <input type="number" name="cantitateaPrelevare">  <br>
             Prețul                                       <input type="number" name="pretulPrelevare" id="pretulPrelevare">  <br>
             Valuta                                       <select name="valutaPrelevare" id="valutaPrelevare"> </select> <br>
@@ -270,7 +270,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
     taraProducatoareNeInregistrat = document.getElementById('taraProducatoareNeInregistrat');
     taraProducatoareMateria = document.getElementById('taraProducatoareMateria');
     taraProducatoarePrelevare = document.getElementById('taraProducatoarePrelevare');
-
     taraImportatoruluiInfo = document.getElementById('taraImportatoruluiInfo');
     for (country in countries) {
         taraProducatoare.add(new Option(countries[country],countries[country]));
@@ -279,7 +278,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
         taraProducatoareNeInregistrat.add(new Option(countries[country],countries[country]));
         taraProducatoareMateria.add(new Option(countries[country],countries[country]));
         taraProducatoarePrelevare.add(new Option(countries[country],countries[country]));
-
         taraVinzatoruluiInfo.add(new Option(countries[country],countries[country]));
         taraImportatoruluiInfo.add(new Option(countries[country],countries[country]));
     }
@@ -338,8 +336,6 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
         var random=0;
         random=Math.floor((Math.random() * 1000000) + 1);
         document.getElementById("nrDeInregistrare").value="CI"+random;
-
-
         var MyDate = new Date();
         var todayString = ('0' + MyDate.getDate()).slice(-2) + '/'
             + ('0' + (MyDate.getMonth()+1)).slice(-2) + '/'
@@ -375,18 +371,11 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
                     counter=dozaDivPrelevare;
                     break;
                 }
-
             }
-            var newdiv = document.createElement('doza');
+            var divID=dozaName+counter;
+            var newdiv = document.createElement(divID);
+            newdiv.id=divID;
             var dropdownName=dozaName+"Dropdown"+counter.toString();
-
-            // newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
-            //     "<select id='dozaDropdown'>" +
-            //     "<option value='mg'>mg</option>" +
-            //     "<option value='ml'>mg</option>" +
-            //     "<option value='buc.'>mg</option>" +
-            //     "</select>" +
-            //     " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'><br>";
 
             newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
                 "<select id='"+dozaName+"Dropdown"+counter+"'>" +
@@ -400,22 +389,46 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
                 "<option value='comp.'>comp.</option>" +
                 "<option value='buc.'>buc.</option>" +
                 "</select>" +
-                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>" +
-                "<button onclick='showIt('inregistrare',dozaName);'>Sterge</button>";
+                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
+
+            var deleteButton = document.createElement('button');
+            deleteButton.id = "deleteButton";
+            deleteButton.type="button";
+            var deleteButton1 = document.createTextNode("Sterge");
+            deleteButton.appendChild(deleteButton1);
+            deleteButton.onclick = function deleteButton() {
+
+                switch (dozaName) {
+                    case "dozaDivInregistrat":{
+                        dozaDivInregistrat--;
+                        counter=dozaDivInregistrat;
+                        break;}
+                    case "dozaDivNeInregistrat": {
+                        dozaDivNeInregistrat--;
+                        counter=dozaDivNeInregistrat;
+                        break;}
+                    case "dozaDivPrelevare":{
+                        dozaDivPrelevare--;
+                        counter=dozaDivPrelevare;
+                        break;
+                    }
+                }
+                var element = document.getElementById(divID);
+                var button = document.getElementById('deleteButton');
+                element.parentNode.removeChild(element);
+                element.parentNode.removeChild(button);
 
 
-
-                // var dozaDropdown = document.getElementById('dozaDropdown');
-                // for (element in dozaArray) {
-                //     dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
-                // }
             }
 
-            document.getElementById(dozaName).appendChild(newdiv);
 
+            var brModule = document.createElement("br");
+        }
 
-            counter++;
-
+        document.getElementById(dozaName).appendChild(newdiv);
+        document.getElementById(divID).appendChild(deleteButton);
+        document.getElementById(divID).appendChild(brModule);
+        counter++;
     }
 </script>
 
@@ -437,12 +450,12 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 </script>
 
 <script>
-    function showIt(parentDiv,childDiv) {
-
-        var child = document.getElementById(childDiv);
-        var parent = document.getElementById(parentDiv);
-        parent.removeChild(child);
-
+    function showIt(dropdownName) {
+        alert(dropdownName);
+        var element = document.getElementById('doza');
+        var button = document.getElementById('deleteButton');
+        element.parentNode.removeChild(element);
+        element.parentNode.removeChild(button);
     }
 </script>
 
