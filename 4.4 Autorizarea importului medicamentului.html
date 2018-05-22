@@ -1,44 +1,192 @@
 <!DOCTYPE html>
+<!--<style>-->
+    <!--/*custom font*/-->
+    <!--@import url(https://fonts.googleapis.com/css?family=Montserrat);-->
 
+    <!--/*basic reset*/-->
+    <!--* {margin: 0; padding: 0;}-->
+
+    <!--html {-->
+        <!--height: 100%;-->
+        <!--/*Image only BG fallback*/-->
+
+        <!--/*background = gradient + image pattern combo*/-->
+        <!--background:-->
+                <!--linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));-->
+    <!--}-->
+
+    <!--body {-->
+        <!--font-family: montserrat, arial, verdana;-->
+    <!--}-->
+    <!--/*form styles*/-->
+    <!--#msform {-->
+        <!--width: 600px;-->
+        <!--margin: 50px auto;-->
+        <!--text-align: left;-->
+        <!--position: relative;-->
+    <!--}-->
+    <!--#msform fieldset {-->
+        <!--background: white;-->
+        <!--border: 0 none;-->
+        <!--border-radius: 3px;-->
+        <!--box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);-->
+        <!--padding: 20px 30px;-->
+        <!--box-sizing: border-box;-->
+        <!--width: 80%;-->
+        <!--margin: 0 10%;-->
+
+        <!--/*stacking fieldsets above each other*/-->
+        <!--position: relative;-->
+    <!--}-->
+    <!--/*Hide all except first fieldset*/-->
+    <!--#msform fieldset:not(:first-of-type) {-->
+        <!--display: none;-->
+    <!--}-->
+    <!--/*inputs*/-->
+    <!--#msform input, #msform textarea {-->
+        <!--padding: 15px;-->
+        <!--border: 1px solid #ccc;-->
+        <!--border-radius: 3px;-->
+        <!--margin-bottom: 10px;-->
+        <!--width: 100%;-->
+        <!--box-sizing: border-box;-->
+        <!--font-family: montserrat;-->
+        <!--color: #2C3E50;-->
+        <!--font-size: 13px;-->
+    <!--}-->
+    <!--/*buttons*/-->
+    <!--#msform .action-button {-->
+        <!--width: 100px;-->
+        <!--background: #27AE60;-->
+        <!--font-weight: bold;-->
+        <!--color: white;-->
+        <!--border: 0 none;-->
+        <!--border-radius: 1px;-->
+        <!--cursor: pointer;-->
+        <!--padding: 10px 5px;-->
+        <!--margin: 10px 50px;-->
+        <!--alignment: center;-->
+    <!--}-->
+    <!--#msform .action-button:hover, #msform .action-button:focus {-->
+        <!--box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;-->
+    <!--}-->
+    <!--/*headings*/-->
+    <!--.fs-title {-->
+        <!--font-size: 15px;-->
+        <!--text-transform: uppercase;-->
+        <!--color: #2C3E50;-->
+        <!--margin-bottom: 10px;-->
+    <!--}-->
+    <!--.fs-subtitle {-->
+        <!--font-weight: normal;-->
+        <!--font-size: 13px;-->
+        <!--color: #666;-->
+        <!--margin-bottom: 20px;-->
+    <!--}-->
+    <!--/*progressbar*/-->
+    <!--#progressbar {-->
+        <!--margin-bottom: 30px;-->
+        <!--overflow: hidden;-->
+        <!--/*CSS counters to number the steps*/-->
+        <!--counter-reset: step;-->
+    <!--}-->
+    <!--#progressbar li {-->
+        <!--list-style-type: none;-->
+        <!--color: white;-->
+        <!--text-transform: uppercase;-->
+        <!--font-size: 9px;-->
+        <!--width: 33.33%;-->
+        <!--float: left;-->
+        <!--position: relative;-->
+    <!--}-->
+    <!--#progressbar li:before {-->
+        <!--content: counter(step);-->
+        <!--counter-increment: step;-->
+        <!--width: 20px;-->
+        <!--line-height: 20px;-->
+        <!--display: block;-->
+        <!--font-size: 10px;-->
+        <!--color: #333;-->
+        <!--background: white;-->
+        <!--border-radius: 3px;-->
+        <!--margin: 0 auto 5px auto;-->
+    <!--}-->
+    <!--/*progressbar connectors*/-->
+    <!--#progressbar li:after {-->
+        <!--content: '';-->
+        <!--width: 100%;-->
+        <!--height: 2px;-->
+        <!--background: white;-->
+        <!--position: absolute;-->
+        <!--left: -50%;-->
+        <!--top: 9px;-->
+        <!--z-index: -1; /*put it behind the numbers*/-->
+    <!--}-->
+    <!--#progressbar li:first-child:after {-->
+        <!--/*connector not needed before the first step*/-->
+        <!--content: none;-->
+    <!--}-->
+    <!--/*marking active/completed steps green*/-->
+    <!--/*The number of the step and the connector before it = green*/-->
+    <!--#progressbar li.active:before,  #progressbar li.active:after{-->
+        <!--background: #27AE60;-->
+        <!--color: white;-->
+    <!--}-->
+
+
+
+
+
+<!--</style>-->
 
 <html lang="en">
 <head>
     <title> Pagina de inregistrare</title>
     <h2>Pagina de inregistrare</h2>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="CustomStyle.css" rel="stylesheet"/>
+
     <title>Title</title>
 </head>
 <body onload="onloadFunction()">
+<div class="container">
 
 
 
-<strong>Se va inregistra:</strong> <br>
-Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
-Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
-Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
-Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
-Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
+    <strong>Se va inregistra:</strong> <br>
+    Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
+    Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
+    Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
+    Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
+    Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
 
 
-<form action="/processForm">
-    <hr>
-    <div id="inregistrare" >
+
+    <div class="row">
+<form id="msform"  action="/processForm" style="background-color:yellow" class="col-12" >
+
+    <div id="inregistrare" style="background-color:silver" class="form-group col-4" >
+
         <br>
         <fieldset>
             <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
 
-            Nr. de înregistrare a cererii                    <input type="text" name="nrDeInregistrare" id="nrDeInregistrare" disabled="disabled" > <br>
-            Data depunerii cererii                           <input type="text" name="dataDepunerii" id="dataDepunerii" disabled="disabled">  <br>
-            Compania-solicitant (Se introduce manual)        <input type="text" name="CompaniaSolicitantInfo">  <br>
-            Denumirea materiei prime                         <input type="text" name="denumireMaterieiInfo">  <br>
-            Producătorul materiei prime                      <input type="text" name="producatorMaterieiInfo">  <br>
+            Nr. de înregistrare a cererii                    <input class="form-control" type="text" name="nrDeInregistrare" id="nrDeInregistrare" disabled="disabled" >
+            Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" disabled="disabled">
+            Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
+            Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
+            Producătorul materiei prime                      <input class="form-control" type="text" name="producatorMaterieiInfo">
             Ţara şi adresa producătorului materiei prime:    <br>
-            <dd>                                             <input  placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo"> <br> </dd>
-            <dd>                                             <input  placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo"> <br> </dd>
-            <dd>                                             <input  placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo"> <br> </dd>
-            <dd>                                             <input  placeholder="Cod Postal" type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo"> <br> </dd>
-            <dd>                                             <input  placeholder="Localitate" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo"> <br> </dd>
-            <dd>                                             <input  placeholder="Raion     " type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Cod Postal" type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Localitate" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input class="form-control" placeholder="Raion     " type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo"> <br> </dd>
             <dd>                                             <select placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo">
                                                                      <option value="" disabled selected hidden>Ţara...</option></select> <br> </dd>
 
@@ -79,7 +227,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
     </div>
 
 
-    <div id="medicamentulInregistrat" style="display:none">
+    <div id="medicamentulInregistrat" style="display:none" class="col-4">
         <br>
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></legend>
@@ -108,7 +256,7 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
         </fieldset>
     </div>
 
-    <div id="medicamentulNeInregistrat" style="display:none">
+    <div id="medicamentulNeInregistrat" style="display:none" class="col-3">
         <br>
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></legend>
@@ -199,10 +347,16 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
 
 
         </fieldset>
-    </div>
-    <input type="submit" value="Submit">
-</form>
 
+</div>
+
+
+    <!--<input type="submit" value="Submit">-->
+    <input type="submit" name="submit" class="btn btn-default" value="Submit" />
+</form>
+</div>
+</div>
+</div>
 
 
 
@@ -462,6 +616,9 @@ Prelevarea a probei medii și controlului de stat <input type="checkbox" id="che
         element.parentNode.removeChild(button);
     }
 </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </body>
 </html>

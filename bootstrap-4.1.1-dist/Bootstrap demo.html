@@ -15,18 +15,96 @@
 <h1 class="text-primary">Hello, world!</h1>
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
-            <div class="customDiv">LEFT SIDE BAR</div>
+
+
+    <div id="inregistrare" class="col-6" >
+
+        <br>
+        <fieldset>
+            <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
+
+            Nr. de înregistrare a cererii                    <input type="text" name="nrDeInregistrare" id="nrDeInregistrare" disabled="disabled" > <br>
+            Data depunerii cererii                           <input type="text" name="dataDepunerii" id="dataDepunerii" disabled="disabled">  <br>
+            Compania-solicitant (Se introduce manual)        <input type="text" name="CompaniaSolicitantInfo">  <br>
+            Denumirea materiei prime                         <input type="text" name="denumireMaterieiInfo">  <br>
+            Producătorul materiei prime                      <input type="text" name="producatorMaterieiInfo">  <br>
+            Ţara şi adresa producătorului materiei prime:    <br>
+            <dd>                                             <input  placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Cod Postal" type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Localitate" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Raion     " type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <select placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo">
+                <option value="" disabled selected hidden>Ţara...</option></select> <br> </dd>
+
+            Vînzător                                         <input  placeholder="" type="text" name="vinzatorInfo">  <br>
+            Ţara şi adresa vînzătorului:
+            <dd>                                             <input  placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Cod Postal" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Localitate" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input  placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <select placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo">
+                <option value="" disabled selected hidden>Ţara...</option></select> <br> </dd>
+
+            Importator                                       <input type="text" name="importatorInfo">  <br>
+            Ţara şi adresa importatorului:
+            <dd>                                             <input placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo"> <br> </dd>
+            <dd>                                             <input placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo"> <br>
+                <select name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+                    <option value="" disabled selected hidden>Ţara...</option></select> <br> </dd>
+            Codul vamal                                      <input type="text" name="codVamaiInfo">  <br>
+            Temeiul pentru autorizație de import (Contract)  <input type="text" name="contractInfo">  <br>
+            Cantitatea                                       <input type="number" name="cantitateaInfo">  <br>
+            Prețul                                           <input type="number" name="pretulInfo" id="pretulInfo">  <br>
+            Valuta                                           <select name="valutaInfo" id="valutaInfo"> </select> <br>
+            Condiții și precizări                            <input type="textarea" name="conditiiInfo" >  <br>
+            Nr. şi data a declaraţiei vamale                 <input type="text" name="nrDeclaratieiVamaleInfo"> <input type="date" name="dataDeclaratieiVamaleInfo"> <br>
+            Nr. autorizaţiei de import în RM                 <input type="text" name="nrAutorizatieiInfo">   <br>
+            Termen de valabilitate                           <input type="date" name="termenDeValabilitateInfo">  <br>
+            Cantitatea prelevată                             <input type="number" name="cantitateaPrelevataInfo">  <br>
+            Cantitatea returnată                             <input type="number" name="cantitateaReturnataInfo">  <br>
+
+        </fieldset>
+
         </div>
-        <div class="col-md-8">
-            <div class="customDiv">MAIN CONTENT AREA</div>
-        </div>
-        <div class="col-md-2">
-            <div class="customDiv">RIGHT SIDE BAR</div>
+        <div id="medicamentulInregistrat" class="col-6">
+            <br>
+            <fieldset>
+                <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></legend>
+
+                Codul medicamentului                             <input type="text" name="codMedicamentului">                             <br>
+                Codul vamal                                      <input type="text" name="codVamal">                                      <br>
+                Denumirea comercială a medicamentului            <input type="text" name="denumireComerciala">                            <br>
+                Forma medicamentoasă                             <select name="formaMedicamentoasa" id="formaMedicamentoasa">   </select> <br>
+                <div id="dozaDivInregistrat">
+                    Doza                                             <input type="number" name="dozaInregistrat" id="dozaInregistrat">
+                    <select id="dozaDropdown"></select>
+                    Denumirea comună internaționala                  <input type="text" name="denumireaInternationala" id="denumireaInternationala">                       <br>
+                </div>
+                <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala');"> <br>
+                Divizare (Unitatea de măsură)                    <input type="number" name="divizare" placeholder="într-o paleta">
+                <select name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input type="text" name="dozaBlisterInregistrat" placeholder="palete"> <br>
+                Cantitatea                                       <input type="number" name="cantitate">                                     <br>
+                Prețul                                           <input type="number" name="pret">                                          <br>
+                Valuta                                           <select name="valuta" id="valuta"> </select>                             <br>
+                Țara producătoare                                <select name="taraProducatoare" id="taraProducatoare">         </select> <br>
+                Firma producătoare                               <input type="text" name="firmaProducatoare">                             <br>
+                Nr. de înregistrare în RM                        <input type="text" name="nrInregistrare">                                <br>
+                Data înregistrare în RM                          <input type="date" name="dataInregistrare">                              <br>
+                Cod ATC                                          <input type="text" name="codATC">                                        <br>
+
+            </fieldset>
         </div>
     </div>
-</div>
 
+</div>
 </div>
 
 <!-- Optional JavaScript -->
