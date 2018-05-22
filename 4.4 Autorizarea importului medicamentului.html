@@ -172,9 +172,8 @@
 
     <div class="row">
 <form id="msform"  action="/processForm" style="background-color:yellow" class="col-12" >
-    <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-    </div>
 
+    <div class="row">
     <div id="inregistrare" style="background-color:silver" class="form-group col-4" >
 
         <br>
@@ -257,7 +256,8 @@
             Prețul                                           <input  class="form-control" type="number" name="pret">                                          
             Valuta                                           <select class="form-control" name="valuta" id="valuta">                              
                                                              <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                                <select class="form-control" name="taraProducatoare" id="taraProducatoare">         </select> 
+            Țara producătoare                                <select class="form-control" name="taraProducatoare" id="taraProducatoare">
+                                                             <option value="" disabled selected hidden>Ţara...</option> </select>
             Firma producătoare                               <input  class="form-control" type="text" name="firmaProducatoare">                             
             Nr. de înregistrare în RM                        <input  class="form-control" type="text" name="nrInregistrare">                                
             Data înregistrare în RM                          <input  class="form-control" type="date" name="dataInregistrare">                              
@@ -271,97 +271,98 @@
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></legend>
 
-            Codul vamal                                  <input type="text" name="codVamalNeInregistrat"> <br>
-            Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaNeInregistrat"> <br>
-            Forma medicamentoasă                         <select name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select> <br>
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalNeInregistrat"> 
+            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaNeInregistrat"> 
+            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select> 
             <div id="dozaDivNeInregistrat">
-                Doza                                         <input type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
-                <select id="dozaDropdownNeInregistrat"></select>
-                Denumirea comună internaționala              <input type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat"> <br>
+                Doza                                         <input  class="form-control"type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
+                <select class="form-control" id="dozaDropdownNeInregistrat"></select>
+                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat"> 
             </div>
-            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');"> <br>
-            Divizare (Unitatea de măsură)                <input type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
-            <select name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input type="text" name="dozaBlisterNeInregistrat" placeholder="palete"> <br>
-            Cantitatea                                   <input type="number" name="cantitateNeInregistrat"> <br>
-            Prețul                                       <input type="number" name="pretNeInregistrat"> <br>
-            Valuta                                       <select name="valuta" id="valutaNeInregistrat">  <br>
+            <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');"> 
+            Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
+            <select class="form-control" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete"> 
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat"> 
+            Prețul                                       <input  class="form-control"type="number" name="pretNeInregistrat"> 
+            Valuta                                       <select class="form-control" name="valuta" id="valutaNeInregistrat">  
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select> <br>
-            Firma producătoare                           <input type="text" name="firmaProducatoareNeInregistrat"> <br>
-            Nr. de înregistrare în RM                    <input type="text" name="nrInregistrareNeInregistrat"> <br>
-            Data înregistrare în RM                      <input type="date" name="dataInregistrareNeInregistrat"> <br>
-            Cod ATC                                      <input type="text" name="codATCNeInregistrat"> <br>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select> 
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareNeInregistrat"> 
+            Nr. de înregistrare în RM                    <input  class="form-control"type="text" name="nrInregistrareNeInregistrat"> 
+            Data înregistrare în RM                      <input  class="form-control"type="date" name="dataInregistrareNeInregistrat"> 
+            Cod ATC                                      <input  class="form-control"type="text" name="codATCNeInregistrat"> 
         </fieldset>
     </div>
 
     <div id="materiaPrima" style="display:none">
-        <br>
+        
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></legend>
 
-            Codul vamal                                  <input type="text" name="codVamalMateria">                              <br>
-            Denumirea materiei prime (DCI)               <input type="text" name="denumireMateriei">                             <br>
-            Cantitatea                                   <input type="number" name="cantitateMateria">                             <br>
-            Prețul                                       <input type="number" name="pretMateria">                                  <br>
-            Valuta                                       <select name="valuta" id="valutaMateria">                      <br>
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalMateria">                              
+            Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei">                             
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateMateria">                             
+            Prețul                                       <input  class="form-control"type="number" name="pretMateria">                                  
+            Valuta                                       <select class="form-control" name="valuta" id="valutaMateria">                      
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select name="taraProducatoareMateria" id="taraProducatoareMateria"> </select> <br>
-            Firma producătoare                           <input type="text" name="firmaProducatoareMateria">                     <br>
-            Cod ATC                                      <input type="text" name="codATCMateria">                                <br>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareMateria" id="taraProducatoareMateria"> </select> 
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareMateria">                     
+            Cod ATC                                      <input  class="form-control"type="text" name="codATCMateria">                                
 
         </fieldset>
     </div>
 
     <div id="ambalaj" style="display:none">
-        <br>
+        
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </legend>
-            Codul vamal                                  <input type="text" name="codVamalAmbalaj">                              <br>
-            Denumirea ambalajului                        <input type="text" name="denumireAmbalaj">                             <br>
-            Cantitatea                                   <input type="number" name="cantitateAmbalaj">                             <br>
-            Prețul                                       <input type="number" name="pretAmbalaj">                                  <br>
-            Valuta                                       <select name="valuta" id="valutaAmbalaj">                      <br>
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">                              
+            Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">                             
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">                             
+            Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">                                  
+            Valuta                                       <select class="form-control" name="valuta" id="valutaAmbalaj">                      
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select> <br>
-            Firma producătoare                           <input type="text" name="firmaProducatoareAmbalaj">                     <br>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select> 
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">                     
 
         </fieldset>
     </div>
 
     <div id="prelevareAProbei" style="display: none">
-        <br>
+        
         <fieldset>
             <legend><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></legend>
 
 
-            Codul medicamentului                         <input type="text" name="codMedicamentuluiPrelevare">                             <br>
-            Codul vamal                                  <input type="text" name="codVamalPrelevare">                                      <br>
-            Denumirea comercială a medicamentului        <input type="text" name="denumireComercialaPrelevare">                            <br>
-            Forma medicamentoasă                         <select name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> <br>
+            Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">                             
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalPrelevare">                                      
+            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaPrelevare">                            
+            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> 
             <div id="dozaDivPrelevare">
-                Doza                                         <input type="number" name="dozaPrelevare" id="dozaPrelevare">
-                <select id="dozaDropdownPrelevare"></select>
-                Denumirea comună internaționala              <input type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> <br>
+                Doza                                         <input  class="form-control"type="number" name="dozaPrelevare" id="dozaPrelevare">
+                <select class="form-control" id="dozaDropdownPrelevare"></select>
+                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> 
             </div>
-            <input type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> <br>
-            Divizare (Unitatea de măsură)                <input type="number" name="divizarePrelevare" placeholder="într-o paleta">
-            <select name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input type="text" name="dozaBlisterPrelevare" placeholder="palete"> <br>
-            Cantitatea                                   <input type="number" name="cantitateaPrelevare">  <br>
-            Prețul                                       <input type="number" name="pretulPrelevare" id="pretulPrelevare">  <br>
-            Valuta                                       <select name="valutaPrelevare" id="valutaPrelevare">  <br>
+            <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> 
+            Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizarePrelevare" placeholder="într-o paleta">
+            <select class="form-control" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete"> 
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">  
+            Prețul                                       <input  class="form-control"type="number" name="pretulPrelevare" id="pretulPrelevare">  
+            Valuta                                       <select class="form-control" name="valutaPrelevare" id="valutaPrelevare">  
                                                           <option value="" disabled selected hidden></option>  </select>
-            Suma                                         <input type="number" name="sumaPrelevare">                                      <br>
-            Țara producătoare                            <select name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select> <br>
-            Firma producătoare                           <input type="text" name="firmaProducatoarePrelevare">                     <br>
-            Nr. autorizaţiei de import în RM             <input type="text" name="nrAutorizatieiPrelevare">  <br>
-            Nr. şi data a declaraţiei vamale             <input type="text" name="nrDeclaratieiVamaleInfo"> <input type="date" name="dataDeclaratieiVamaleInfo"> <br>
-            Termen de valabilitate                       <input type="date" name="termenDeValabilitatePrelevare">  <br>
-            Cantitatea prelevată                         <input type="number" name="cantitateaPrelevataPrelevare">  <br>
-            Cantitatea returnată                         <input type="number" name="cantitateaReturnataPrelevare">  <br>
+            Suma                                         <input  class="form-control"type="number" name="sumaPrelevare">                                      
+            Țara producătoare                            <select class="form-control" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select> 
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoarePrelevare">                     
+            Nr. autorizaţiei de import în RM             <input  class="form-control"type="text" name="nrAutorizatieiPrelevare">  
+            Nr. şi data a declaraţiei vamale             <input  class="form-control"type="text" name="nrDeclaratieiVamaleInfo"> <input  class="form-control"type="date" name="dataDeclaratieiVamaleInfo"> 
+            Termen de valabilitate                       <input  class="form-control"type="date" name="termenDeValabilitatePrelevare">  
+            Cantitatea prelevată                         <input  class="form-control"type="number" name="cantitateaPrelevataPrelevare">  
+            Cantitatea returnată                         <input  class="form-control"type="number" name="cantitateaReturnataPrelevare">  
 
 
         </fieldset>
 
+</div>
 </div>
 
 
