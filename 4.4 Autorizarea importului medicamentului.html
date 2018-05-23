@@ -155,6 +155,24 @@
     <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet">
     <script src="js/bootstrap-formhelpers.min.js"></script>
 
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Medicament inregistrat
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Medicamentul neinregistrat
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Materia primă
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option4" autocomplete="off"> Ambalajul pentru <br> producerea medicamentelor
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option5" autocomplete="off"> Prelevarea a probei medii și controlului de stat
+        </label>
+    </div>
+
     <title>Title</title>
 </head>
 <body onload="onloadFunction()">
@@ -164,6 +182,7 @@
 
     <strong>Se va inregistra:</strong> <br>
     Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
+    <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
     Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
     Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
     Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
@@ -296,7 +315,7 @@
         </fieldset>
     </div>
 
-    <div id="medicamentulNeInregistrat" style="background-color:silver; display:none" class="col-md-3">
+    <div id="medicamentulNeInregistrat" style="background-color:silver; display:none" class="col-md-6 col-lg-4">
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></legend>
 
@@ -409,6 +428,17 @@
         var checkBox = document.getElementById("checkMedicamentulInregistrat");
         var text = document.getElementById("medicamentulInregistrat");
         if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function showInregistrat() {
+        var checkBox = document.getElementById("buttonMedicamentulInregistrat");
+        var text = document.getElementById("medicamentulInregistrat");
+        if (text.style.display == "none"){
             text.style.display = "block";
         } else {
             text.style.display = "none";
