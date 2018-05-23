@@ -32,8 +32,9 @@
         <!--box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);-->
         <!--padding: 20px 30px;-->
         <!--box-sizing: border-box;-->
-        <!--width: 80%;-->
-        <!--margin: 0 10%;-->
+        <!--width: 100%;-->
+        <!--margin: 0 0%;-->
+        <!--margin-bottom: 15px;-->
 
         <!--/*stacking fieldsets above each other*/-->
         <!--position: relative;-->
@@ -173,8 +174,8 @@
     <div class="row ">
         <form id="msform"  action="/processForm" style="background-color:yellow" class="col-12" >
 
-    <div class="row">
-    <div id="inregistrare" style="background-color:silver" class="form-group col-md-6 offset-lg-2 col-lg-4 " >
+    <div class="row" style="display:flex">
+    <div id="inregistrare" style="background-color:silver" class="form-group col-md-9 offset-md-1 offset-lg-2 col-lg-9 " >
 
         <fieldset>
             <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
@@ -183,8 +184,11 @@
             Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" disabled="disabled">
             Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
             Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
-            Producătorul materiei prime                      <input class="form-control" type="text" name="producatorMaterieiInfo">
-            Ţara şi adresa producătorului materiei prime:
+
+            <div class="row" style="display: flex; flex-wrap: wrap">
+                <div class="col-md-4" style="background: #0c5460">
+            Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
+                     Ţara şi adresa producătorului materiei prime:
             <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo">  </dd>
@@ -194,9 +198,13 @@
             <dd>                                             <select class="form-control" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo">
                                                                      <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
 
+                </div>
+                <div class="col-md-4" style="background: #0c5460" >
+                    <div  >
 
-            Vînzător                                         <input  class="form-control" placeholder="" type="text" name="vinzatorInfo">
-            Ţara şi adresa vînzătorului:
+                    Vînzător                                         <input  class="form-control" placeholder="" type="text" name="vinzatorInfo"style="flex:1">
+                    <br>
+                     Ţara şi adresa vînzătorului:
             <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </dd>
@@ -205,17 +213,22 @@
             <dd>                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <select class="form-control" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo">
                                                                      <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
-
+                </div>
+                </div>
+                <div class="col-md-4" style="background: #0c5460">
             Importator                                       <input  class="form-control" type="text" name="importatorInfo">
-            Ţara şi adresa importatorului:
+                    <br>
+                    Ţara şi adresa importatorului:
             <dd>                                             <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo">
-                                                             <select class="form-control" name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+            <dd>                                             <select class="form-control" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
                                                              <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
+                </div>
+            </div>
             Codul vamal                                      <input  class="form-control" type="text" name="codVamaiInfo">
             Temeiul pentru autorizație de import (Contract)  <input  class="form-control" type="text" name="contractInfo">
             Cantitatea                                       <input  class="form-control" type="number" name="cantitateaInfo">
@@ -310,7 +323,7 @@
         </fieldset>
     </div>
 
-    <div id="materiaPrima" style="background-color:silver; display:none" class="col-md-6 col-lg-4">
+    <div id="materiaPrima" style="background-color:silver; display:none " class="col-md-6 col-lg-4">
 
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></legend>

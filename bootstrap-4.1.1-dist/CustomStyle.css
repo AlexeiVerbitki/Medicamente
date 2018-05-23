@@ -1,11 +1,8 @@
-.customDiv{
-    margin:3px;
-    min-height:300px;
-    background-color:silver;
-    text-align:center;
-    font-size:large
-}
-
 .container{
 display:flex;
+}
+.bottom-align-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
