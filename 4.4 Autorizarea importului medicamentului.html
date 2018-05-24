@@ -469,8 +469,8 @@
         var text = document.getElementById("medicamentulInregistrat");
         var text2 = document.getElementById("inregistrare");
         if (text.style.display == "none"){
-            <!--text.classList.remove('fadeOutRight');-->
-            <!--text.classList.remove('animated');-->
+            text.classList.remove('fadeOutRight');
+            text.classList.remove('animated');
             text.classList.add('animated');
             text.classList.add('fadeInRight');
             text.style.display = "block";
@@ -479,7 +479,8 @@
             <!--text.classList.remove('animated');-->
             text.classList.add('animated');
             text.classList.add('fadeOutRight');
-            <!--text.style.display = "none";-->
+            setTimeout(function(){ text.style.display = "none"; }, 1000);
+
             <!--text.classList.add('infinite');-->
         }
     }
