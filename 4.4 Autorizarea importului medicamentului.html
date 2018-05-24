@@ -165,6 +165,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="CustomStyle.css" rel="stylesheet"/>
+    <link href="H:\Java\Medicamente\bootstrap-material-design-master\css\mdb.css" rel="stylesheet"/>
 
     <!--Bootstrap Form Helper  http://js.nicdn.de/bootstrap/formhelpers/docs/country.html -->
     <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet">
@@ -209,7 +210,7 @@
         <form id="msform"  action="/processForm"  class="col-12 " >
 
     <div class="row d-flex justify-content-center" style="display:flex">
-    <div id="inregistrare" style="" class="form-group col-md-9  col-lg-9 " >
+    <div id="inregistrare" style="" class="form-group col-md-9  col-lg-6" >
 
         <fieldset>
             <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
@@ -221,7 +222,7 @@
 
             <div class="row" style="display:flex; flex-wrap:wrap">
 
-                <div class="col-md-4 align-self-end order-md-1 order-sm-1" >
+                <div class="col-md-4 align-self-end order-md-1 order-sm-1 " >
             Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
                 </div>
 
@@ -290,7 +291,7 @@
     </div>
 
 
-    <div id="medicamentulInregistrat" style="; display:none " class="col-md-6 col-lg-4">
+    <div id="medicamentulInregistrat" style=" display:none " class="col-md-6 col-lg-4 ">
 
         <fieldset>
             <legend><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></legend>
@@ -466,10 +467,20 @@
     function showInregistrat() {
         var checkBox = document.getElementById("buttonMedicamentulInregistrat");
         var text = document.getElementById("medicamentulInregistrat");
+        var text2 = document.getElementById("inregistrare");
         if (text.style.display == "none"){
+            <!--text.classList.remove('fadeOutRight');-->
+            <!--text.classList.remove('animated');-->
+            text.classList.add('animated');
+            text.classList.add('fadeInRight');
             text.style.display = "block";
         } else {
-            text.style.display = "none";
+            <!--text.classList.remove('fadeInRight');-->
+            <!--text.classList.remove('animated');-->
+            text.classList.add('animated');
+            text.classList.add('fadeOutRight');
+            <!--text.style.display = "none";-->
+            <!--text.classList.add('infinite');-->
         }
     }
 </script>
