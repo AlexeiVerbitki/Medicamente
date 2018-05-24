@@ -18,8 +18,11 @@
     body {
         font-family: montserrat, arial, verdana;
         background:
-                linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+                /*linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));*/
+                /*linear-gradient(rgba(92, 120, 144, 0.6), rgba(126, 148, 167, 0.6));*/
+                linear-gradient(rgba(50, 90, 120, 0.6), rgba(132, 173, 207, 0.6));
     }
+
     /*form styles*/
     /*#msform {*/
         /*width: 600px;*/
@@ -211,14 +214,19 @@
         <fieldset>
             <legend><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></legend>
 
-            Nr. de înregistrare a cererii                    <input class="form-control" type="text" name="nrDeInregistrare" id="nrDeInregistrare" disabled="disabled" >
-            Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" disabled="disabled">
+            Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
+            Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly>
             Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
             Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
 
             <div class="row" style="display:flex; flex-wrap:wrap">
-                <div class="col-md-4 align-self-end" >
+
+                <div class="col-md-4 align-self-end order-md-1 order-sm-1" >
             Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
+                </div>
+
+                <div class="col-md-4 align-self-end order-md-4 order-sm-2" >
+
                      Ţara şi adresa producătorului materiei prime:
             <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo">  </dd>
@@ -230,12 +238,14 @@
                                                                      <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
 
                 </div>
-                <div class="col-md-4 align-self-end"  >
-                    <!--<div class="col align-self-end" style="flex:1" >-->
+                <div class="col-md-4 align-self-end order-md-2 order-sm-3"   >
 
-                    Vînzător                                         <input  class="form-control" placeholder="" type="text" name="vinzatorInfo"style="flex:1">
-                    <br>
-                     Ţara şi adresa vînzătorului:
+                    Vînzător
+                    <input  class="form-control" placeholder="" type="text" name="vinzatorInfo" style="flex:1">
+                </div>
+
+                <div class="col-md-4 align-self-end order-md-5 order-sm-4" >
+            <div style="white-space: pre-line">Ţara şi adresa vînzătorului:</div>
             <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </dd>
@@ -244,10 +254,12 @@
             <dd>                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </dd>
             <dd>                                             <select class="form-control" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo">
                                                                      <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
-                <!--</div>-->
                 </div>
-                <div class="col-md-4 align-self-end" >
+
+                <div class="col-md-4 align-self-end order-md-3 order-sm-5" >
             Importator                                       <input  class="form-control" type="text" name="importatorInfo">
+                </div>
+                <div class="col-md-4 align-self-end order-md-6 order-sm-6" >
                     <br>
                     Ţara şi adresa importatorului:
             <dd>                                             <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </dd>
@@ -434,6 +446,7 @@
         </div>
 
 
+</div>
 </div>
 
 
@@ -638,6 +651,9 @@
                 "</select>" +
                 " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
 
+
+
+
             var deleteButton = document.createElement('button');
             deleteButton.id = "deleteButton";
             deleteButton.type="button";
@@ -660,6 +676,7 @@
                         break;
                     }
                 }
+                var element = document.getElementById(divID);
                 var element = document.getElementById(divID);
                 var button = document.getElementById('deleteButton');
                 element.parentNode.removeChild(element);
@@ -704,6 +721,33 @@
         element.parentNode.removeChild(element);
         element.parentNode.removeChild(button);
     }
+
+
+
+</script>
+
+<script>
+    (function(){
+        var countup = this;
+        var newNode = document.createElement('div');
+        // newNode.className = 'btn btn-success col-3 ';
+        // newNode.innerHTML = 'this created div contains class while created!!!';
+        newNode.innerHTML = " <div id=\"dozaDivInregistrat\">\n" +
+            "                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name=\"denumireaInternationala\" id=\"denumireaInternationala\">\n" +
+            "                Doza\n" +
+            "                <div class=\"row\">\n" +
+            "                    <div class=\"form-group col-6\">\n" +
+            "                        <input class=\"form-control\" type=\"number\" name=\"dozaInregistrat\" id=\"dozaInregistrat\">\n" +
+            "                    </div>\n" +
+            "                    <div class=\"form-group col-6\">\n" +
+            "                        <select class=\"form-control\" id=\"dozaDropdown\"></select>\n" +
+            "                    </div>\n" +
+            "\n" +
+            "                </div>\n" +
+            "\n" +
+            "            </div>";
+        document.getElementById('medicamentulInregistrat').appendChild(newNode);
+    })();
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
