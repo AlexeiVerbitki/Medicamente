@@ -208,19 +208,20 @@
 
 
     <div class="row ">
-
-        <form id="msform"  action="/processForm"  class="col-10 " >
-
-    <div class="row d-flex justify-content-start">
-
         <div class="btn-group btn-group-vertical col-md-3 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
 
             <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
             <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
-            <button type="button" class="btn btn-primary d-flex text-left" >Materia primă</button>
-            <button type="button" class="btn btn-primary d-flex text-left" >Ambalajul pentru producerea medicamentelor</button>
-            <button type="button" class="btn btn-primary d-flex text-left" >Prelevarea a probei</button>
+            <button type="button" class="btn btn-primary d-flex text-left" onclick="showMateria()" >Materia primă</button>
+            <button type="button" class="btn btn-primary d-flex text-left" onclick="showAmbalaj()" >Ambalajul pentru producerea medicamentelor</button>
+            <button type="button" class="btn btn-primary d-flex text-left" onclick="showPrelevareAProbei()" >Prelevarea a probei</button>
         </div>
+
+        <form id="msform"  action="/processForm"  class="col-9 " >
+
+    <div class="row d-flex justify-content-start">
+
+
 
     <div id="inregistrare" class="form-group col-md-9  col-lg-8" >
 
@@ -364,7 +365,8 @@
                 <select class="form-control" id="dozaDropdownNeInregistrat"></select>
                 Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">
             </div>
-                                                         <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');">
+                                                            <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
+                                                                   onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');">
             Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
             <select class="form-control" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat">
@@ -428,7 +430,8 @@
                 <select class="form-control" id="dozaDropdownPrelevare"></select>
                 Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> 
             </div>
-            <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> 
+                                                            <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
+                                                                   onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');">
             Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizarePrelevare" placeholder="într-o paleta">
             <select class="form-control" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete"> 
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">  
@@ -453,7 +456,9 @@
 
     <!--<input type="submit" value="Submit">-->
 </form>
-        <div class="col 12 d-flex justify-content-center">
+    </div>
+
+    <div class="col 12 d-flex justify-content-center">
 
         <input type="submit" name="submit" id="submit" class="btn btn-success col-3 " value="Submit" /> <br>
             <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
@@ -540,7 +545,7 @@
     function showMateria() {
         var checkBox = document.getElementById("checkMateriaPrima");
         var text = document.getElementById("materiaPrima");
-        if (checkBox.checked == true){
+        if (text.style.display=="none"){
             text.style.display = "block";
         } else {
             text.style.display = "none";
@@ -551,7 +556,7 @@
     function showAmbalaj() {
         var checkBox = document.getElementById("checkAmbalaj");
         var text = document.getElementById("ambalaj");
-        if (checkBox.checked == true){
+        if (text.style.display=="none"){
             text.style.display = "block";
         } else {
             text.style.display = "none";
@@ -563,7 +568,7 @@
     function showPrelevareAProbei() {
         var checkBox = document.getElementById("checkPrelevareAProbei");
         var text = document.getElementById("prelevareAProbei");
-        if (checkBox.checked == true){
+        if (text.style.display=="none"){
             text.style.display = "block";
         } else {
             text.style.display = "none";
@@ -776,29 +781,29 @@
 
 </script>
 
-<script>
-    (function(){
-        var countup = this;
-        var newNode = document.createElement('div');
-        // newNode.className = 'btn btn-success col-3 ';
-        // newNode.innerHTML = 'this created div contains class while created!!!';
-        newNode.innerHTML = " <div id=\"dozaDivInregistrat\">\n" +
-            "                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name=\"denumireaInternationala\" id=\"denumireaInternationala\">\n" +
-            "                Doza\n" +
-            "                <div class=\"row\">\n" +
-            "                    <div class=\"form-group col-6\">\n" +
-            "                        <input class=\"form-control\" type=\"number\" name=\"dozaInregistrat\" id=\"dozaInregistrat\">\n" +
-            "                    </div>\n" +
-            "                    <div class=\"form-group col-6\">\n" +
-            "                        <select class=\"form-control\" id=\"dozaDropdown\"></select>\n" +
-            "                    </div>\n" +
-            "\n" +
-            "                </div>\n" +
-            "\n" +
-            "            </div>";
-        document.getElementById('medicamentulInregistrat').appendChild(newNode);
-    })();
-</script>
+<!--<script>-->
+    <!--(function(){-->
+        <!--var countup = this;-->
+        <!--var newNode = document.createElement('div');-->
+        <!--// newNode.className = 'btn btn-success col-3 ';-->
+        <!--// newNode.innerHTML = 'this created div contains class while created!!!';-->
+        <!--newNode.innerHTML = " <div id=\"dozaDivInregistrat\">\n" +-->
+            <!--"                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name=\"denumireaInternationala\" id=\"denumireaInternationala\">\n" +-->
+            <!--"                Doza\n" +-->
+            <!--"                <div class=\"row\">\n" +-->
+            <!--"                    <div class=\"form-group col-6\">\n" +-->
+            <!--"                        <input class=\"form-control\" type=\"number\" name=\"dozaInregistrat\" id=\"dozaInregistrat\">\n" +-->
+            <!--"                    </div>\n" +-->
+            <!--"                    <div class=\"form-group col-6\">\n" +-->
+            <!--"                        <select class=\"form-control\" id=\"dozaDropdown\"></select>\n" +-->
+            <!--"                    </div>\n" +-->
+            <!--"\n" +-->
+            <!--"                </div>\n" +-->
+            <!--"\n" +-->
+            <!--"            </div>";-->
+        <!--document.getElementById('medicamentulInregistrat').appendChild(newNode);-->
+    <!--})();-->
+<!--</script>-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
