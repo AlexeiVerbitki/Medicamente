@@ -162,42 +162,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <<!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> Medicament inregistrat
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2" autocomplete="off"> Medicamentul neinregistrat
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3" autocomplete="off"> Materia primă
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option4" autocomplete="off"> Ambalajul pentru <br> producerea medicamentelor
-        </label>
-        <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option5" autocomplete="off"> Prelevarea a probei medii și controlului de stat
-        </label>
-    </div>
+    <!--<div class="btn-group btn-group-toggle" data-toggle="buttons">-->
+    <!--<label class="btn btn-secondary">-->
+        <!--<input type="radio" name="options" id="option1" autocomplete="off" checked> Medicament inregistrat-->
+    <!--</label>-->
+    <!--<label class="btn btn-secondary">-->
+        <!--<input type="radio" name="options" id="checkGroupMedicamentulNeInregistrat" autocomplete="off" onclick="myFunction2()"> Medicamentul neinregistrat-->
+    <!--</label>-->
+    <!--<label class="btn btn-secondary">-->
+        <!--<input type="radio" name="options" id="option3" autocomplete="off"> Materia primă-->
+    <!--</label>-->
+    <!--<label class="btn btn-secondary">-->
+        <!--<input type="radio" name="options" id="option4" autocomplete="off"> Ambalajul pentru <br> producerea medicamentelor-->
+    <!--</label>-->
+    <!--<label class="btn btn-secondary">-->
+        <!--<input type="radio" name="options" id="option5" autocomplete="off"> Prelevarea a probei medii și controlului de stat-->
+    <!--</label>-->
+<!--</div>-->
+
+
 
     <title>Title</title>
 </head>
 <body onload="onloadFunction()">
-<div class="container">
+<div class="container1" style="width: 90%">
+
 
     <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
 
     <strong>Se va inregistra:</strong> <br>
-    Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
-
-    Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
+    <!--Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>-->
+    <!--Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>-->
+    <button type="button" name="MedicamentulNeInregistrat" id="buttonMedicamentulNeInregistrat" class="btn btn-success" onclick="medicamentulNeInregistratShow()">  Medicamentul neinregistrat</button> <br>
     Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
     Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
     Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
@@ -205,13 +208,24 @@
 
 
     <div class="row ">
-        <form id="msform"  action="/processForm"  class="col-12 " >
 
-    <div class="row d-flex justify-content-center">
-    <div id="inregistrare" style="" class="form-group col-md-9  col-lg-6" >
+        <form id="msform"  action="/processForm"  class="col-10 " >
+
+    <div class="row d-flex justify-content-start">
+
+        <div class="btn-group btn-group-vertical col-md-3 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
+
+            <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
+            <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
+            <button type="button" class="btn btn-primary d-flex text-left" >Materia primă</button>
+            <button type="button" class="btn btn-primary d-flex text-left" >Ambalajul pentru producerea medicamentelor</button>
+            <button type="button" class="btn btn-primary d-flex text-left" >Prelevarea a probei</button>
+        </div>
+
+    <div id="inregistrare" class="form-group col-md-9  col-lg-8" >
 
         <fieldset>
-            <h4 ><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
+            <h4 class="text-center" class="text-center"><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
 
             Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
             Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly>
@@ -292,7 +306,7 @@
     <div id="medicamentulInregistrat" style=" display:none " class="col-md-6 col-lg-4 ">
 
         <fieldset>
-            <h4><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></h4>
+            <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></h4>
 
             Codul medicamentului                             <input  class="form-control" type="text" name="codMedicamentului">
             Codul vamal                                      <input  class="form-control" type="text" name="codVamal">
@@ -340,7 +354,7 @@
 
     <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-4">
         <fieldset>
-            <h4><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
+            <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
 
             Codul vamal                                  <input  class="form-control"type="text" name="codVamalNeInregistrat">
             Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaNeInregistrat">
@@ -368,7 +382,7 @@
     <div id="materiaPrima" style="; display:none " class="col-md-6 col-lg-4">
 
         <fieldset>
-            <h4><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></h4>
+            <h4 class="text-center"><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></h4>
 
             Codul vamal                                  <input  class="form-control"type="text" name="codVamalMateria">
             Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei">
@@ -386,7 +400,7 @@
     <div id="ambalaj" style="; display:none" class="col-md-6 col-lg-4">
 
         <fieldset>
-            <h4><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
+            <h4 class="text-center"><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
             Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">
             Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
@@ -402,7 +416,7 @@
     <div id="prelevareAProbei" style="; display: none" class="col-md-6 col-lg-4">
         
         <fieldset>
-            <h4><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></h4>
+            <h4 class="text-center"><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></h4>
 
 
             Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">                             
@@ -502,12 +516,22 @@
 
 <script>
     function myFunction2() {
-        var checkBox = document.getElementById("checkMedicamentulNeInregistrat");
+        var checkBox = document.getElementById("checkGroupMedicamentulNeInregistrat");
         var text = document.getElementById("medicamentulNeInregistrat");
         if (checkBox.checked == true){
             text.style.display = "block";
         } else {
             text.style.display = "none";
+        }
+    }
+
+    function medicamentulNeInregistratShow() {
+        var checkBox = document.getElementById("buttonMedicamentulNeInregistrat");
+        var div = document.getElementById("medicamentulNeInregistrat");
+        if (div.style.display=="none"){
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
         }
     }
 </script>
