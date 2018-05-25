@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<style>
+    /*custom font*/
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+    /*basic reset*/
+    * {margin: 0; padding: 0;}
+
+    /*html {*/
+        /*height: 100%;*/
+        /*!*Image only BG fallback*!*/
+
+        /*!*background = gradient + image pattern combo*!*/
+        /*background:*/
+                /*linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));*/
+    /*}*/
+
+    body {
+        font-family: montserrat, arial, verdana;
+        background:
+                /*linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));*/
+                /*linear-gradient(rgba(92, 120, 144, 0.6), rgba(126, 148, 167, 0.6));*/
+                linear-gradient(rgba(50, 90, 120, 0.6), rgba(132, 173, 207, 0.6));
+    }
+
+    /*form styles*/
+    /*#msform {*/
+        /*width: 600px;*/
+        /*margin: 50px auto;*/
+        /*text-align: left;*/
+        /*position: relative;*/
+    /*}*/
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 0%;
+        margin-bottom: 15px;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+    #submit  {
+        /*background: white;*/
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+    /*!*Hide all except first fieldset*!*/
+    /*#msform fieldset:not(:first-of-type) {*/
+        /*display: none;*/
+    /*}*/
+    /*inputs*/
+    #msform input, #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        font-size: 13px;
+    }
+    /*buttons*/
+    /*#msform .action-button {*/
+        /*width: 100px;*/
+        /*background: #27AE60;*/
+        /*font-weight: bold;*/
+        /*color: white;*/
+        /*border: 0 none;*/
+        /*border-radius: 1px;*/
+        /*cursor: pointer;*/
+        /*padding: 10px 5px;*/
+        /*margin: 10px 50px;*/
+        /*alignment: center;*/
+    /*}*/
+    #msform .action-button:hover, #msform .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    }
+    /*headings*/
+    .fs-title {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #2C3E50;
+        margin-bottom: 10px;
+    }
+    .fs-subtitle {
+        font-weight: normal;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    /*!*progressbar*!*/
+    /*#progressbar {*/
+        /*margin-bottom: 30px;*/
+        /*overflow: hidden;*/
+        /*!*CSS counters to number the steps*!*/
+        /*counter-reset: step;*/
+    /*}*/
+    /*#progressbar li {*/
+        /*list-style-type: none;*/
+        /*color: white;*/
+        /*text-transform: uppercase;*/
+        /*font-size: 9px;*/
+        /*width: 33.33%;*/
+        /*float: left;*/
+        /*position: relative;*/
+    /*}*/
+    /*#progressbar li:before {*/
+        /*content: counter(step);*/
+        /*counter-increment: step;*/
+        /*width: 20px;*/
+        /*line-height: 20px;*/
+        /*display: block;*/
+        /*font-size: 10px;*/
+        /*color: #333;*/
+        /*background: white;*/
+        /*border-radius: 3px;*/
+        /*margin: 0 auto 5px auto;*/
+    /*}*/
+    /*!*progressbar connectors*!*/
+    /*#progressbar li:after {*/
+        /*content: '';*/
+        /*width: 100%;*/
+        /*height: 2px;*/
+        /*background: white;*/
+        /*position: absolute;*/
+        /*left: -50%;*/
+        /*top: 9px;*/
+        /*z-index: -1; !*put it behind the numbers*!*/
+    /*}*/
+    /*#progressbar li:first-child:after {*/
+        /*!*connector not needed before the first step*!*/
+        /*content: none;*/
+    /*}*/
+    /*!*marking active/completed steps green*!*/
+    /*!*The number of the step and the connector before it = green*!*/
+    /*#progressbar li.active:before,  #progressbar li.active:after{*/
+        /*background: #27AE60;*/
+        /*color: white;*/
+    /*}*/
+
+
+
+
+
+</style>
+
+<html lang="en">
+<head>
+    <title> TEST 2</title>
+    <h2>Pagina de inregistrare</h2>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Medicament inregistrat
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> Medicamentul neinregistrat
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> Materia primă
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option4" autocomplete="off"> Ambalajul pentru <br> producerea medicamentelor
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option5" autocomplete="off"> Prelevarea a probei medii și controlului de stat
+        </label>
+    </div>
+
+    <title>Title</title>
+</head>
+<body onload="onloadFunction()">
+<div class="container">
+
+    <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
+
+    <strong>Se va inregistra:</strong> <br>
+    Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>
+
+    Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>
+    Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
+    Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
+    Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
+
+
+
+    <div class="row ">
+        <form id="msform"  action="/processForm"  class="col-12 " >
+
+    <div class="row d-flex justify-content-center">
+    <div id="inregistrare" style="" class="form-group col-md-9  col-lg-6" >
+
+        <fieldset>
+            <h4 ><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
+
+            Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
+            Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly>
+            Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
+            Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
+
+            <div class="row" style="display:flex; flex-wrap:wrap">
+
+                <div class="col-md-4 align-self-end order-md-1 order-sm-1 " >
+            Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
+                </div>
+
+                <div class="col-md-4 align-self-end order-md-4 order-sm-2" >
+
+                     Ţara şi adresa producătorului materiei prime:
+            <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <select class="form-control" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo">
+                                                                     <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
+
+                </div>
+                <div class="col-md-4 align-self-end order-md-2 order-sm-3"   >
+
+                    Vînzător
+                    <input  class="form-control" placeholder="" type="text" name="vinzatorInfo" style="flex:1">
+                </div>
+
+                <div class="col-md-4 align-self-end order-md-5 order-sm-4" >
+            <div style="white-space: pre-line">Ţara şi adresa vînzătorului:</div>
+            <dd>                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <select class="form-control" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo">
+                                                                     <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
+                </div>
+
+                <div class="col-md-4 align-self-end order-md-3 order-sm-5" >
+            Importator                                       <input  class="form-control" type="text" name="importatorInfo">
+                </div>
+                <div class="col-md-4 align-self-end order-md-6 order-sm-6" >
+                    <br>
+                    Ţara şi adresa importatorului:
+            <dd>                                             <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo">  </dd>
+            <dd>                                             <input  class="form-control" placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo">
+            <dd>                                             <select class="form-control" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+                                                             <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
+                </div>
+            </div>
+            Codul vamal                                      <input  class="form-control" type="text" name="codVamaiInfo">
+            Temeiul pentru autorizație de import (Contract)  <input  class="form-control" type="text" name="contractInfo">
+            Cantitatea                                       <input  class="form-control" type="number" name="cantitateaInfo">
+            Prețul                                           <input  class="form-control" type="number" name="pretulInfo" id="pretulInfo">
+            Valuta                                           <select class="form-control" name="valutaInfo" id="valutaInfo">
+                                                             <option value="" disabled selected hidden></option>  </select>
+            Condiții și precizări                            <input  class="form-control" type="textarea" name="conditiiInfo" >
+            Nr. şi data a declaraţiei vamale                 <input  class="form-control" type="text" name="nrDeclaratieiVamaleInfo">
+                                                             <input  class="form-control" type="date" name="dataDeclaratieiVamaleInfo">
+            Nr. autorizaţiei de import în RM                 <input  class="form-control" type="text" name="nrAutorizatieiInfo">
+            Termen de valabilitate                           <input  class="form-control" type="date" name="termenDeValabilitateInfo">
+            Cantitatea prelevată                             <input  class="form-control" type="number" name="cantitateaPrelevataInfo">
+            Cantitatea returnată                             <input  class="form-control" type="number" name="cantitateaReturnataInfo">
+
+        </fieldset>
+    </div>
+
+
+    <div id="medicamentulInregistrat" style=" display:none " class="col-md-6 col-lg-4 ">
+
+        <fieldset>
+            <h4><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></h4>
+
+            Codul medicamentului                             <input  class="form-control" type="text" name="codMedicamentului">
+            Codul vamal                                      <input  class="form-control" type="text" name="codVamal">
+            Denumirea comercială a medicamentului            <input  class="form-control" type="text" name="denumireComerciala">
+            Forma medicamentoasă                             <select class="form-control" name="formaMedicamentoasa" id="formaMedicamentoasa">   </select>
+
+
+            <div id="dozaDivInregistrat">
+                Denumirea comună internaționala   <input class="form-control" type="text" name="denumireaInternationala" id="denumireaInternationala">
+                Doza
+                <div class="row">
+                    <div class="form-group col-6">
+                        <input class="form-control" type="number" name="dozaInregistrat" id="dozaInregistrat">
+                    </div>
+                    <div class="form-group col-6">
+                        <select class="form-control" id="dozaDropdown"></select>
+                    </div>
+
+                </div>
+
+            </div>
+
+                <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
+                       onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala');">
+
+
+
+
+
+            Divizare (Unitatea de măsură)                    <input  class="form-control" type="number" name="divizare" placeholder="într-o paleta">
+            <select class="form-control" name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input  class="form-control" type="text" name="dozaBlisterInregistrat" placeholder="palete">
+            Cantitatea                                       <input  class="form-control" type="number" name="cantitate">
+            Prețul                                           <input  class="form-control" type="number" name="pret">
+            Valuta                                           <select class="form-control" name="valuta" id="valuta">
+                                                             <option value="" disabled selected hidden></option>  </select>
+            Țara producătoare                                <select class="form-control" name="taraProducatoare" id="taraProducatoare">
+                                                             <option value="" disabled selected hidden>Ţara...</option> </select>
+            Firma producătoare                               <input  class="form-control" type="text" name="firmaProducatoare">
+            Nr. de înregistrare în RM                        <input  class="form-control" type="text" name="nrInregistrare">
+            Data înregistrare în RM                          <input  class="form-control" type="date" name="dataInregistrare">
+            Cod ATC                                          <input  class="form-control" type="text" name="codATC">
+
+        </fieldset>
+    </div>
+
+    <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-4">
+        <fieldset>
+            <h4><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
+
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalNeInregistrat">
+            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaNeInregistrat">
+            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select>
+            <div id="dozaDivNeInregistrat">
+                Doza                                         <input  class="form-control"type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
+                <select class="form-control" id="dozaDropdownNeInregistrat"></select>
+                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">
+            </div>
+                                                         <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');">
+            Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
+            <select class="form-control" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete">
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat">
+            Prețul                                       <input  class="form-control"type="number" name="pretNeInregistrat">
+            Valuta                                       <select class="form-control" name="valuta" id="valutaNeInregistrat">
+                                                         <option value="" disabled selected hidden></option>  </select>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select>
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareNeInregistrat">
+            Nr. de înregistrare în RM                    <input  class="form-control"type="text" name="nrInregistrareNeInregistrat">
+            Data înregistrare în RM                      <input  class="form-control"type="date" name="dataInregistrareNeInregistrat">
+            Cod ATC                                      <input  class="form-control"type="text" name="codATCNeInregistrat">
+        </fieldset>
+    </div>
+
+    <div id="materiaPrima" style="; display:none " class="col-md-6 col-lg-4">
+
+        <fieldset>
+            <h4><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></h4>
+
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalMateria">
+            Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei">
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateMateria">
+            Prețul                                       <input  class="form-control"type="number" name="pretMateria">
+            Valuta                                       <select class="form-control" name="valuta" id="valutaMateria">
+                                                         <option value="" disabled selected hidden></option>  </select>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareMateria" id="taraProducatoareMateria"> </select>
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareMateria">
+            Cod ATC                                      <input  class="form-control"type="text" name="codATCMateria">
+
+        </fieldset>
+    </div>
+
+    <div id="ambalaj" style="; display:none" class="col-md-6 col-lg-4">
+
+        <fieldset>
+            <h4><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">
+            Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
+            Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">
+            Valuta                                       <select class="form-control" name="valuta" id="valutaAmbalaj">
+                                                         <option value="" disabled selected hidden></option>  </select>
+            Țara producătoare                            <select class="form-control" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">
+
+        </fieldset>
+    </div>
+
+    <div id="prelevareAProbei" style="; display: none" class="col-md-6 col-lg-4">
+        
+        <fieldset>
+            <h4><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></h4>
+
+
+            Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">                             
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalPrelevare">                                      
+            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaPrelevare">                            
+            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> 
+            <div id="dozaDivPrelevare">
+                Doza                                         <input  class="form-control"type="number" name="dozaPrelevare" id="dozaPrelevare">
+                <select class="form-control" id="dozaDropdownPrelevare"></select>
+                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> 
+            </div>
+            <input  class="form-control"type="button" value="Adauga" onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');"> 
+            Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizarePrelevare" placeholder="într-o paleta">
+            <select class="form-control" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete"> 
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">  
+            Prețul                                       <input  class="form-control"type="number" name="pretulPrelevare" id="pretulPrelevare">  
+            Valuta                                       <select class="form-control" name="valutaPrelevare" id="valutaPrelevare">  
+                                                          <option value="" disabled selected hidden></option>  </select>
+            Suma                                         <input  class="form-control"type="number" name="sumaPrelevare">                                      
+            Țara producătoare                            <select class="form-control" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select> 
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoarePrelevare">                     
+            Nr. autorizaţiei de import în RM             <input  class="form-control"type="text" name="nrAutorizatieiPrelevare">  
+            Nr. şi data a declaraţiei vamale             <input  class="form-control"type="text" name="nrDeclaratieiVamaleInfo"> <input  class="form-control"type="date" name="dataDeclaratieiVamaleInfo"> 
+            Termen de valabilitate                       <input  class="form-control"type="date" name="termenDeValabilitatePrelevare">  
+            Cantitatea prelevată                         <input  class="form-control"type="number" name="cantitateaPrelevataPrelevare">  
+            Cantitatea returnată                         <input  class="form-control"type="number" name="cantitateaReturnataPrelevare">  
+
+
+        </fieldset>
+
+</div>
+</div>
+
+
+    <!--<input type="submit" value="Submit">-->
+</form>
+        <div class="col 12 d-flex justify-content-center">
+
+        <input type="submit" name="submit" id="submit" class="btn btn-success col-3 " value="Submit" /> <br>
+            <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
+        </div>
+
+
+</div>
+</div>
+
+
+
+<script>
+    function myFunction() {
+        var checkBox = document.getElementById("checkMedicamentulInregistrat");
+        var text = document.getElementById("medicamentulInregistrat");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function showInregistrat() {
+        var checkBox = document.getElementById("buttonMedicamentulInregistrat");
+        var text = document.getElementById("medicamentulInregistrat");
+        var text2 = document.getElementById("inregistrare");
+        if (text.style.display == "none"){
+            text.classList.remove('fadeOutRight');
+            text.classList.remove('animated');
+            text.classList.add('animated');
+            text.classList.add('fadeInRight');
+            text.style.display = "block";
+
+            // block de inregistrare
+
+            text2.style.display = "none";
+            // setTimeout(function(){ text2.style.display = "block"; }, 1000);
+        } else {
+            <!--text.classList.remove('fadeInRight');-->
+            <!--text.classList.remove('animated');-->
+            text.classList.add('animated');
+            text.classList.add('fadeOutRight');
+
+            // block de inregistrare
+
+            // text2.style.display = "block";
+            setTimeout(function(){
+                text.style.display = "none";  }, 1000);
+
+            text2.classList.add('animated');
+            text2.classList.add('fadeInUp');
+            // setTimeout(function(){ text2.style.display = "block"; }, 1000);
+            text2.style.display = "block";
+
+            <!--text.classList.add('infinite');-->
+        }
+    }
+</script>
+
+<script>
+    function myFunction2() {
+        var checkBox = document.getElementById("checkMedicamentulNeInregistrat");
+        var text = document.getElementById("medicamentulNeInregistrat");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function showMateria() {
+        var checkBox = document.getElementById("checkMateriaPrima");
+        var text = document.getElementById("materiaPrima");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+<script>
+    function showAmbalaj() {
+        var checkBox = document.getElementById("checkAmbalaj");
+        var text = document.getElementById("ambalaj");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function showPrelevareAProbei() {
+        var checkBox = document.getElementById("checkPrelevareAProbei");
+        var text = document.getElementById("prelevareAProbei");
+        if (checkBox.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    var countries = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"],
+        taraProducatoare = document.getElementById('taraProducatoare');
+    taraVinzatoruluiInfo = document.getElementById('taraVinzatoruluiInfo');
+    taraProducatoruluiMaterieiInfo = document.getElementById('taraProducatoruluiMaterieiInfo');
+    taraProducatoareAmbalaj = document.getElementById('taraProducatoareAmbalaj');
+    taraProducatoareNeInregistrat = document.getElementById('taraProducatoareNeInregistrat');
+    taraProducatoareMateria = document.getElementById('taraProducatoareMateria');
+    taraProducatoarePrelevare = document.getElementById('taraProducatoarePrelevare');
+    taraImportatoruluiInfo = document.getElementById('taraImportatoruluiInfo');
+    for (country in countries) {
+        taraProducatoare.add(new Option(countries[country],countries[country]));
+        taraProducatoruluiMaterieiInfo.add(new Option(countries[country],countries[country]));
+        taraProducatoareAmbalaj.add(new Option(countries[country],countries[country]));
+        taraProducatoareNeInregistrat.add(new Option(countries[country],countries[country]));
+        taraProducatoareMateria.add(new Option(countries[country],countries[country]));
+        taraProducatoarePrelevare.add(new Option(countries[country],countries[country]));
+        taraVinzatoruluiInfo.add(new Option(countries[country],countries[country]));
+        taraImportatoruluiInfo.add(new Option(countries[country],countries[country]));
+    }
+</script>
+
+<script>
+    var currencies = ["EUR : Euro","USD : United States dollar","GBP : Pound sterling","RUB : Russian ruble","UAH : Ukrainian hryvnia","RON : Romanian leu","AED : United Arab Emirates dirham","AFN : Afghan afghani","ALL : Albanian lek","AMD : Armenian dram","ANG : Netherlands Antillean guilder","AOA : Angolan kwanza","ARS : Argentine peso","AUD : Australian dollar","AWG : Aruban florin","AZN : Azerbaijani manat","BAM : Bosnia and Herzegovina convertible mark","BBD : Barbados dollar","BDT : Bangladeshi taka","BGN : Bulgarian lev","BHD : Bahraini dinar","BIF : Burundian franc","BMD : Bermudian dollar","BND : Brunei dollar","BOB : Boliviano","BRL : Brazilian real","BSD : Bahamian dollar","BTN : Bhutanese ngultrum","BWP : Botswana pula","BYN : New Belarusian ruble","BYR : Belarusian ruble","BZD : Belize dollar","CAD : Canadian dollar","CDF : Congolese franc","CHF : Swiss franc","CLF : Unidad de Fomento","CLP : Chilean peso","CNY : Renminbi|Chinese yuan","COP : Colombian peso","CRC : Costa Rican colon","CUC : Cuban convertible peso","CUP : Cuban peso","CVE : Cape Verde escudo","CZK : Czech koruna","DJF : Djiboutian franc","DKK : Danish krone","DOP : Dominican peso","DZD : Algerian dinar","EGP : Egyptian pound","ERN : Eritrean nakfa","ETB : Ethiopian birr","FJD : Fiji dollar","FKP : Falkland Islands pound","GEL : Georgian lari","GHS : Ghanaian cedi","GIP : Gibraltar pound","GMD : Gambian dalasi","GNF : Guinean franc","GTQ : Guatemalan quetzal","GYD : Guyanese dollar","HKD : Hong Kong dollar","HNL : Honduran lempira","HRK : Croatian kuna","HTG : Haitian gourde","HUF : Hungarian forint","IDR : Indonesian rupiah","ILS : Israeli new shekel","INR : Indian rupee","IQD : Iraqi dinar","IRR : Iranian rial","ISK : Icelandic króna","JMD : Jamaican dollar","JOD : Jordanian dinar","JPY : Japanese yen","KES : Kenyan shilling","KGS : Kyrgyzstani som","KHR : Cambodian riel","KMF : Comoro franc","KPW : North Korean won","KRW : South Korean won","KWD : Kuwaiti dinar","KYD : Cayman Islands dollar","KZT : Kazakhstani tenge","LAK : Lao kip","LBP : Lebanese pound","LKR : Sri Lankan rupee","LRD : Liberian dollar","LSL : Lesotho loti","LYD : Libyan dinar","MAD : Moroccan dirham","MDL : Moldovan leu","MGA : Malagasy ariary","MKD : Macedonian denar","MMK : Myanmar kyat","MNT : Mongolian tögrög","MOP : Macanese pataca","MRO : Mauritanian ouguiya","MUR : Mauritian rupee","MVR : Maldivian rufiyaa","MWK : Malawian kwacha","MXN : Mexican peso","MXV : Mexican Unidad de Inversion","MYR : Malaysian ringgit","MZN : Mozambican metical","NAD : Namibian dollar","NGN : Nigerian naira","NIO : Nicaraguan córdoba","NOK : Norwegian krone","NPR : Nepalese rupee","NZD : New Zealand dollar","OMR : Omani rial","PAB : Panamanian balboa","PEN : Peruvian Sol","PGK : Papua New Guinean kina","PHP : Philippine peso","PKR : Pakistani rupee","PLN : Polish złoty","PYG : Paraguayan guaraní","QAR : Qatari riyal","RSD : Serbian dinar","RWF : Rwandan franc","SAR : Saudi riyal","SBD : Solomon Islands dollar","SCR : Seychelles rupee","SDG : Sudanese pound","SEK : Swedish krona","SGD : Singapore dollar","SHP : Saint Helena pound","SLL : Sierra Leonean leone","SOS : Somali shilling","SRD : Surinamese dollar","SSP : South Sudanese pound","STD : São Tomé and Príncipe dobra","SVC : Salvadoran colón","SYP : Syrian pound","SZL : Swazi lilangeni","THB : Thai baht","TJS : Tajikistani somoni","TMT : Turkmenistani manat","TND : Tunisian dinar","TOP : Tongan paʻanga","TRY : Turkish lira","TTD : Trinidad and Tobago dollar","TWD : New Taiwan dollar","TZS : Tanzanian shilling","UGX : Ugandan shilling","UYI : Uruguay Peso en Unidades Indexadas","UYU : Uruguayan peso","UZS : Uzbekistan som","VEF : Venezuelan bolívar","VND : Vietnamese đồng","VUV : Vanuatu vatu","WST : Samoan tala","XAF : Central African CFA franc","XCD : East Caribbean dollar","XOF : West African CFA franc","XPF : CFP franc","XXX : No currency","YER : Yemeni rial","ZAR : South African rand","ZMW : Zambian kwacha","ZWL : Zimbabwean dollar"],
+        valuta = document.getElementById('valuta');
+    valutaAmbalaj = document.getElementById('valutaAmbalaj');
+    valutaMateria = document.getElementById('valutaMateria');
+    valutaNeInregistrat = document.getElementById('valutaNeInregistrat');
+    valutaInfo = document.getElementById('valutaInfo');
+    valutaPrelevare = document.getElementById('valutaPrelevare');
+    for (currency in currencies) {
+        valuta.add(new Option(currencies[currency],currencies[currency]));
+        valutaAmbalaj.add(new Option(currencies[currency],currencies[currency]));
+        valutaMateria.add(new Option(currencies[currency],currencies[currency]));
+        valutaNeInregistrat.add(new Option(currencies[currency],currencies[currency]));
+        valutaInfo.add(new Option(currencies[currency],currencies[currency]));
+        valutaPrelevare.add(new Option(currencies[currency],currencies[currency]));
+    }
+</script>
+
+<script>
+    var formaMedicamentoasaArray = [" conc./sol. perf.", " drajeuri", "comp. film.", "sol. inj.", "comprimate", "sirop", "comp. film. gastrorez.", "sol. cutan.", "     comp. eferv.", "     pulb./sol. orală", " spray cutan., sol.", "     ung.", "     sol. perf.", "     sol. uleioasă", " caps.", "     cremă", " comp. masticab.", "     pulb. cutan.", "     pulb./sol. cutan", " liof./sol. perf.", " pic. orale homeopate", " pulb.+solv./sol. inj./perf.", "     gel", " sol. inj. în cartuş", " sup.", "     pic. naz., sol.", "     caps. elib. prel.", "     emuls. cutan.", "     pic. orale, sol.", "     caps. moi", " comp. homeopate", " pastile", " comp. gastrorez.", "     sol. orală", " pulb./susp. orală", " pulb.+solv./sol. inj.", " pulb./sol. inj.", " sol. alc. cutan.", "     pic. oft., sol.", "     sol.", "     spray naz., sol.", "     gran./susp. orală", " susp. orală", " liof./sol. inj.", " comp. de supt", " comp./disper. orală", " pulb./sol. inj./perf.", "     pic. auric., sol.", "     spray bucofaring.", "     sol./gargarisme"];
+    formaMedicamentoasa = document.getElementById('formaMedicamentoasa');
+    formaMedicamentoasaNeInregistrat = document.getElementById('formaMedicamentoasaNeInregistrat');
+    formaMedicamentoasaPrelevare = document.getElementById('formaMedicamentoasaPrelevare');
+    for (element in formaMedicamentoasaArray) {
+        formaMedicamentoasa.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+        formaMedicamentoasaNeInregistrat.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+        formaMedicamentoasaPrelevare.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+    }
+</script>
+
+<script>
+    var dozaArray = ["mg","ml","mg/ml","g","mcg","IU","%","comp.","buc."];
+    dozaDropdown = document.getElementById('dozaDropdown');
+    dozaDropdownPrelevare = document.getElementById('dozaDropdownPrelevare');
+    dozaDivizareInregistrat = document.getElementById('dozaDivizareInregistrat');
+    dozaDivizareNeInregistrat = document.getElementById('dozaDivizareNeInregistrat');
+    dozaDropdownNeInregistrat = document.getElementById('dozaDropdownNeInregistrat');
+    dozaDivizarePrelevare = document.getElementById('dozaDivizarePrelevare');
+    for (element in dozaArray) {
+        dozaDropdown.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDropdownPrelevare.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDropdownNeInregistrat.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDivizareInregistrat.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDivizareNeInregistrat.add(new Option(dozaArray[element], dozaArray[element]));
+        dozaDivizarePrelevare.add(new Option(dozaArray[element], dozaArray[element]));
+    }
+</script>
+
+<script>
+    function onloadFunction(){
+        var random=0;
+        random=Math.floor((Math.random() * 1000000) + 1);
+        document.getElementById("nrDeInregistrare").value="CI"+random;
+        var MyDate = new Date();
+        var todayString = ('0' + MyDate.getDate()).slice(-2) + '/'
+            + ('0' + (MyDate.getMonth()+1)).slice(-2) + '/'
+            + MyDate.getFullYear();
+        document.getElementById("dataDepunerii").value = todayString;
+    };
+</script>
+
+<script>
+    var counter=1;
+    var dozaDivInregistrat=1;
+    var dozaDivNeInregistrat=1;
+    var dozaDivPrelevare=1;
+    var limit = 20;
+    var dozaArray = ["mg","ml","mg/ml","g","mcg","IU","%","comp.","buc."];
+    function adaugaDoza(dozaName, denumireName) {
+        if (counter == limit) {
+            alert("Ati ajuns la limita de  " + counter + " adaugari");
+        }
+        else {
+// var id='dozaDropdown+counter'+counter;
+            switch (dozaName) {
+                case "dozaDivInregistrat":{
+                    dozaDivInregistrat++;
+                    counter=dozaDivInregistrat;
+                    break;}
+                case "dozaDivNeInregistrat": {
+                    dozaDivNeInregistrat++;
+                    counter=dozaDivNeInregistrat;
+                    break;}
+                case "dozaDivPrelevare":{
+                    dozaDivPrelevare++;
+                    counter=dozaDivPrelevare;
+                    break;
+                }
+            }
+            var divID=dozaName+counter;
+            var newdiv = document.createElement(divID);
+            newdiv.id=divID;
+            var dropdownName=dozaName+"Dropdown"+counter.toString();
+
+            newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
+                "<select id='"+dozaName+"Dropdown"+counter+"'>" +
+                "<option value='mg'>mg</option>" +
+                "<option value='ml'>ml</option>" +
+                "<option value='mg/ml'>mg/ml</option>" +
+                "<option value='g'>g</option>" +
+                "<option value='mcg'>mcg</option>" +
+                "<option value='IU'>IU</option>" +
+                "<option value='%'>mg</option>" +
+                "<option value='comp.'>comp.</option>" +
+                "<option value='buc.'>buc.</option>" +
+                "</select>" +
+                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
+
+
+
+
+            var deleteButton = document.createElement('button');
+            deleteButton.id = "deleteButton";
+            deleteButton.type="button";
+            var deleteButton1 = document.createTextNode("Sterge");
+            deleteButton.appendChild(deleteButton1);
+            deleteButton.onclick = function deleteButton() {
+
+                switch (dozaName) {
+                    case "dozaDivInregistrat":{
+                        dozaDivInregistrat--;
+                        counter=dozaDivInregistrat;
+                        break;}
+                    case "dozaDivNeInregistrat": {
+                        dozaDivNeInregistrat--;
+                        counter=dozaDivNeInregistrat;
+                        break;}
+                    case "dozaDivPrelevare":{
+                        dozaDivPrelevare--;
+                        counter=dozaDivPrelevare;
+                        break;
+                    }
+                }
+                var element = document.getElementById(divID);
+                var element = document.getElementById(divID);
+                var button = document.getElementById('deleteButton');
+                element.parentNode.removeChild(element);
+                element.parentNode.removeChild(button);
+
+
+            }
+
+
+            var brModule = document.createElement("br");
+        }
+
+        document.getElementById(dozaName).appendChild(newdiv);
+        document.getElementById(divID).appendChild(deleteButton);
+        document.getElementById(divID).appendChild(brModule);
+        counter++;
+    }
+</script>
+
+<script>
+    function removeElement(parentDiv, childDiv){
+        if (childDiv == parentDiv) {
+            alert("The parent div cannot be removed.");
+        }
+        else if (document.getElementById(childDiv)) {
+            var child = document.getElementById(childDiv);
+            var parent = document.getElementById(parentDiv);
+            parent.removeChild(child);
+        }
+        else {
+            alert("Doza si Denumirea comună internaționala sunt obligatorii");
+            return false;
+        }
+    }
+</script>
+
+<script>
+    function showIt(dropdownName) {
+        alert(dropdownName);
+        var element = document.getElementById('doza');
+        var button = document.getElementById('deleteButton');
+        element.parentNode.removeChild(element);
+        element.parentNode.removeChild(button);
+    }
+
+
+
+</script>
+
+<script>
+    (function(){
+        var countup = this;
+        var newNode = document.createElement('div');
+        // newNode.className = 'btn btn-success col-3 ';
+        // newNode.innerHTML = 'this created div contains class while created!!!';
+        newNode.innerHTML = " <div id=\"dozaDivInregistrat\">\n" +
+            "                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name=\"denumireaInternationala\" id=\"denumireaInternationala\">\n" +
+            "                Doza\n" +
+            "                <div class=\"row\">\n" +
+            "                    <div class=\"form-group col-6\">\n" +
+            "                        <input class=\"form-control\" type=\"number\" name=\"dozaInregistrat\" id=\"dozaInregistrat\">\n" +
+            "                    </div>\n" +
+            "                    <div class=\"form-group col-6\">\n" +
+            "                        <select class=\"form-control\" id=\"dozaDropdown\"></select>\n" +
+            "                    </div>\n" +
+            "\n" +
+            "                </div>\n" +
+            "\n" +
+            "            </div>";
+        document.getElementById('medicamentulInregistrat').appendChild(newNode);
+    })();
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+</html>
