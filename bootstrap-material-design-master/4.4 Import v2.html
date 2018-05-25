@@ -157,8 +157,7 @@
 
 <html lang="en">
 <head>
-    <title> TEST 2</title>
-    <h2>Pagina de inregistrare</h2>
+    <title>Autorizarea importului</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -189,26 +188,27 @@
 
 
 
-    <title>Title</title>
 </head>
 <body onload="onloadFunction()">
 <div class="container1" style="width: 90%">
 
 
-    <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
+    <!--<button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>-->
 
-    <strong>Se va inregistra:</strong> <br>
-    <!--Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>-->
-    <!--Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>-->
-    <button type="button" name="MedicamentulNeInregistrat" id="buttonMedicamentulNeInregistrat" class="btn btn-success" onclick="medicamentulNeInregistratShow()">  Medicamentul neinregistrat</button> <br>
-    Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>
-    Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>
-    Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>
+    <!--<strong>Se va inregistra:</strong> <br>-->
+    <!--&lt;!&ndash;Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>&ndash;&gt;-->
+    <!--&lt;!&ndash;Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>&ndash;&gt;-->
+    <!--<button type="button" name="MedicamentulNeInregistrat" id="buttonMedicamentulNeInregistrat" class="btn btn-success" onclick="medicamentulNeInregistratShow()">  Medicamentul neinregistrat</button> <br>-->
+    <!--Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>-->
+    <!--Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>-->
+    <!--Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>-->
 
 
 
     <div class="row ">
-        <div class="btn-group btn-group-vertical col-md-3 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
+        <h2 class="display-5 text-center col-12">Autorizarea importului</h2>
+
+        <div class="btn-group btn-group-vertical col-3 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
 
             <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
             <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
@@ -224,11 +224,12 @@
 
 
     <div id="inregistrare" class="form-group col-md-9  col-lg-8" >
+    <!--<div id="inregistrare" class="form-group col-auto" >-->
 
         <fieldset>
             <h4 class="text-center" class="text-center"><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
 
-            Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
+            Nr. de înregistrare a cererii                    <input class="form-control" type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
             Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly>
             Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
             Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
@@ -305,6 +306,7 @@
 
 
     <div id="medicamentulInregistrat" style=" display:none " class="col-md-6 col-lg-4 ">
+    <!--<div id="medicamentulInregistrat" style=" display:none " class="col-auto">-->
 
         <fieldset>
             <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT </strong></h4>
@@ -692,8 +694,8 @@
             newdiv.id=divID;
             var dropdownName=dozaName+"Dropdown"+counter.toString();
 
-            newdiv.innerHTML = " + Doza " + (counter) + "<input type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
-                "<select id='"+dozaName+"Dropdown"+counter+"'>" +
+            newdiv.innerHTML = "Doza " + (counter) + "<input class='form-control' type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
+                "<select class='form-control' id='"+dozaName+"Dropdown"+counter+"'>" +
                 "<option value='mg'>mg</option>" +
                 "<option value='ml'>ml</option>" +
                 "<option value='mg/ml'>mg/ml</option>" +
@@ -704,7 +706,7 @@
                 "<option value='comp.'>comp.</option>" +
                 "<option value='buc.'>buc.</option>" +
                 "</select>" +
-                " Denumirea comună internaționala " + (counter) +  " <input type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
+                " Denumirea comună internaționala " + (counter) +  " <input class='form-control' type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
 
 
 
@@ -713,6 +715,8 @@
             deleteButton.id = "deleteButton";
             deleteButton.type="button";
             var deleteButton1 = document.createTextNode("Sterge");
+            deleteButton.classList.add("form-control");
+            deleteButton.classList.add("btn-warning");
             deleteButton.appendChild(deleteButton1);
             deleteButton.onclick = function deleteButton() {
 
