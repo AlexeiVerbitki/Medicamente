@@ -152,8 +152,40 @@
 
 
 
+</style>
+
+<style>
+
+
+
+    .form-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-control-placeholder {
+        position: absolute;
+        top: 0;
+        padding: 7px 0 0 0px;
+        transition: all 300ms;
+        opacity: 0.5;
+        margin-left: 13px;
+    }
+
+    .form-control:focus + .form-control-placeholder,
+    .form-control:valid + .form-control-placeholder {
+        font-size: 100%;
+        transform: translate3d(0, -65%, 0);
+        opacity: 1;
+        z-index: 3;
+        color: gray;
+        /*         margin-left: 10px; */
+        background: white;
+    }
 
 </style>
+
+
 
 <html lang="en">
 <head>
@@ -167,6 +199,10 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!--Floating labels https://www.npmjs.com/package/bootstrap-float-label-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v3.0.1/dist/bootstrap-float-label.min.css"/>
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.0/dist/bootstrap-float-label.min.css"/>-->
 
     <!--<div class="btn-group btn-group-toggle" data-toggle="buttons">-->
     <!--<label class="btn btn-secondary">-->
@@ -191,6 +227,8 @@
 </head>
 <body onload="onloadFunction()">
 <div class="container1" style="width: 90%">
+
+
 
 
     <!--<button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>-->
@@ -229,12 +267,23 @@
         <fieldset>
             <h4 class="text-center" class="text-center"><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
 
+
             Nr. de înregistrare a cererii                    <input class="form-control" type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly>
             Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly>
-            Compania-solicitant (Se introduce manual)        <input class="form-control" type="text" name="CompaniaSolicitantInfo">
-            Denumirea materiei prime                         <input class="form-control" type="text" name="denumireMaterieiInfo">
+
 
             <div class="row" style="display:flex; flex-wrap:wrap">
+                <div class="col-12" style="visibility: hidden">Compania-solicitant</div>
+                <div class="form-group col-12">
+                    <input class="form-control" type="text" id="CompaniaSolicitantInfo" required>
+                    <label class="form-control-placeholder" for="CompaniaSolicitantInfo">Compania-solicitant</label>
+                </div>
+
+                <div class="form-group col-12">
+                    <input class="form-control" type="text" id="denumireMaterieiInfo" required>
+                    <label class="form-control-placeholder" for="denumireMaterieiInfo">Denumirea materiei prime </label>
+                </div>
+
 
                 <div class="col-md-4 align-self-end order-md-1 order-sm-1 " >
             Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
@@ -287,7 +336,12 @@
                                                              <option value="" disabled selected hidden>Ţara...</option></select>  </dd>
                 </div>
             </div>
+
             Codul vamal                                      <input  class="form-control" type="text" name="codVamaiInfo">
+            <span class="form-group has-float-label">
+                <input  class="form-control" type="text" name="codVamaiInfo" id="codVamaiInfo" placeholder="Codul vamal"/>
+                <label for="codVamaiInfo">Temeiul pentru autorizație de import (Contract)</label>
+            </span>
             Temeiul pentru autorizație de import (Contract)  <input  class="form-control" type="text" name="contractInfo">
             Cantitatea                                       <input  class="form-control" type="number" name="cantitateaInfo">
             Prețul                                           <input  class="form-control" type="number" name="pretulInfo" id="pretulInfo">
