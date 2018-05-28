@@ -226,7 +226,7 @@
 
 </head>
 <body onload="onloadFunction()">
-<div class="container1" style="width: 90%">
+<div class="container1" style="width: 100%">
 
 
 
@@ -246,7 +246,7 @@
     <div class="row ">
         <h2 class="display-5 text-center col-12">Autorizarea importului</h2>
 
-        <div class="btn-group btn-group-vertical col-3 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
+        <div class="btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
 
             <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
             <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
@@ -275,8 +275,8 @@
             <div class="row" style="display:flex; flex-wrap:wrap">
                 <div class="col-12" style="visibility: hidden">Compania-solicitant</div>
                 <div class="form-group col-12">
-                    <input class="form-control" type="text" id="CompaniaSolicitantInfo" required>
-                    <label class="form-control-placeholder" for="CompaniaSolicitantInfo">Compania-solicitant</label>
+                    <input class="form-control align-self-end" type="text" id="CompaniaSolicitantInfo" required>
+                    <label class="form-control-placeholder align-self-end" for="CompaniaSolicitantInfo">Compania-solicitant</label>
                 </div>
 
                 <div class="form-group col-12">
@@ -286,7 +286,11 @@
 
 
                 <div class="col-md-4 align-self-end order-md-1 order-sm-1 " >
-            Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">
+            <!--Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">-->
+                    <div class="form-group">
+                        <input class="form-control col-12" type="text" id="producatorMaterieiInfo" required>
+                        <label class="form-control-placeholder" for="producatorMaterieiInfo">Producătorul materiei prime</label>
+                    </div>
                 </div>
 
                 <div class="col-md-4 align-self-end order-md-4 order-sm-2" >
@@ -304,8 +308,12 @@
                 </div>
                 <div class="col-md-4 align-self-end order-md-2 order-sm-3"   >
 
-                    Vînzător
-                    <input  class="form-control" placeholder="" type="text" name="vinzatorInfo" style="flex:1">
+                    <!--Vînzător-->
+                    <!--<input  class="form-control" placeholder="" type="text" name="vinzatorInfo" style="flex:1">-->
+                    <div class="form-group col-12">
+                        <input class="form-control" type="text" id="vinzatorInfo" required>
+                        <label class="form-control-placeholder" for="vinzatorInfo">Vînzător</label>
+                    </div>
                 </div>
 
                 <div class="col-md-4 align-self-end order-md-5 order-sm-4" >
@@ -321,7 +329,12 @@
                 </div>
 
                 <div class="col-md-4 align-self-end order-md-3 order-sm-5" >
-            Importator                                       <input  class="form-control" type="text" name="importatorInfo">
+            <!--Importator                                       <input  class="form-control" type="text" name="importatorInfo">-->
+
+                    <div class="form-group col-12">
+                        <input class="form-control" type="text" id="importatorInfo" required>
+                        <label class="form-control-placeholder" for="importatorInfo">Importator</label>
+                    </div>
                 </div>
                 <div class="col-md-4 align-self-end order-md-6 order-sm-6" >
                     <br>
@@ -409,7 +422,7 @@
         </fieldset>
     </div>
 
-    <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-4">
+    <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-6">
         <fieldset>
             <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
 
