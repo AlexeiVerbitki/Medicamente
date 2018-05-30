@@ -263,8 +263,8 @@
             </a>
         </div>
 
-        <form id="msform"  action="/processForm"  class="col-lg-10 col-md-12" style="overflow-y: scroll; max-height:calc(100vh - 130px);">
-        <!--<form id="msform"  action="/processForm"  class="col-lg-10 col-md-12">-->
+        <!--<form id="msform"  action="/processForm"  class="col-lg-10 col-md-12" style="overflow-y: scroll; max-height:calc(100vh - 130px);">-->
+        <form id="msform"  action="/processForm"  class="col-lg-10 col-md-12">
 
     <div class="row d-flex justify-content-start">
 
@@ -599,14 +599,24 @@
 
     <div class="col 12 d-flex justify-content-center">
 
-        <input type="submit" name="submit" id="submit" class="btn btn-success col-3 " value="Submit" /> <br>
-            <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
-        </div>
+        <input type="submit" name="submit" id="submit" class="btn btn-success col-3 " value="Submit" onclick="scrollToTop()" /> <br>
+        <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
+    </div>
 
 
 </div>
 </div>
 
+<script>
+    function scrollToTop() {(function smoothscroll(){
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        if (currentScroll > 0) {
+            window.requestAnimationFrame(smoothscroll);
+            window.scrollTo (0,currentScroll - (currentScroll/10));
+        }
+    })();
+    }
+</script>
 
 
 <script>
@@ -632,10 +642,15 @@
             text.classList.add('fadeInRight');
             text.style.display = "block";
 
+
             // block de inregistrare
 
             text2.style.display = "none";
             // setTimeout(function(){ text2.style.display = "block"; }, 1000);
+
+            // scrollToTop();
+            window.scrollTo(0,0);
+
         } else {
             <!--text.classList.remove('fadeInRight');-->
             <!--text.classList.remove('animated');-->
@@ -654,7 +669,10 @@
             text2.style.display = "block";
 
             <!--text.classList.add('infinite');-->
+            // scrollToTop();
+            window.scrollTo(0,0);
         }
+
     }
 </script>
 
