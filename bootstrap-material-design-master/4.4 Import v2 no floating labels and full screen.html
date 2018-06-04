@@ -294,6 +294,9 @@
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
     }
+    .dropdown-height-custom {
+        height: calc(3.2rem + 1.5px) !important;
+    }
 
 </style>
 
@@ -459,21 +462,39 @@
 
                 <!--<div class="row col-12 align-self-center">-->
 <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-                    <h6 class="col-12 form-group">Ţara şi adresa producătorului materiei prime: </h6>
+                    <h6 class="col-12 form-group">Denumirea şi adresa producătorului materiei prime: </h6>
                     <div class="form-group col-xl-6 col-lg-6">
                         <input class="form-control col-12" type="text" id="producatorMaterieiInfo" required>
                         <label class="form-control-placeholder " for="producatorMaterieiInfo">Producătorul materiei prime</label>
                     </div>
-                <div class="col-xl-6 col-lg-6">                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo">  </div>
-                <div class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo">  </div>
-                <div class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo">  </div>
-                <div class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalProducatoruluiMaterieiInfo" id="nrProducatoruluiMaterieiInfo">  </div>
-                <div class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo">  </div>
-                <div class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo">  </div>
+                <div class="col-xl-6 col-lg-6">
+                    <input  class="form-control" type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="stradaProducatoruluiMaterieiInfo">Strada</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="blocProducatoruluiMaterieiInfo">Block</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="oficiuProducatoruluiMaterieiInfo">Oficiu</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="codPostalProducatoruluiMaterieiInfo" id="codPostalProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="codPostalProducatoruluiMaterieiInfo">Cod Postal</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="localitateProducatoruluiMaterieiInfo">Localitate</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control"  type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="raionProducatoruluiMaterieiInfo">Raion</label>
+                </div>
 
                 <div class="col-xl-4 col-lg-6">
                     <label class="form-group has-float-label">
-                        <select class="form-control" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" required>
+                        <select class="form-control" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
                                                                      <!--<option value="" disabled selected hidden></option>-->
                         </select>
                     <span>Ţara</span>
@@ -485,21 +506,46 @@
 
                 <!--<div class="col-md-4 align-self-end order-md-5 order-sm-4" >-->
             <h6 class="col-12 form-group" style="white-space: pre-line">
-                Ţara şi adresa vînzătorului:</h6>
+                Denumirea şi adresa vînzătorului:</h6>
 
                 <div class="form-group col-lg-6">
                     <input class="form-control" type="text" id="vinzatorInfo" required>
                     <label class="form-control-placeholder" for="vinzatorInfo">Vînzător</label>
                 </div>
-            <div  class="col-xl-6 col-lg-6">                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </div>
+            <!--<div  class="col-xl-6 col-lg-6">                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </div>-->
+
+                <div class="col-xl-6 col-lg-6">
+                    <input  class="form-control" type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="stradaVinzatoruluiMaterieiInfo">Strada</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="blocVinzatoruluiMaterieiInfo">Block</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="oficiuVinzatoruluiMaterieiInfo">Oficiu</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="codPostalVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="codPostalVinzatoruluiMaterieiInfo">Cod Postal</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="localitateVinzatoruluiMaterieiInfo">Localitate</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control"  type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="raionVinzatoruluiMaterieiInfo">Raion</label>
+                </div>
             <div  class="col-xl-4 col-lg-6">
                 <label class="form-group has-float-label">
-                <select class="form-control" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
+                <select class="form-control dropdown-height-custom" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
                                                                      <!--<option value="" disabled selected hidden></option>-->
                 </select>
 
@@ -514,22 +560,48 @@
 
                     <!--<h6 class="col-12 form-group">  Ţara şi adresa importatorului: </h6>-->
                     <h6 class="col-12 form-group" style="white-space: pre-line">
-                        Ţara şi adresa importatorului: </h6>
+                        Denumirea şi adresa importatorului: </h6>
 
                 <div class="form-group col-lg-6">
                     <input class="form-control" type="text" id="importatorInfo" required>
                     <label class="form-control-placeholder" for="importatorInfo">Importator</label>
                 </div>
 
-            <div  class="col-xl-6 col-lg-6">              <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo">  </div>
-            <div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo"> </div>
+            <!--<div  class="col-xl-6 col-lg-6">              <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo">  </div>-->
+            <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo"> </div>-->
+
+                <div class="col-xl-6 col-lg-6">
+                    <input  class="form-control dropdown-height-custom" type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="stradaImportatoruluiMaterieiInfo">Strada</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="blocImportatoruluiMaterieiInfo">Block</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="oficiuImportatoruluiMaterieiInfo">Oficiu</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="codPostalImportatoruluiMaterieiInfo" id="codPostalImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="codPostalImportatoruluiMaterieiInfo">Cod Postal</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="localitateImportatoruluiMaterieiInfo">Localitate</label>
+                </div>
+                <div class="col-xl-4 col-lg-6">
+                    <input  class="form-control"  type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo" required>
+                    <label class="form-control-placeholder " for="raionImportatoruluiMaterieiInfo">Raion</label>
+                </div>
+                
             <div  class="col-xl-4 col-lg-6">
-                <label class="form-group has-float-label">
-                <select class="form-control" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+                <label class="form-group has-float-label ">
+                <select class="form-control dropdown-height-custom" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
                                                              <!--<option value="" disabled selected hidden></option>-->
                 </select>
                     <span>Ţara</span>
@@ -569,8 +641,8 @@
                                                              <!--<option value="" disabled selected hidden>Valuta</option>  </select>-->
                 <!--</div>-->
                 <div class="form-group col-xl-4">
-                    <label class="form-group has-float-label">
-                    <select class="form-control" name="valutaInfo" id="valutaInfo">
+                    <label class="form-group has-float-label ">
+                    <select class="form-control dropdown-height-custom" name="valutaInfo" id="valutaInfo">
                         <!--<option value="" disabled selected hidden>Valuta</option>-->
                     </select>
                         <span>Valuta</span>
@@ -620,6 +692,7 @@
                     <input class="form-control align-self-end" type="text" id="cantitateaReturnataInfo" required>
                     <label class="form-control-placeholder align-self-end" for="cantitateaReturnataInfo">Cantitatea returnată</label>
                 </div>
+            </div>
 
         </fieldset>
     </div>
@@ -634,7 +707,7 @@
             Codul medicamentului                             <input  class="form-control" type="text" name="codMedicamentului">
             Codul vamal                                      <input  class="form-control" type="text" name="codVamal">
             Denumirea comercială a medicamentului            <input  class="form-control" type="text" name="denumireComerciala">
-            Forma medicamentoasă                             <select class="form-control" name="formaMedicamentoasa" id="formaMedicamentoasa">   </select>
+            Forma medicamentoasă                             <select class="form-control dropdown-height-custom" name="formaMedicamentoasa" id="formaMedicamentoasa">   </select>
 
 
             <div id="dozaDivInregistrat">
@@ -645,7 +718,7 @@
                         <input class="form-control" type="number" name="dozaInregistrat" id="dozaInregistrat">
                     </div>
                     <div class="form-group col-6">
-                        <select class="form-control" id="dozaDropdown"></select>
+                        <select class="form-control dropdown-height-custom" id="dozaDropdown"></select>
                     </div>
 
                 </div>
@@ -653,7 +726,7 @@
             </div>
 
                 <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
-                       onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala');">
+                       onClick="adaugaDoza('dozaDivInregistrat','denumireaInternationala','dozaInregistrat', 'dozaDropdown');">
 
 
 
@@ -663,9 +736,9 @@
             <select class="form-control" name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input  class="form-control" type="text" name="dozaBlisterInregistrat" placeholder="palete">
             Cantitatea                                       <input  class="form-control" type="number" name="cantitate">
             Prețul                                           <input  class="form-control" type="number" name="pret">
-            Valuta                                           <select class="form-control" name="valuta" id="valuta">
+            Valuta                                           <select class="form-control dropdown-height-custom" name="valuta" id="valuta">
                                                              <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                                <select class="form-control" name="taraProducatoare" id="taraProducatoare">
+            Țara producătoare                                <select class="form-control dropdown-height-custom" name="taraProducatoare" id="taraProducatoare">
                                                              <option value="" disabled selected hidden>Ţara...</option> </select>
             Firma producătoare                               <input  class="form-control" type="text" name="firmaProducatoare">
             Nr. de înregistrare în RM                        <input  class="form-control" type="text" name="nrInregistrare">
@@ -681,21 +754,40 @@
 
             Codul vamal                                  <input  class="form-control"type="text" name="codVamalNeInregistrat">
             Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaNeInregistrat">
-            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select>
+            Forma medicamentoasă                         <select class="form-control dropdown-height-custom" name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select>
+
+            <!--<div id="dozaDivNeInregistrat">-->
+                <!--Doza                                         <input  class="form-control"type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">-->
+                <!--<select class="form-control dropdown-height-custom" id="dozaDropdownNeInregistrat"></select>-->
+                <!--Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">-->
+            <!--</div>-->
+
             <div id="dozaDivNeInregistrat">
-                Doza                                         <input  class="form-control"type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
-                <select class="form-control" id="dozaDropdownNeInregistrat"></select>
-                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">
+                Denumirea comună internaționala   <input class="form-control" type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">
+                Doza
+                <div class="row">
+                    <div class="form-group col-6">
+                        <input class="form-control" type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
+                    </div>
+                    <div class="form-group col-6">
+                        <select class="form-control dropdown-height-custom" id="dozaDropdownNeInregistrat"></select>
+                    </div>
+
+                </div>
+
             </div>
-                                                            <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
-                                                                   onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat');">
+
+
+
+                                                         <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
+                                                                onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat','dozaNeInregistrat','dozaDropdownNeInregistrat');">
             Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
-            <select class="form-control" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete">
+            <select class="form-control dropdown-height-custom" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat">
             Prețul                                       <input  class="form-control"type="number" name="pretNeInregistrat">
-            Valuta                                       <select class="form-control" name="valuta" id="valutaNeInregistrat">
+            Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaNeInregistrat">
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select class="form-control" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select>
+            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select>
             Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareNeInregistrat">
             Nr. de înregistrare în RM                    <input  class="form-control"type="text" name="nrInregistrareNeInregistrat">
             Data înregistrare în RM                      <input  class="form-control"type="date" name="dataInregistrareNeInregistrat">
@@ -712,9 +804,9 @@
             Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateMateria">
             Prețul                                       <input  class="form-control"type="number" name="pretMateria">
-            Valuta                                       <select class="form-control" name="valuta" id="valutaMateria">
+            Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaMateria">
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select class="form-control" name="taraProducatoareMateria" id="taraProducatoareMateria"> </select>
+            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareMateria" id="taraProducatoareMateria"> </select>
             Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareMateria">
             Cod ATC                                      <input  class="form-control"type="text" name="codATCMateria">
 
@@ -729,9 +821,9 @@
             Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
             Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">
-            Valuta                                       <select class="form-control" name="valuta" id="valutaAmbalaj">
+            Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">
                                                          <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select class="form-control" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
+            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
             Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">
 
         </fieldset>
@@ -746,22 +838,38 @@
             Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">                             
             Codul vamal                                  <input  class="form-control"type="text" name="codVamalPrelevare">                                      
             Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaPrelevare">                            
-            Forma medicamentoasă                         <select class="form-control" name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select> 
+            Forma medicamentoasă                         <select class="form-control dropdown-height-custom" name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select>
+            <!--<div id="dozaDivPrelevare">-->
+                <!--Doza                                         <input  class="form-control"type="number" name="dozaPrelevare" id="dozaPrelevare">-->
+                <!--<select class="form-control dropdown-height-custom" id="dozaDropdownPrelevare"></select>-->
+                <!--Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> -->
+            <!--</div>-->
+
             <div id="dozaDivPrelevare">
-                Doza                                         <input  class="form-control"type="number" name="dozaPrelevare" id="dozaPrelevare">
-                <select class="form-control" id="dozaDropdownPrelevare"></select>
-                Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare"> 
+                Denumirea comună internaționala   <input class="form-control" type="text" name="denumireaInternationalaPrelevare" id="denumireaInternationalaPrelevare">
+                Doza
+                <div class="row">
+                    <div class="form-group col-6">
+                        <input class="form-control" type="number" name="dozaPrelevare" id="dozaPrelevare">
+                    </div>
+                    <div class="form-group col-6">
+                        <select class="form-control dropdown-height-custom" id="dozaDropdownPrelevare"></select>
+                    </div>
+
+                </div>
+
             </div>
                                                             <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
-                                                                   onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare');">
+                                                                   onClick="adaugaDoza('dozaDivPrelevare','denumireaInternationalaPrelevare','dozaPrelevare','dozaDropdownPrelevare');">
+
             Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizarePrelevare" placeholder="într-o paleta">
-            <select class="form-control" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete"> 
+            <select class="form-control dropdown-height-custom" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete">
             Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">  
             Prețul                                       <input  class="form-control"type="number" name="pretulPrelevare" id="pretulPrelevare">  
-            Valuta                                       <select class="form-control" name="valutaPrelevare" id="valutaPrelevare">  
+            Valuta                                       <select class="form-control dropdown-height-custom" name="valutaPrelevare" id="valutaPrelevare">
                                                           <option value="" disabled selected hidden></option>  </select>
             Suma                                         <input  class="form-control"type="number" name="sumaPrelevare">                                      
-            Țara producătoare                            <select class="form-control" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select> 
+            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select>
             Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoarePrelevare">                     
             Nr. autorizaţiei de import în RM             <input  class="form-control"type="text" name="nrAutorizatieiPrelevare">  
             Nr. şi data a declaraţiei vamale             <input  class="form-control"type="text" name="nrDeclaratieiVamaleInfo"> <input  class="form-control"type="date" name="dataDeclaratieiVamaleInfo"> 
@@ -1002,13 +1110,13 @@
     var dozaDivPrelevare=1;
     var limit = 20;
     var dozaArray = ["mg","ml","mg/ml","g","mcg","IU","%","comp.","buc."];
-    function adaugaDoza(dozaName, denumireName) {
+    function adaugaDoza(dozaDivName, denumireName, dozaName, dropdownName) {
         if (counter == limit) {
             alert("Ati ajuns la limita de  " + counter + " adaugari");
         }
         else {
 // var id='dozaDropdown+counter'+counter;
-            switch (dozaName) {
+            switch (dozaDivName) {
                 case "dozaDivInregistrat":{
                     dozaDivInregistrat++;
                     counter=dozaDivInregistrat;
@@ -1023,24 +1131,42 @@
                     break;
                 }
             }
-            var divID=dozaName+counter;
+            var divID=dozaDivName+counter;
             var newdiv = document.createElement(divID);
             newdiv.id=divID;
-            var dropdownName=dozaName+"Dropdown"+counter.toString();
+            var dropdownName=dozaDivName+"Dropdown"+counter.toString();
+            var denumireName = denumireName + counter.toString();
 
-            newdiv.innerHTML = "Doza " + (counter) + "<input class='form-control' type='number' name='"+dozaName+"' id='"+dozaName+(counter)+"'> " +
-                "<select class='form-control' id='"+dozaName+"Dropdown"+counter+"'>" +
-                "<option value='mg'>mg</option>" +
-                "<option value='ml'>ml</option>" +
-                "<option value='mg/ml'>mg/ml</option>" +
-                "<option value='g'>g</option>" +
-                "<option value='mcg'>mcg</option>" +
-                "<option value='IU'>IU</option>" +
-                "<option value='%'>mg</option>" +
-                "<option value='comp.'>comp.</option>" +
-                "<option value='buc.'>buc.</option>" +
-                "</select>" +
-                " Denumirea comună internaționala " + (counter) +  " <input class='form-control' type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
+            // newdiv.innerHTML = "Doza " + (counter) + "<input class='form-control ' type='number' name='"+dozaDivName+"' id='"+dozaDivName+(counter)+"'> " +
+            //     "<select class='form-control dropdown-height-custom' id='"+dozaDivName+"Dropdown"+counter+"'>" +
+            //     "<option value='mg'>mg</option>" +
+            //     "<option value='ml'>ml</option>" +
+            //     "<option value='mg/ml'>mg/ml</option>" +
+            //     "<option value='g'>g</option>" +
+            //     "<option value='mcg'>mcg</option>" +
+            //     "<option value='IU'>IU</option>" +
+            //     "<option value='%'>mg</option>" +
+            //     "<option value='comp.'>comp.</option>" +
+            //     "<option value='buc.'>buc.</option>" +
+            //     "</select>" +
+            //     " Denumirea comună internaționala " + (counter) +  " <input class='form-control' type='text' name='"+denumireName+"' id='"+denumireName+(counter)+"'>";
+
+            
+            
+            newdiv.innerHTML = "<div id="+dozaDivName+">\n" +
+                "                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name="+denumireName+" id="+denumireName+">\n" +
+                "                Doza "+counter.toString()+"\n" +
+                "                <div class=\"row\">\n" +
+                "                    <div class=\"form-group col-6\">\n" +
+                "                        <input class=\"form-control\" type=\"number\" name="+dozaName+" id="+dozaName+">\n" +
+                "                    </div>\n" +
+                "                    <div class=\"form-group col-6\">\n" +
+                "                        <select class=\"form-control dropdown-height-custom\" id="+dropdownName+"></select>\n" +
+                "                    </div>\n" +
+                "\n" +
+                "                </div>\n" +
+                "\n" +
+                "            </div>";
 
 
 
@@ -1054,7 +1180,7 @@
             deleteButton.appendChild(deleteButton1);
             deleteButton.onclick = function deleteButton() {
 
-                switch (dozaName) {
+                switch (dozaDivName) {
                     case "dozaDivInregistrat":{
                         dozaDivInregistrat--;
                         counter=dozaDivInregistrat;
@@ -1082,7 +1208,7 @@
             var brModule = document.createElement("br");
         }
 
-        document.getElementById(dozaName).appendChild(newdiv);
+        document.getElementById(dozaDivName).appendChild(newdiv);
         document.getElementById(divID).appendChild(deleteButton);
         document.getElementById(divID).appendChild(brModule);
         counter++;
