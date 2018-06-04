@@ -1136,6 +1136,7 @@
             newdiv.id=divID;
             var dropdownName=dozaDivName+"Dropdown"+counter.toString();
             var denumireName = denumireName + counter.toString();
+            var dozaName = dozaName + counter.toString();
 
             // newdiv.innerHTML = "Doza " + (counter) + "<input class='form-control ' type='number' name='"+dozaDivName+"' id='"+dozaDivName+(counter)+"'> " +
             //     "<select class='form-control dropdown-height-custom' id='"+dozaDivName+"Dropdown"+counter+"'>" +
@@ -1154,8 +1155,8 @@
             
             
             newdiv.innerHTML = "<div id="+dozaDivName+">\n" +
-                "                Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name="+denumireName+" id="+denumireName+">\n" +
-                "                Doza "+counter.toString()+"\n" +
+                "                + Denumirea comună internaționala   <input class=\"form-control\" type=\"text\" name="+denumireName+" id="+denumireName+">\n" +
+                "                + Doza\n" +
                 "                <div class=\"row\">\n" +
                 "                    <div class=\"form-group col-6\">\n" +
                 "                        <input class=\"form-control\" type=\"number\" name="+dozaName+" id="+dozaName+">\n" +
@@ -1167,12 +1168,13 @@
                 "                </div>\n" +
                 "\n" +
                 "            </div>";
+            // populateDropdown(dropdownName);
 
 
 
 
             var deleteButton = document.createElement('button');
-            deleteButton.id = "deleteButton";
+            deleteButton.id = "deleteButton"+counter.toString();;
             deleteButton.type="button";
             var deleteButton1 = document.createTextNode("Sterge");
             deleteButton.classList.add("form-control");
@@ -1182,15 +1184,15 @@
 
                 switch (dozaDivName) {
                     case "dozaDivInregistrat":{
-                        dozaDivInregistrat--;
+                        // dozaDivInregistrat--;
                         counter=dozaDivInregistrat;
                         break;}
                     case "dozaDivNeInregistrat": {
-                        dozaDivNeInregistrat--;
+                        // dozaDivNeInregistrat--;
                         counter=dozaDivNeInregistrat;
                         break;}
                     case "dozaDivPrelevare":{
-                        dozaDivPrelevare--;
+                        // dozaDivPrelevare--;
                         counter=dozaDivPrelevare;
                         break;
                     }
@@ -1243,6 +1245,25 @@
 
 
 
+</script>
+<script>
+    // var formaMedicamentoasaArray = [" conc./sol. perf.", " drajeuri", "comp. film.", "sol. inj.", "comprimate", "sirop", "comp. film. gastrorez.", "sol. cutan.", "     comp. eferv.", "     pulb./sol. orală", " spray cutan., sol.", "     ung.", "     sol. perf.", "     sol. uleioasă", " caps.", "     cremă", " comp. masticab.", "     pulb. cutan.", "     pulb./sol. cutan", " liof./sol. perf.", " pic. orale homeopate", " pulb.+solv./sol. inj./perf.", "     gel", " sol. inj. în cartuş", " sup.", "     pic. naz., sol.", "     caps. elib. prel.", "     emuls. cutan.", "     pic. orale, sol.", "     caps. moi", " comp. homeopate", " pastile", " comp. gastrorez.", "     sol. orală", " pulb./susp. orală", " pulb.+solv./sol. inj.", " pulb./sol. inj.", " sol. alc. cutan.", "     pic. oft., sol.", "     sol.", "     spray naz., sol.", "     gran./susp. orală", " susp. orală", " liof./sol. inj.", " comp. de supt", " comp./disper. orală", " pulb./sol. inj./perf.", "     pic. auric., sol.", "     spray bucofaring.", "     sol./gargarisme"];
+    // formaMedicamentoasa = document.getElementById('formaMedicamentoasa');
+    // formaMedicamentoasaNeInregistrat = document.getElementById('formaMedicamentoasaNeInregistrat');
+    // formaMedicamentoasaPrelevare = document.getElementById('formaMedicamentoasaPrelevare');
+    // for (element in formaMedicamentoasaArray) {
+    //     formaMedicamentoasa.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+    //     formaMedicamentoasaNeInregistrat.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+    //     formaMedicamentoasaPrelevare.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+    // }
+
+    function populateDropdown (dropdownName) {
+        var formaMedicamentoasaArray = [" conc./sol. perf.", " drajeuri", "comp. film.", "sol. inj.", "comprimate", "sirop", "comp. film. gastrorez.", "sol. cutan.", "     comp. eferv.", "     pulb./sol. orală", " spray cutan., sol.", "     ung.", "     sol. perf.", "     sol. uleioasă", " caps.", "     cremă", " comp. masticab.", "     pulb. cutan.", "     pulb./sol. cutan", " liof./sol. perf.", " pic. orale homeopate", " pulb.+solv./sol. inj./perf.", "     gel", " sol. inj. în cartuş", " sup.", "     pic. naz., sol.", "     caps. elib. prel.", "     emuls. cutan.", "     pic. orale, sol.", "     caps. moi", " comp. homeopate", " pastile", " comp. gastrorez.", "     sol. orală", " pulb./susp. orală", " pulb.+solv./sol. inj.", " pulb./sol. inj.", " sol. alc. cutan.", "     pic. oft., sol.", "     sol.", "     spray naz., sol.", "     gran./susp. orală", " susp. orală", " liof./sol. inj.", " comp. de supt", " comp./disper. orală", " pulb./sol. inj./perf.", "     pic. auric., sol.", "     spray bucofaring.", "     sol./gargarisme"];
+        formaMedicamentoasa = document.getElementById(dropdownName);
+        for (element in formaMedicamentoasaArray) {
+            formaMedicamentoasa.add(new Option(formaMedicamentoasaArray[element], formaMedicamentoasaArray[element]));
+        }
+    }
 </script>
 
 <!--<script>-->
