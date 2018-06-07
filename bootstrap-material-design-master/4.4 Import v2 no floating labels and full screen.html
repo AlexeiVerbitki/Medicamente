@@ -256,7 +256,7 @@
         opacity: 0;
     }
     .has-float-label .form-control:placeholder-shown:not(:focus) + * {
-        font-size: 150%;
+        font-size: 100%;
         opacity: .5;
         top: .3em;
     }
@@ -695,10 +695,12 @@
                     <input class="form-control align-self-end" type="text" id="cantitateaReturnataInfo" required>
                     <label class="form-control-placeholder align-self-end" for="cantitateaReturnataInfo">Cantitatea returnată</label>
                 </div>
-                <label class="has-float-label">
+                <div class="text-center">
+                <label class="has-float-label" >
                     <input class="form-control" type="number" placeholder=" "/>
-                    <span>number</span>
+                    <span style="display:inline-block;">number</span>
                 </label>
+            </div>
             </div>
 
         </fieldset>
