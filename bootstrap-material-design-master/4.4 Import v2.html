@@ -698,6 +698,8 @@
             text.classList.add('animated');
             text.classList.add('fadeInRight');
             text.style.display = "block";
+            window.scrollTo(0,0);
+
 
 
         } else {
@@ -716,9 +718,20 @@
         var checkBox = document.getElementById("checkMateriaPrima");
         var text = document.getElementById("materiaPrima");
         if (text.style.display=="none"){
+            text.classList.remove('fadeOutRight');
+            text.classList.remove('animated');
+            text.classList.add('animated');
+            text.classList.add('fadeInRight');
             text.style.display = "block";
+            text.scrollIntoView();
+            // window.scrollTo(0,0);
+
         } else {
-            text.style.display = "none";
+            // text.style.display = "none";
+            text.classList.add('animated');
+            text.classList.add('fadeOutRight');
+            setTimeout(function(){
+                text.style.display = "none";  }, 1000);
         }
     }
 </script>
