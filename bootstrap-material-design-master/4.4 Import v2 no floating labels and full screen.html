@@ -363,8 +363,11 @@
     <div class="row ">
         <h2 class="display-5 text-center col-12 ">Autorizarea importului</h2>
 
-        <div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">
-            <a class="d-none d-lg-block col-12">
+
+        <!--<div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">-->
+        <div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" >
+            <!--<a class="d-none d-lg-block col-12">-->
+            <a >
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showMateria()" >Materia primă</button>
@@ -455,17 +458,17 @@
 
 
 
-            <div class="row" style="display:flex; flex-wrap:wrap">
+            <div class="row " style="display:flex; flex-wrap:wrap">
 
-            <div class="col-6">Nr. de înregistrare a cererii                    <input class="form-control" type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly></div>
-            <div class="col-6">Data depunerii cererii                           <input class="form-control" type="text" name="dataDepunerii" id="dataDepunerii" readonly></div>
+            <div class="col-6 align-self-end">Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly></div>
+            <div class="col-6 align-self-end">Data depunerii cererii                           <input class="form-control " type="text" name="dataDepunerii" id="dataDepunerii" readonly></div>
 
-                <div class="form-group col-6">
+                <div class="form-group col-sm-6">
                     <input class="form-control align-self-end" type="text" id="CompaniaSolicitantInfo" required>
                     <label class="form-control-placeholder align-self-end" for="CompaniaSolicitantInfo">Compania-solicitant</label>
                 </div>
 
-                <div class="form-group col-6">
+                <div class="form-group col-sm-6">
                     <input class="form-control" type="text" id="denumireMaterieiInfo" required>
                     <label class="form-control-placeholder" for="denumireMaterieiInfo">Denumirea materiei prime </label>
                 </div>
@@ -922,7 +925,7 @@
 
     <div class="col 12 d-flex justify-content-center">
 
-        <input type="submit" name="submit" id="submit" class="btn btn-success col-3 " value="Submit" /> <br>
+        <input type="submit" name="submit" id="submit" class="btn btn-success col-sm-3 " value="Submit" /> <br>
             <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
         </div>
 
@@ -950,6 +953,12 @@
         var checkBox = document.getElementById("buttonMedicamentulInregistrat");
         var text = document.getElementById("medicamentulInregistrat");
         var text2 = document.getElementById("inregistrare");
+        var inregistrare = document.getElementById("inregistrare");
+        var medicamentulInregistrat = document.getElementById("medicamentulInregistrat");
+        var medicamentulNeInregistrat = document.getElementById("medicamentulNeInregistrat");
+        var prelevareAProbei = document.getElementById("prelevareAProbei");
+        var ambalaj = document.getElementById("ambalaj");
+        var materiaPrima = document.getElementById("materiaPrima");
         if (text.style.display == "none"){
             text.classList.remove('fadeOutRight');
             text.classList.remove('animated');
@@ -960,6 +969,13 @@
             // block de inregistrare
 
             text2.style.display = "none";
+            // inregistrare.style.display = "none";
+            // medicamentulInregistrat.style.display = "none";
+            medicamentulNeInregistrat.style.display = "none";
+            prelevareAProbei.style.display = "none";
+            ambalaj.style.display = "none";
+            materiaPrima.style.display = "none";
+
             // setTimeout(function(){ text2.style.display = "block"; }, 1000);
             // window.scrollTo(0,0);
         } else {
@@ -1000,12 +1016,28 @@
     function medicamentulNeInregistratShow() {
         var checkBox = document.getElementById("buttonMedicamentulNeInregistrat");
         var text = document.getElementById("medicamentulNeInregistrat");
+
+        //vars to make the other blocks disappears
+        var inregistrare = document.getElementById("inregistrare");
+        var medicamentulInregistrat = document.getElementById("medicamentulInregistrat");
+        var medicamentulNeInregistrat = document.getElementById("medicamentulNeInregistrat");
+        var prelevareAProbei = document.getElementById("prelevareAProbei");
+        var ambalaj = document.getElementById("ambalaj");
+        var materiaPrima = document.getElementById("materiaPrima");
         if (text.style.display=="none"){
             text.classList.remove('fadeOutRight');
             text.classList.remove('animated');
             text.classList.add('animated');
             text.classList.add('fadeInRight');
             text.style.display = "block";
+
+            // make the other blocks disappear
+            // inregistrare.style.display = "none";
+            medicamentulInregistrat.style.display = "none";
+            // medicamentulNeInregistrat.style.display = "none";
+            prelevareAProbei.style.display = "none";
+            ambalaj.style.display = "none";
+            materiaPrima.style.display = "none";
             window.scrollTo(0,0);
 
 
@@ -1024,32 +1056,81 @@
     function showMateria() {
         var checkBox = document.getElementById("checkMateriaPrima");
         var text = document.getElementById("materiaPrima");
+        var inregistrare = document.getElementById("inregistrare");
+        var medicamentulInregistrat = document.getElementById("medicamentulInregistrat");
+        var medicamentulNeInregistrat = document.getElementById("medicamentulNeInregistrat");
+        var prelevareAProbei = document.getElementById("prelevareAProbei");
+        var ambalaj = document.getElementById("ambalaj");
+        var materiaPrima = document.getElementById("materiaPrima");
         if (text.style.display=="none"){
             text.classList.remove('fadeOutRight');
             text.classList.remove('animated');
             text.classList.add('animated');
             text.classList.add('fadeInRight');
             text.style.display = "block";
-            text.scrollIntoView();
+
+            // hide the other blocks
+            inregistrare.style.display = "none";
+            medicamentulInregistrat.style.display = "none";
+            medicamentulNeInregistrat.style.display = "none";
+            prelevareAProbei.style.display = "none";
+            ambalaj.style.display = "none";
+            // materiaPrima.style.display = "none";
+
+            window.scrollTo(0,0);
         } else {
-            // text.style.display = "none";
             text.classList.add('animated');
             text.classList.add('fadeOutRight');
-            // text.style.display = "none";
 
-            setTimeout(function(){
-                text.style.display = "none";  }, 1000);
+
+            text.style.display = "none";
+            inregistrare.classList.add('animated');
+            inregistrare.classList.add('fadeInUp');
+            inregistrare.style.display = "block";
+
+            window.scrollTo(0, 0);
         }
     }
 </script>
 <script id="showAmbalaj">
     function showAmbalaj() {
         var checkBox = document.getElementById("checkAmbalaj");
+        var inregistrare = document.getElementById("inregistrare");
+        var medicamentulInregistrat = document.getElementById("medicamentulInregistrat");
+        var medicamentulNeInregistrat = document.getElementById("medicamentulNeInregistrat");
+        var prelevareAProbei = document.getElementById("prelevareAProbei");
+        var ambalaj = document.getElementById("ambalaj");
+        var materiaPrima = document.getElementById("materiaPrima");
         var text = document.getElementById("ambalaj");
         if (text.style.display=="none"){
+            text.classList.remove('fadeOutRight');
+            text.classList.remove('animated');
+            text.classList.add('animated');
+            text.classList.add('fadeInRight');
             text.style.display = "block";
+
+            // hide the other blocks
+            inregistrare.style.display = "none";
+            medicamentulInregistrat.style.display = "none";
+            medicamentulNeInregistrat.style.display = "none";
+            prelevareAProbei.style.display = "none";
+            // ambalaj.style.display = "none";
+            materiaPrima.style.display = "none";
+
+            window.scrollTo(0,0);
         } else {
+            text.classList.add('animated');
+            text.classList.add('fadeOutRight');
+
+
             text.style.display = "none";
+            inregistrare.classList.add('animated');
+            inregistrare.classList.add('fadeInUp');
+            inregistrare.style.display = "block";
+
+            window.scrollTo(0, 0);
+
+
         }
     }
 </script>
@@ -1058,10 +1139,40 @@
     function showPrelevareAProbei() {
         var checkBox = document.getElementById("checkPrelevareAProbei");
         var text = document.getElementById("prelevareAProbei");
-        if (text.style.display=="none"){
+        var inregistrare = document.getElementById("inregistrare");
+        var medicamentulInregistrat = document.getElementById("medicamentulInregistrat");
+        var medicamentulNeInregistrat = document.getElementById("medicamentulNeInregistrat");
+        var prelevareAProbei = document.getElementById("prelevareAProbei");
+        var ambalaj = document.getElementById("ambalaj");
+        var materiaPrima = document.getElementById("materiaPrima");
+        if (text.style.display == "none") {
+            text.classList.remove('fadeOutRight');
+            text.classList.remove('animated');
+            text.classList.add('animated');
+            text.classList.add('fadeInRight');
             text.style.display = "block";
+
+            // hide the other blocks
+            inregistrare.style.display = "none";
+            // inregistrare.style.display = "none";
+            medicamentulInregistrat.style.display = "none";
+            medicamentulNeInregistrat.style.display = "none";
+            // prelevareAProbei.style.display = "none";
+            ambalaj.style.display = "none";
+            materiaPrima.style.display = "none";
+
+            window.scrollTo(0,0);
         } else {
+            text.classList.add('animated');
+            text.classList.add('fadeOutRight');
+
+
             text.style.display = "none";
+            inregistrare.classList.add('animated');
+            inregistrare.classList.add('fadeInUp');
+            inregistrare.style.display = "block";
+
+            window.scrollTo(0, 0);
         }
     }
 </script>
@@ -1076,6 +1187,7 @@
     taraProducatoareMateria = document.getElementById('taraProducatoareMateria');
     taraProducatoarePrelevare = document.getElementById('taraProducatoarePrelevare');
     taraImportatoruluiInfo = document.getElementById('taraImportatoruluiInfo');
+
     for (country in countries) {
         taraProducatoare.add(new Option(countries[country],countries[country]));
         taraProducatoruluiMaterieiInfo.add(new Option(countries[country],countries[country]));
@@ -1096,6 +1208,7 @@
     valutaNeInregistrat = document.getElementById('valutaNeInregistrat');
     valutaInfo = document.getElementById('valutaInfo');
     valutaPrelevare = document.getElementById('valutaPrelevare');
+
     for (currency in currencies) {
         valuta.add(new Option(currencies[currency],currencies[currency]));
         valutaAmbalaj.add(new Option(currencies[currency],currencies[currency]));
