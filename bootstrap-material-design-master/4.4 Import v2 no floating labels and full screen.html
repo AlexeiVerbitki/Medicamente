@@ -353,23 +353,23 @@
     <!--<strong>Se va inregistra:</strong> <br>-->
     <!--&lt;!&ndash;Medicament inregistrat: <input type="checkbox" id="checkMedicamentulInregistrat"  onclick="myFunction()"> <br>&ndash;&gt;-->
     <!--&lt;!&ndash;Medicamentul neinregistrat: <input type="checkbox" id="checkMedicamentulNeInregistrat"  onclick="myFunction2()"> <br>&ndash;&gt;-->
-    <!--<button type="button" name="MedicamentulNeInregistrat" id="buttonMedicamentulNeInregistrat" class="btn btn-success" onclick="medicamentulNeInregistratShow()">  Medicamentul neinregistrat</button> <br>-->
+    <!--<button type="button" name="MedicamentulNeInregistrat" id="buttonMedicamentulNeInregistrat" class="btn btn-success" onclick="ShowMedicamentulNeInregistrat()">  Medicamentul neinregistrat</button> <br>-->
     <!--Materia primă <input type="checkbox" id="checkMateriaPrima"  onclick="showMateria()"> <br>-->
     <!--Ambalajul pentru producerea medicamentelor <input type="checkbox" id="checkAmbalaj"  onclick="showAmbalaj()"> <br>-->
     <!--Prelevarea a probei medii și controlului de stat <input type="checkbox" id="checkPrelevareAProbei"  onclick="showPrelevareAProbei()"> <br>-->
 
 
 
-    <div class="row ">
+    <div class="row  ">
         <h2 class="display-5 text-center col-12 ">Autorizarea importului</h2>
 
 
         <!--<div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">-->
         <div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" >
-            <!--<a class="d-none d-lg-block col-12">-->
-            <a >
+            <a class="d-none d-lg-block col-12">
+            <!--<a >-->
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
-                <button type="button" class="btn btn-primary d-flex text-left" onclick="medicamentulNeInregistratShow()">Medicamentul neinregistrat</button>
+                <button type="button" class="btn btn-primary d-flex text-left" onclick="ShowMedicamentulNeInregistrat()">Medicamentul neinregistrat</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showMateria()" >Materia primă</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showAmbalaj()" >Ambalajul pentru producerea medicamentelor</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showPrelevareAProbei()" >Prelevarea a probei</button>
@@ -382,7 +382,7 @@
                 <!--<input type="radio" class="btn btn-primary d-flex text-left" autocomplete="off" onchange="showInregistrat()">Medicament inregistrat</input>-->
             <!--</label>-->
             <!--<label class="btn btn-secondary">-->
-                <!--<input type="radio" class="btn btn-primary d-flex text-left" autocomplete="off" onchange="medicamentulNeInregistratShow()">Medicamentul neinregistrat</input>-->
+                <!--<input type="radio" class="btn btn-primary d-flex text-left" autocomplete="off" onchange="ShowMedicamentulNeInregistrat()">Medicamentul neinregistrat</input>-->
             <!--</label>-->
             <!--<label class="btn btn-secondary">-->
                 <!--<input type="radio" class="btn btn-primary d-flex text-left" autocomplete="off" onchange="showMateria()">Materia primă</input>-->
@@ -397,7 +397,8 @@
 
         <form id="msform"  action="/processForm"  class="col-lg-10 col-md-12" >
 
-    <div class="row d-flex justify-content-start">
+    <!--<div class="row d-flex justify-content-start d-none d-lg-block">-->
+    <div class="row justify-content-start d-none d-md-block d-md-flex">
 
 
 
@@ -408,54 +409,6 @@
 
         <fieldset>
             <h4 class="text-center" class="text-center"><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
-
-
-            <!--<div id="accordion">-->
-                <!--<div class="card">-->
-                    <!--<div class="card-header" id="headingOne">-->
-                        <!--<h5 class="mb-0">-->
-                            <!--<button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
-                                <!--Collapsible Group Item #1-->
-                            <!--</button>-->
-                        <!--</h5>-->
-                    <!--</div>-->
-
-                    <!--<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">-->
-                        <!--<div class="card-body">-->
-                            <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="card">-->
-                    <!--<div class="card-header" id="headingTwo">-->
-                        <!--<h5 class="mb-0">-->
-                            <!--<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
-                                <!--Collapsible Group Item #2-->
-                            <!--</button>-->
-                        <!--</h5>-->
-                    <!--</div>-->
-                    <!--<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">-->
-                        <!--<div class="card-body">-->
-                            <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="card">-->
-                    <!--<div class="card-header" id="headingThree">-->
-                        <!--<h5 class="mb-0">-->
-                            <!--<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
-                                <!--Collapsible Group Item #3-->
-                            <!--</button>-->
-                        <!--</h5>-->
-                    <!--</div>-->
-                    <!--<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">-->
-                        <!--<div class="card-body">-->
-                            <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
 
 
             <div class="row " style="display:flex; flex-wrap:wrap">
@@ -624,7 +577,7 @@
                     <input  class="form-control"  type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo" required>
                     <label class="form-control-placeholder " for="raionImportatoruluiMaterieiInfo">Raion</label>
                 </div>
-                
+
             <div  class="col-xl-4 col-lg-6">
                 <label class="form-group has-float-label ">
                 <select class="form-control dropdown-height-custom" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
@@ -865,14 +818,14 @@
     </div>
 
     <div id="prelevareAProbei" style="; display: none" class="col-md-6 col-lg-4">
-        
+
         <fieldset>
             <h4 class="text-center"><strong>ACTUL DE PRELEVARE A PROBEI MEDII ŞI CONTROLULUI DE STAT</strong></h4>
 
 
-            Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">                             
-            Codul vamal                                  <input  class="form-control"type="text" name="codVamalPrelevare">                                      
-            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaPrelevare">                            
+            Codul medicamentului                         <input  class="form-control"type="text" name="codMedicamentuluiPrelevare">
+            Codul vamal                                  <input  class="form-control"type="text" name="codVamalPrelevare">
+            Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaPrelevare">
             Forma medicamentoasă                         <select class="form-control dropdown-height-custom" name="formaMedicamentoasaPrelevare" id="formaMedicamentoasaPrelevare">   </select>
             <!--<div id="dozaDivPrelevare">-->
                 <!--Doza                                         <input  class="form-control"type="number" name="dozaPrelevare" id="dozaPrelevare">-->
@@ -899,18 +852,18 @@
 
             Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizarePrelevare" placeholder="într-o paleta">
             <select class="form-control dropdown-height-custom" name="dozaDivizarePrelevare"  id="dozaDivizarePrelevare"> </select> N <input  class="form-control"type="text" name="dozaBlisterPrelevare" placeholder="palete">
-            Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">  
-            Prețul                                       <input  class="form-control"type="number" name="pretulPrelevare" id="pretulPrelevare">  
+            Cantitatea                                   <input  class="form-control"type="number" name="cantitateaPrelevare">
+            Prețul                                       <input  class="form-control"type="number" name="pretulPrelevare" id="pretulPrelevare">
             Valuta                                       <select class="form-control dropdown-height-custom" name="valutaPrelevare" id="valutaPrelevare">
                                                           <option value="" disabled selected hidden></option>  </select>
-            Suma                                         <input  class="form-control"type="number" name="sumaPrelevare">                                      
+            Suma                                         <input  class="form-control"type="number" name="sumaPrelevare">
             Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare"> </select>
-            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoarePrelevare">                     
-            Nr. autorizaţiei de import în RM             <input  class="form-control"type="text" name="nrAutorizatieiPrelevare">  
-            Nr. şi data a declaraţiei vamale             <input  class="form-control"type="text" name="nrDeclaratieiVamaleInfo"> <input  class="form-control"type="date" name="dataDeclaratieiVamaleInfo"> 
-            Termen de valabilitate                       <input  class="form-control"type="date" name="termenDeValabilitatePrelevare">  
-            Cantitatea prelevată                         <input  class="form-control"type="number" name="cantitateaPrelevataPrelevare">  
-            Cantitatea returnată                         <input  class="form-control"type="number" name="cantitateaReturnataPrelevare">  
+            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoarePrelevare">
+            Nr. autorizaţiei de import în RM             <input  class="form-control"type="text" name="nrAutorizatieiPrelevare">
+            Nr. şi data a declaraţiei vamale             <input  class="form-control"type="text" name="nrDeclaratieiVamaleInfo"> <input  class="form-control"type="date" name="dataDeclaratieiVamaleInfo">
+            Termen de valabilitate                       <input  class="form-control"type="date" name="termenDeValabilitatePrelevare">
+            Cantitatea prelevată                         <input  class="form-control"type="number" name="cantitateaPrelevataPrelevare">
+            Cantitatea returnată                         <input  class="form-control"type="number" name="cantitateaReturnataPrelevare">
 
 
         </fieldset>
@@ -920,6 +873,390 @@
 
 
     <!--<input type="submit" value="Submit">-->
+
+            <!--================================================================================================================================================================================================-->
+            <!--================================================================================================================================================================================================-->
+            <!--Accordion presentation-->
+
+            <!--<div id="accordion " class="d-none d-xs-block d-lg-none">-->
+            <div id="accordion " class="d-block d-lg-none">
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <!--<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+                            <a class="font-weight-bold"          data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree" onclick="scrollToTop()">
+                                Collapsible Group Item #3
+                            </a>
+                            <!--</button>-->
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="row " style="display:flex; flex-wrap:wrap">
+
+                                <div class="col-6 align-self-end">Nr. de înregistrare a cererii                    <input class="form-control " type="text" name="nrDeInregistrare" id="nrDeInregistrare" readonly></div>
+                                <div class="col-6 align-self-end">Data depunerii cererii                           <input class="form-control " type="text" name="dataDepunerii" id="dataDepunerii" readonly></div>
+
+                                <div class="form-group col-sm-6">
+                                    <input class="form-control align-self-end" type="text" id="CompaniaSolicitantInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="CompaniaSolicitantInfo">Compania-solicitant</label>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <input class="form-control" type="text" id="denumireMaterieiInfo" required>
+                                    <label class="form-control-placeholder" for="denumireMaterieiInfo">Denumirea materiei prime </label>
+                                </div>
+
+
+                                <!--<div class="col-md-4 align-self-end order-md-1 order-sm-1 " >-->
+                                <!--&lt;!&ndash;Producătorul materiei prime                      <input class="form-control " type="text" name="producatorMaterieiInfo">&ndash;&gt;-->
+                                <!--<div class="form-group">-->
+                                <!--<input class="form-control col-12" type="text" id="producatorMaterieiInfo" required>-->
+                                <!--<label class="form-control-placeholder " for="producatorMaterieiInfo">Producătorul materiei prime</label>-->
+                                <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<div class="col-md-4 align-self-end order-md-4 order-sm-2" >-->
+
+                                <!--<div class="row col-12 align-self-center">-->
+
+                                <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                                <h6 class="col-12 form-group">Denumirea şi adresa producătorului materiei prime: </h6>
+                                <div class="form-group col-xl-6 col-lg-6">
+                                    <input class="form-control col-12" type="text" id="producatorMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="producatorMaterieiInfo">Producătorul materiei prime</label>
+                                </div>
+                                <div class="col-xl-6 col-lg-6">
+                                    <input  class="form-control" type="text" name="stradaProducatoruluiMaterieiInfo" id="stradaProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="stradaProducatoruluiMaterieiInfo">Strada</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="blocProducatoruluiMaterieiInfo" id="blocProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="blocProducatoruluiMaterieiInfo">Block</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="oficiuProducatoruluiMaterieiInfo" id="oficiuProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="oficiuProducatoruluiMaterieiInfo">Oficiu</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="codPostalProducatoruluiMaterieiInfo" id="codPostalProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="codPostalProducatoruluiMaterieiInfo">Cod Postal</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="localitateProducatoruluiMaterieiInfo" id="localitateProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="localitateProducatoruluiMaterieiInfo">Localitate</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control"  type="text" name="raionProducatoruluiMaterieiInfo" id="raionProducatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="raionProducatoruluiMaterieiInfo">Raion</label>
+                                </div>
+
+                                <div class="col-xl-4 col-lg-6">
+                                    <label class="form-group has-float-label">
+                                        <select class="form-control dropdown-height-custom" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
+                                            <!--<option value="" disabled selected hidden></option>-->
+                                        </select>
+                                        <span>Ţara</span>
+                                    </label>
+                                </div>
+
+                                <!--</div>-->
+                                <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                                <!--<div class="col-md-4 align-self-end order-md-5 order-sm-4" >-->
+                                <h6 class="col-12 form-group" style="white-space: pre-line">
+                                    Denumirea şi adresa vînzătorului:</h6>
+
+                                <div class="form-group col-lg-6">
+                                    <input class="form-control" type="text" id="vinzatorInfo" required>
+                                    <label class="form-control-placeholder" for="vinzatorInfo">Vînzător</label>
+                                </div>
+                                <!--<div  class="col-xl-6 col-lg-6">                                             <input  class="form-control" placeholder="Strada    " type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Bloc      " type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Oficiu    " type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Cod Postal" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="nrVinzatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Localitate" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">                                             <input  class="form-control" placeholder="Raion     " type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo">  </div>-->
+
+                                <div class="col-xl-6 col-lg-6">
+                                    <input  class="form-control" type="text" name="stradaVinzatoruluiMaterieiInfo" id="stradaVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="stradaVinzatoruluiMaterieiInfo">Strada</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="blocVinzatoruluiMaterieiInfo" id="blocVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="blocVinzatoruluiMaterieiInfo">Block</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="oficiuVinzatoruluiMaterieiInfo" id="oficiuVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="oficiuVinzatoruluiMaterieiInfo">Oficiu</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="codPostalVinzatoruluiMaterieiInfo" id="codPostalVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="codPostalVinzatoruluiMaterieiInfo">Cod Postal</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="localitateVinzatoruluiMaterieiInfo" id="localitateVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="localitateVinzatoruluiMaterieiInfo">Localitate</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control"  type="text" name="raionVinzatoruluiMaterieiInfo" id="raionVinzatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="raionVinzatoruluiMaterieiInfo">Raion</label>
+                                </div>
+                                <div  class="col-xl-4 col-lg-6">
+                                    <label class="form-group has-float-label">
+                                        <select class="form-control dropdown-height-custom" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
+                                            <!--<option value="" disabled selected hidden></option>-->
+                                        </select>
+
+                                        <span>Ţara</span>
+                                    </label>
+                                </div>
+                                <!--</div>-->
+
+
+                                <!--<div class="col-md-4 align-self-end order-md-6 order-sm-6" >-->
+                                <br>
+
+                                <!--<h6 class="col-12 form-group">  Ţara şi adresa importatorului: </h6>-->
+                                <h6 class="col-12 form-group" style="white-space: pre-line">
+                                    Denumirea şi adresa importatorului: </h6>
+
+                                <div class="form-group col-lg-6">
+                                    <input class="form-control" type="text" id="importatorInfo" required>
+                                    <label class="form-control-placeholder" for="importatorInfo">Importator</label>
+                                </div>
+
+                                <!--<div  class="col-xl-6 col-lg-6">              <input  class="form-control" placeholder = "Strada    " type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Bloc      " type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Oficiu    " type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Cod Postal" type="text" name="codPostalImportatoruluiMaterieiInfo" id="nrImportatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Localitate" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo">  </div>-->
+                                <!--<div  class="col-xl-4 col-lg-6">              <input  class="form-control" placeholder = "Raion     " type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo"> </div>-->
+
+                                <div class="col-xl-6 col-lg-6">
+                                    <input  class="form-control dropdown-height-custom" type="text" name="stradaImportatoruluiMaterieiInfo" id="stradaImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="stradaImportatoruluiMaterieiInfo">Strada</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="blocImportatoruluiMaterieiInfo" id="blocImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="blocImportatoruluiMaterieiInfo">Block</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="oficiuImportatoruluiMaterieiInfo" id="oficiuImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="oficiuImportatoruluiMaterieiInfo">Oficiu</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="codPostalImportatoruluiMaterieiInfo" id="codPostalImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="codPostalImportatoruluiMaterieiInfo">Cod Postal</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control" type="text" name="localitateImportatoruluiMaterieiInfo" id="localitateImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="localitateImportatoruluiMaterieiInfo">Localitate</label>
+                                </div>
+                                <div class="col-xl-4 col-lg-6">
+                                    <input  class="form-control"  type="text" name="raionImportatoruluiMaterieiInfo" id="raionImportatoruluiMaterieiInfo" required>
+                                    <label class="form-control-placeholder " for="raionImportatoruluiMaterieiInfo">Raion</label>
+                                </div>
+
+                                <div  class="col-xl-4 col-lg-6">
+                                    <label class="form-group has-float-label ">
+                                        <select class="form-control dropdown-height-custom" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+                                            <!--<option value="" disabled selected hidden></option>-->
+                                        </select>
+                                        <span>Ţara</span>
+                                    </label>
+                                </div>
+
+                                <!--</div>-->
+
+                                <!--<h6 class="col-12 form-group" style="white-space: pre-line">-->
+                                <!--Codul vamal </h6>                        <input  class="form-control" type="text" name="codVamaiInfo">-->
+
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="codVamaiInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="codVamaiInfo">Codul vamal</label>
+                                </div>
+
+                                <!--Temeiul pentru autorizație de import (Contract)  <input  class="form-control" type="text" name="contractInfo">-->
+                                <div class="form-group col-xl-8">
+                                    <input class="form-control align-self-end" type="text" id="contractInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="contractInfo">Temeiul pentru autorizație de import (Contract)</label>
+                                </div>
+
+
+                                <!--Cantitatea                                       <input  class="form-control" type="number" name="cantitateaInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="cantitateaInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="cantitateaInfo">Cantitatea</label>
+                                </div>
+                                <!--Prețul                                           <input  class="form-control" type="number" name="pretulInfo" id="pretulInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="pretulInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="pretulInfo">Prețul</label>
+                                </div>
+                                <!--<div class="form-group col-xl-4">-->
+                                <!--<label class="form-control-placeholder align-self-end" for="conditiiInfo">Tara</label>-->
+                                <!--<select class="form-control" name="valutaInfo" id="valutaInfo">-->
+                                <!--<option value="" disabled selected hidden>Valuta</option>  </select>-->
+                                <!--</div>-->
+                                <div class="form-group col-xl-4">
+                                    <label class="form-group has-float-label ">
+                                        <select class="form-control dropdown-height-custom" name="valutaInfo" id="valutaInfo">
+                                            <!--<option value="" disabled selected hidden>Valuta</option>-->
+                                        </select>
+                                        <span>Valuta</span>
+                                    </label>
+                                </div>
+                                <!--Condiții și precizări                            <input  class="form-control" type="textarea" name="conditiiInfo" >-->
+
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="conditiiInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="conditiiInfo">Condiții și precizări</label>
+                                </div>
+
+                                <!--Nr. şi data a declaraţiei vamale                 <input  class="form-control" type="text" name="nrDeclaratieiVamaleInfo">-->
+                                <!--<input  class="form-control" type="date" name="dataDeclaratieiVamaleInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="nrDeclaratieiVamaleInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="nrDeclaratieiVamaleInfo">Nr. a declaraţiei vamale</label>
+                                </div>
+                                <div class="form-group col-xl-4">
+                                    <label class="form-group has-float-label">
+                                        <input class="form-control align-self-end" type="date" id="dataDeclaratieiVamaleInfo" required>
+                                        <span>Data a declaraţiei vamale</span>
+                                    </label>
+                                </div>
+                                <!--Nr. autorizaţiei de import în RM                 <input  class="form-control" type="text" name="nrAutorizatieiInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="nrAutorizatieiInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="nrAutorizatieiInfo">Nr. autorizaţiei de import în RM</label>
+                                </div>
+                                <!--Termen de valabilitate                           <input  class="form-control" type="date" name="termenDeValabilitateInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <label class="form-group has-float-label">
+                                        <input class="form-control align-self-end" type="date" id="termenDeValabilitateInfo" required>
+                                        <span>
+                        Termen de valabilitate
+                    </span>
+                                    </label>
+                                </div>
+                                <!--Cantitatea prelevată                             <input  class="form-control" type="number" name="cantitateaPrelevataInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="cantitateaPrelevataInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="cantitateaPrelevataInfo">Cantitatea prelevată</label>
+                                </div>
+
+                                <!--Cantitatea returnată                             <input  class="form-control" type="number" name="cantitateaReturnataInfo">-->
+                                <div class="form-group col-xl-4">
+                                    <input class="form-control align-self-end" type="text" id="cantitateaReturnataInfo" required>
+                                    <label class="form-control-placeholder align-self-end" for="cantitateaReturnataInfo">Cantitatea returnată</label>
+                                </div>
+
+                                <div class="form-group col-xl-4 " >
+                                    <label class="has-float-label " >
+                                        <input class="form-control" type="number" placeholder=" "/>
+                                        <span style="display:inline-block;">Number</span>
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <!--<button class="btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+                            <a class="font-weight-bold"          data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="scrollToTop()">
+                                Ambalaj
+                            </a>
+                            <!--</button>-->
+                        </h5>
+
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+
+
+                            <fieldset>
+                                <h4 class="text-center"><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
+                                Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">
+                                Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
+                                Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
+                                Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">
+                                Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">
+                                <option value="" disabled selected hidden></option>  </select>
+                                Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
+                                Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <!--<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+                            <a class="font-weight-bold"          data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" onclick="scrollToTop()">
+                                MEDICAMENTUL NEÎNREGISTRAT
+                            </a>
+                            <!--</button>-->
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <fieldset>
+                                <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
+
+                                Codul vamal                                  <input  class="form-control"type="text" name="codVamalNeInregistrat">
+                                Denumirea comercială a medicamentului        <input  class="form-control"type="text" name="denumireComercialaNeInregistrat">
+                                Forma medicamentoasă                         <select class="form-control dropdown-height-custom" name="formaMedicamentoasa" id="formaMedicamentoasaNeInregistrat"> </select>
+
+                                <!--<div id="dozaDivNeInregistrat">-->
+                                <!--Doza                                         <input  class="form-control"type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">-->
+                                <!--<select class="form-control dropdown-height-custom" id="dozaDropdownNeInregistrat"></select>-->
+                                <!--Denumirea comună internaționala              <input  class="form-control"type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">-->
+                                <!--</div>-->
+
+                                <div id="dozaDivNeInregistrat">
+                                    Denumirea comună internaționala   <input class="form-control" type="text" name="denumireaInternationalaNeInregistrat" id="denumireaInternationalaNeInregistrat">
+                                    Doza
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <input class="form-control" type="number" name="dozaNeInregistrat" id="dozaNeInregistrat">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <select class="form-control dropdown-height-custom" id="dozaDropdownNeInregistrat"></select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <input class="form-control btn btn-xs btn-primary" type="button" value="Adauga doza si denumire"
+                                       onClick="adaugaDoza('dozaDivNeInregistrat','denumireaInternationalaNeInregistrat','dozaNeInregistrat','dozaDropdownNeInregistrat');">
+                                Divizare (Unitatea de măsură)                <input  class="form-control"type="number" name="divizareNeInregistrat" placeholder="într-o paleta">
+                                <select class="form-control dropdown-height-custom" name="dozaDivizareNeInregistrat"  id="dozaDivizareNeInregistrat"> </select> N <input  class="form-control"type="text" name="dozaBlisterNeInregistrat" placeholder="palete">
+                                Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat">
+                                Prețul                                       <input  class="form-control"type="number" name="pretNeInregistrat">
+                                Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaNeInregistrat">
+                                <option value="" disabled selected hidden></option>  </select>
+                                Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select>
+                                Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareNeInregistrat">
+                                Nr. de înregistrare în RM                    <input  class="form-control"type="text" name="nrInregistrareNeInregistrat">
+                                Data înregistrare în RM                      <input  class="form-control"type="date" name="dataInregistrareNeInregistrat">
+                                Cod ATC                                      <input  class="form-control"type="text" name="codATCNeInregistrat">
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 </form>
     </div>
 
@@ -1013,7 +1350,7 @@
         }
     }
 
-    function medicamentulNeInregistratShow() {
+    function ShowMedicamentulNeInregistrat() {
         var checkBox = document.getElementById("buttonMedicamentulNeInregistrat");
         var text = document.getElementById("medicamentulNeInregistrat");
 
