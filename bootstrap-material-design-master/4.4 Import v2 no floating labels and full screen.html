@@ -297,7 +297,7 @@
     .dropdown-height-custom {
         height: calc(3.2rem + 1.5px) !important;
         font-weight : 300;
-        opacity: 0.5;
+        opacity: 0.8;
     }
 
 </style>
@@ -360,13 +360,17 @@
 
 
 
+    <!--================================================================================================================================================================================================-->
+    <!--================================================================================================================================================================================================-->
+
     <div class="row  ">
         <h2 class="display-5 text-center col-12 ">Autorizarea importului</h2>
 
 
         <!--<div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" data-toggle="buttons">-->
         <div class="d-none d-lg-block btn-group btn-group-vertical col-md-3 col-lg-2 row d-flex justify-content-center align-self-start sticky-top" >
-            <a class="d-none d-lg-block col-12">
+            <a class="d-none d-sm-block col-12">
+            <!--<a class="d-none d-lg-block col-12">-->
             <!--<a >-->
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
                 <button type="button" class="btn btn-primary d-flex text-left" onclick="ShowMedicamentulNeInregistrat()">Medicamentul neinregistrat</button>
@@ -395,16 +399,35 @@
             <!--</label>-->
         <!--</div>-->
 
+<!--================================================================================================================================================================================================-->
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--================================================================================================================================================================================================-->
+
         <form id="msform"  action="/processForm"  class="col-lg-10 col-md-12" >
+            <div class="d-none d-lg-block btn-group btn-group col-12 row d-flex justify-content-center align-self-start sticky-top" >
+                <a class="d-none d-sm-block d-sm-flex col-12">
+                    <!--<a class="d-none d-lg-block col-12">-->
+                    <!--<a >-->
+                    <button type="button" class="btn btn-primary d-flex text-left" onclick="showInregistrat()">Medicament inregistrat</button>
+                    <button type="button" class="btn btn-primary d-flex text-left" onclick="ShowMedicamentulNeInregistrat()">Medicamentul neinregistrat</button>
+                    <button type="button" class="btn btn-primary d-flex text-left" onclick="showMateria()" >Materia primă</button>
+                    <button type="button" class="btn btn-primary d-flex text-left" onclick="showAmbalaj()" >Ambalajul pentru producerea medicamentelor</button>
+                    <button type="button" class="btn btn-primary d-flex text-left" onclick="showPrelevareAProbei()" >Prelevarea a probei</button>
+                </a>
+            </div>
 
     <!--<div class="row d-flex justify-content-start d-none d-lg-block">-->
-    <div class="row justify-content-start d-none d-md-block d-md-flex">
+    <div class="row justify-content-start d-none d-lg-block d-lg-flex">
 
 
 
     <div id="inregistrare" class="form-group col-md-12  col-lg-7" >
     <!--<div id="inregistrare" class="form-group col-auto" >-->
 
+
+<!--================================================================================================================================================================================================-->
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--================================================================================================================================================================================================-->
 
 
         <fieldset>
@@ -439,7 +462,7 @@
 
                 <!--<div class="row col-12 align-self-center">-->
 
-<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 
                     <h6 class="col-12 form-group">Denumirea şi adresa producătorului materiei prime: </h6>
                     <div class="form-group col-xl-6 col-lg-6">
@@ -481,7 +504,11 @@
                 </div>
 
                 <!--</div>-->
-<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <!--=============================================================================================================================================================================================-->
+                <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <!--=============================================================================================================================================================================================-->
+
 
                 <!--<div class="col-md-4 align-self-end order-md-5 order-sm-4" >-->
             <h6 class="col-12 form-group" style="white-space: pre-line">
@@ -685,6 +712,10 @@
         </fieldset>
     </div>
 
+        <!--=============================================================================================================================================================================================-->
+        <!--////////////////////////////////////////////////////////////////////INFORMAȚIA DESPRE MEDICAMENTUL ÎNREGISTRAT///////////////////////////////////////////////////////////////////////////////-->
+        <!--=============================================================================================================================================================================================-->
+
 
     <div id="medicamentulInregistrat" style=" display:none " class="col-md-6 col-lg-4 ">
     <!--<div id="medicamentulInregistrat" style=" display:none " class="col-auto">-->
@@ -736,7 +767,12 @@
         </fieldset>
     </div>
 
-    <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-5">
+
+        <!--=============================================================================================================================================================================================-->
+        <!--/////////////////////////////////////////////////////////////////INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT////////////////////////////////////////////////////////////////////////////////-->
+        <!--=============================================================================================================================================================================================-->
+
+        <div id="medicamentulNeInregistrat" style="; display:none" class="col-md-6 col-lg-5">
         <fieldset>
             <h4 class="text-center"><strong>INFORMAȚIA DESPRE MEDICAMENTUL NEÎNREGISTRAT </strong></h4>
 
@@ -788,15 +824,67 @@
         <fieldset>
             <h4 class="text-center"><strong>INFORMAȚIA DESPRE MATERIA PRIMĂ </strong></h4>
 
-            Codul vamal                                  <input  class="form-control"type="text" name="codVamalMateria">
-            Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei">
-            Cantitatea                                   <input  class="form-control"type="number" name="cantitateMateria">
-            Prețul                                       <input  class="form-control"type="number" name="pretMateria">
-            Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaMateria">
-                                                         <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareMateria" id="taraProducatoareMateria"> </select>
-            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareMateria">
-            Cod ATC                                      <input  class="form-control"type="text" name="codATCMateria">
+            <!--Codul vamal                                  <input  class="form-control"type="text" name="codVamalMateria" placeholder=" " required>-->
+            <!--Denumirea materiei prime (DCI)               <input  class="form-control"type="text" name="denumireMateriei" placeholder=" " required>-->
+            <!--Cantitatea                                   <input  class="form-control"type="number" name="cantitateMateria" placeholder=" " required>-->
+            <!--Prețul                                       <input  class="form-control"type="number" name="pretMateria" placeholder=" " required>-->
+            <!--Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaMateria" placeholder=" " required>-->
+                                                         <!--<option value="" disabled selected hidden></option>  </select>-->
+            <!--Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareMateria" id="taraProducatoareMateria" placeholder=" " required> </select>-->
+            <!--Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareMateria" placeholder=" " required>-->
+            <!--Cod ATC                                      <input  class="form-control"type="text" name="codATCMateria" placeholder=" " required>-->
+
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="codVamalMateria" placeholder=" " required>
+                    <span>Codul vamal</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="denumireMateriei" placeholder=" " required>
+                    <span>Denumirea materiei prime (DCI)               </span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="number" name="cantitateMateria" placeholder=" " required>
+                    <span>Cantitatea</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="number" name="pretMateria" placeholder=" " required>
+                    <span>Prețul</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <select class="form-control dropdown-height-custom" name="valuta" id="valutaMateria" placeholder=" " required>
+                        <option value="" disabled selected hidden></option>
+                    </select>
+                    <span>Valuta</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <select class="form-control dropdown-height-custom" name="taraProducatoareMateria" id="taraProducatoareMateria" placeholder=" " required> </select>
+                    <span>Țara producătoare </span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="firmaProducatoareMateria" placeholder=" " required>
+                    <span>Firma producătoare</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="codATCMateria" placeholder=" " required>
+                    <span>Cod ATC</span>
+                </label>
+            </div>
+
 
         </fieldset>
     </div>
@@ -805,14 +893,60 @@
 
         <fieldset>
             <h4 class="text-center"><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
-            Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">
-            Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
-            Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
-            Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">
-            Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">
-                                                         <option value="" disabled selected hidden></option>  </select>
-            Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
-            Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">
+            <!--Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">-->
+            <!--Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">-->
+            <!--Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">-->
+            <!--Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">-->
+            <!--Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">-->
+                                                         <!--<option value="" disabled selected hidden></option>  </select>-->
+            <!--Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>-->
+            <!--Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">-->
+
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="codVamalAmbalaj" placeholder=" " required>
+                    <span> Codul vamal</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="denumireAmbalaj" placeholder=" " required>
+                    <span>Denumirea ambalajului</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="number" name="cantitateAmbalaj" placeholder=" " required>
+                    <span>Cantitatea</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="number" name="pretAmbalaj" placeholder=" ">
+                    <span>Prețul</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj" placeholder=" " required>
+                        <option value="" disabled selected hidden></option>
+                    </select>
+                    <span>Valuta</span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj" placeholder=" " required> </select>
+                    <span>Țara producătoare </span>
+                </label>
+            </div>
+            <div>
+                <label class="has-float-label">
+                    <input class="form-control" type="text" name="firmaProducatoareAmbalaj" placeholder=" " required>
+                    <span>Firma producătoare  </span>
+                </label>
+            </div>
+
 
         </fieldset>
     </div>
@@ -1183,14 +1317,60 @@
 
                             <fieldset>
                                 <h4 class="text-center"><strong>INFORMAȚIA DESPRE AMBALAJUL</strong> </h4>
-                                Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">
-                                Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">
-                                Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">
-                                Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">
-                                Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">
-                                <option value="" disabled selected hidden></option>  </select>
-                                Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>
-                                Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">
+                                <!--Codul vamal                                  <input  class="form-control"type="text" name="codVamalAmbalaj">-->
+                                <!--Denumirea ambalajului                        <input  class="form-control"type="text" name="denumireAmbalaj">-->
+                                <!--Cantitatea                                   <input  class="form-control"type="number" name="cantitateAmbalaj">-->
+                                <!--Prețul                                       <input  class="form-control"type="number" name="pretAmbalaj">-->
+                                <!--Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj">-->
+                                <!--<option value="" disabled selected hidden></option>  </select>-->
+                                <!--Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj"> </select>-->
+                                <!--Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareAmbalaj">-->
+
+                                <div>
+                                    <label class="has-float-label">
+                                        <input class="form-control" type="text" name="codVamalAmbalaj" placeholder=" " required>
+                                        <span> Codul vamal</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <input class="form-control" type="text" name="denumireAmbalaj" placeholder=" " required>
+                                        <span>Denumirea ambalajului</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <input class="form-control" type="number" name="cantitateAmbalaj" placeholder=" " required>
+                                        <span>Cantitatea</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <input class="form-control" type="number" name="pretAmbalaj" placeholder=" ">
+                                        <span>Prețul</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj" placeholder=" " required>
+                                            <option value="" disabled selected hidden></option>
+                                        </select>
+                                        <span>Valuta</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <select class="form-control dropdown-height-custom" name="taraProducatoareAmbalaj" id="taraProducatoareAmbalaj" placeholder=" " required> </select>
+                                        <span>Țara producătoare </span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="has-float-label">
+                                        <input class="form-control" type="text" name="firmaProducatoareAmbalaj" placeholder=" " required>
+                                        <span>Firma producătoare  </span>
+                                    </label>
+                                </div>
+
 
                             </fieldset>
                         </div>
