@@ -433,6 +433,45 @@
         <fieldset>
             <h4 class="text-center" class="text-center"><strong>INFORMAȚIA PENTRU ÎNREGISTRARE</strong></h4>
 
+            <select class="selectpicker">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </select>
+
+
+            <!--Dropdown primary-->
+            <div class="dropdown">
+
+                <!--Trigger-->
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown primary</button>
+
+
+                <!--Menu-->
+                <div class="dropdown-menu dropdown-primary">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <!--/Dropdown primary-->
+
+            <!-- Split button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger">Action</button>
+                <button type="button" class="btn btn-danger dropdown-toggle px-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </div>
+
 
             <div class="row " style="display:flex; flex-wrap:wrap">
 
@@ -496,12 +535,13 @@
 
                 <div class="col-xl-4 col-lg-6">
                     <label class="form-group has-float-label">
-                        <select class="form-control dropdown-height-custom" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
+                        <select class="form-control dropdown-height-custom" placeholder="Ţara" name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
                                                                      <!--<option value="" disabled selected hidden></option>-->
                         </select>
                     <span>Ţara</span>
                 </label>
                 </div>
+
 
                 <!--</div>-->
 
@@ -551,7 +591,7 @@
                 </div>
             <div  class="col-xl-4 col-lg-6">
                 <label class="form-group has-float-label">
-                <select class="form-control dropdown-height-custom" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
+                <select class="form-control dropdown-height-custom" placeholder="Ţara:" name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
                                                                      <!--<option value="" disabled selected hidden></option>-->
                 </select>
 
@@ -607,8 +647,8 @@
 
             <div  class="col-xl-4 col-lg-6">
                 <label class="form-group has-float-label ">
-                <select class="form-control dropdown-height-custom" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
-                                                             <!--<option value="" disabled selected hidden></option>-->
+                <select class="form-control dropdown-height-custom" placeholder=  "Ţara:" name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
+                                                             <option value="" disabled selected hidden></option>
                 </select>
                     <span>Ţara</span>
                 </label>
@@ -755,10 +795,11 @@
             <select class="form-control" name="dozaDivizareInregistrat"  id="dozaDivizareInregistrat"> </select> N <input  class="form-control" type="text" name="dozaBlisterInregistrat" placeholder=" ">
             Cantitatea                                       <input  class="form-control" type="number" name="cantitate">
             Prețul                                           <input  class="form-control" type="number" name="pret">
-            Valuta                                           <select class="form-control dropdown-height-custom" name="valuta" id="valuta">
-                                                             <option value="" disabled selected hidden></option>  </select>
+            Valuta                                           <select class="form-control dropdown-height-custom" name="valuta" id="valuta"> </select>
+                                                             <!--<option value="" disabled selected hidden></option>  </select>-->
             Țara producătoare                                <select class="form-control dropdown-height-custom" name="taraProducatoare" id="taraProducatoare">
-                                                             <option value="" disabled selected hidden>Ţara...</option> </select>
+                                                             <!--<option value="" disabled selected hidden>Ţara...</option>-->
+        </select>
             Firma producătoare                               <input  class="form-control" type="text" name="firmaProducatoare">
             Nr. de înregistrare în RM                        <input  class="form-control" type="text" name="nrInregistrare">
             Data înregistrare în RM                          <input  class="form-control" type="date" name="dataInregistrare">
@@ -867,7 +908,7 @@
             <div>
                 <label class="has-float-label">
                     <select class="form-control dropdown-height-custom" name="valuta" id="valutaNeInregistrat" placeholder=" " required>
-                        <option value="" disabled selected hidden></option>
+                        <!--<option value="" disabled selected hidden></option>-->
                     </select>
                     <span>Valuta</span>
                 </label>
@@ -954,7 +995,7 @@
             <div>
                 <label class="has-float-label">
                     <select class="form-control dropdown-height-custom" name="valuta" id="valutaMateria" placeholder=" " required>
-                        <option value="" disabled selected hidden></option>
+                        <!--<option value="" disabled selected hidden></option>-->
                     </select>
                     <span>Valuta</span>
                 </label>
@@ -1027,7 +1068,7 @@
             <div>
                 <label class="has-float-label">
                     <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj" placeholder=" " required>
-                        <option value="" disabled selected hidden></option>
+                        <!--<option value="" disabled selected hidden></option>-->
                     </select>
                     <span>Valuta</span>
                 </label>
@@ -1185,7 +1226,7 @@
             <div>
                 <label class="has-float-label">
                     <select class="form-control dropdown-height-custom" name="valutaPrelevare" id="valutaPrelevare" required>
-                        <option value="" disabled selected hidden></option>
+                        <!--<option value="" disabled selected hidden></option>-->
                     </select>
                     <span>Valuta</span>
                 </label>
@@ -1200,6 +1241,7 @@
                 <label class="has-float-label">
 
                     <select class="form-control dropdown-height-custom" name="taraProducatoarePrelevare" id="taraProducatoarePrelevare" required> </select>
+                    <option value ="test"></option>
                     <span>Țara producătoare</span>
                 </label>
             </div>
@@ -1339,7 +1381,7 @@
 
                                 <div class="col-xl-4 col-lg-6">
                                     <label class="form-group has-float-label">
-                                        <select class="form-control dropdown-height-custom" placeholder="Ţara      " name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
+                                        <select class="form-control dropdown-height-custom" placeholder="Ţara" name="taraProducatoruluiMaterieiInfo" id="taraProducatoruluiMaterieiInfo" style="height: calc(3.2rem + 1.5px)" required>
                                             <!--<option value="" disabled selected hidden></option>-->
                                         </select>
                                         <span>Ţara</span>
@@ -1390,7 +1432,7 @@
                                 </div>
                                 <div  class="col-xl-4 col-lg-6">
                                     <label class="form-group has-float-label">
-                                        <select class="form-control dropdown-height-custom" placeholder="Ţara:     " name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
+                                        <select class="form-control dropdown-height-custom" placeholder="Ţara:" name="taraVinzatoruluiInfo" id="taraVinzatoruluiInfo" required>
                                             <!--<option value="" disabled selected hidden></option>-->
                                         </select>
 
@@ -1447,7 +1489,7 @@
                                 <div  class="col-xl-4 col-lg-6">
                                     <label class="form-group has-float-label ">
                                         <select class="form-control dropdown-height-custom" placeholder=  "Ţara:     " name="taraImportatoruluiInfo" id="taraImportatoruluiInfo">
-                                            <!--<option value="" disabled selected hidden></option>-->
+                                            <option value="" disabled selected hidden></option>
                                         </select>
                                         <span>Ţara</span>
                                     </label>
@@ -1604,7 +1646,7 @@
                                 <div>
                                     <label class="has-float-label">
                                         <select class="form-control dropdown-height-custom" name="valuta" id="valutaAmbalaj" placeholder=" " required>
-                                            <option value="" disabled selected hidden></option>
+                                            <!--<option value="" disabled selected hidden></option>-->
                                         </select>
                                         <span>Valuta</span>
                                     </label>
@@ -1676,7 +1718,7 @@
                                 Cantitatea                                   <input  class="form-control"type="number" name="cantitateNeInregistrat">
                                 Prețul                                       <input  class="form-control"type="number" name="pretNeInregistrat">
                                 Valuta                                       <select class="form-control dropdown-height-custom" name="valuta" id="valutaNeInregistrat">
-                                <option value="" disabled selected hidden></option>  </select>
+                                <!--<option value="" disabled selected hidden></option>  </select>-->
                                 Țara producătoare                            <select class="form-control dropdown-height-custom" name="taraProducatoareNeInregistrat" id="taraProducatoareNeInregistrat"></select>
                                 Firma producătoare                           <input  class="form-control"type="text" name="firmaProducatoareNeInregistrat">
                                 Nr. de înregistrare în RM                    <input  class="form-control"type="text" name="nrInregistrareNeInregistrat">
@@ -1691,7 +1733,7 @@
 </form>
     </div>
 
-    <div class="col 12 d-flex justify-content-center">
+    <div class="col 12 d-flex justify-content-center animated slideInLeft" id="submitDiv">
 
         <input type="submit" name="submit" id="submit" class="btn btn-success col-sm-3 " value="Submit" /> <br>
             <button type="button" name="Medicament inregistrat" id="buttonMedicamentulInregistrat" class="btn btn-success" onclick="showInregistrat()">Medicament inregistrat</button> <br>
@@ -2059,8 +2101,9 @@
                 }
             }
             var divID=dozaDivName+counter;
+            // var divID="<div></div>";
             var newdiv = document.createElement(divID);
-            newdiv.id=divID;
+            newdiv.id=divID+"element";
             var dropdownName=dozaDivName+"Dropdown"+counter.toString();
             var denumireName = denumireName + counter.toString();
             var dozaName = dozaName + counter.toString();
@@ -2096,7 +2139,7 @@
             //     "\n" +
             //     "            </div>";
 
-            newdiv.innerHTML = "<div id="+dozaDivName+">\n" +
+            newdiv.innerHTML = "<div id="+dozaDivName+counter+" class=\"animated slideInDown\">\n" +
                 "                <div>\n" +
                 "                    <label class=\"has-float-label\">\n" +
                 "                        <input class=\"form-control\" type=\"text\" name="+denumireName+" id="+denumireName+" placeholder=\" \" required>\n" +
@@ -2131,7 +2174,10 @@
             var deleteButton1 = document.createTextNode("Sterge");
             deleteButton.classList.add("form-control");
             deleteButton.classList.add("btn-warning");
+            deleteButton.classList.add("animated");
+            deleteButton.classList.add("slideInDown");
             deleteButton.appendChild(deleteButton1);
+
             deleteButton.onclick = function deleteButton() {
 
                 switch (dozaDivName) {
@@ -2149,11 +2195,17 @@
                         break;
                     }
                 }
+                var dozaDivPrelevare = document.getElementById(divID);
                 var element = document.getElementById(divID);
-                var element = document.getElementById(divID);
-                var button = document.getElementById('deleteButton');
-                element.parentNode.removeChild(element);
-                element.parentNode.removeChild(button);
+                var button = document.getElementById('deleteButton'+counter);
+                // element.classList.add('animated');
+                // element.classList.add('slideOutUp');
+                button.classList.add('slideOutDown');
+                // element.classList.add("animated");
+                setTimeout(function(){ element.parentNode.removeChild(element); element.parentNode.removeChild(button); }, 1000);
+                // element.parentNode.removeChild(element);
+                // element.parentNode.removeChild(button);
+
 
 
             }
